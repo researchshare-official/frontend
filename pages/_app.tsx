@@ -6,10 +6,10 @@ import { common, purple } from '@mui/material/colors';
 const theme = createTheme({
     palette: {
         primary: {
-            main: purple[400]
+            main: common.white
         },
         secondary: {
-            main: common.white
+            main: purple.A700
         },
     }
 })
