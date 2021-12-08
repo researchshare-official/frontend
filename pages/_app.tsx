@@ -12,7 +12,7 @@ const globalTheme: ThemeOptions = {
             main: common.white
         },
         secondary: {
-            main: purple.A700
+            main: "#7447D5"
         },
         background: {
             default: purple[400]
