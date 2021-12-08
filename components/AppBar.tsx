@@ -1,19 +1,25 @@
 import Image from 'next/image'
-import { styled, alpha } from '@mui/material/styles';
+import { styled, alpha, useTheme } from '@mui/material/styles';
 import MUIAppBar from '@mui/material/AppBar';
+import Box from '@mui/material/Box';
 import { useRouter } from 'next/router'
 import Toolbar from '@mui/material/Toolbar';
 import IconButton from '@mui/material/IconButton';
 import SearchIcon from '@mui/icons-material/Search';
 import InputBase from '@mui/material/InputBase';
+import Divider from '@mui/material/Divider';
 import { NextPage } from 'next';
+import { useContext } from 'react';
+import Brightness4Icon from '@mui/icons-material/Brightness4';
+import Brightness7Icon from '@mui/icons-material/Brightness7';
+import ColorModeContext from '../utils/ColorModeContext';
 
 const Search = styled('div')(({ theme }) => ({
     position: 'relative',
     borderRadius: theme.shape.borderRadius,
-    backgroundColor: alpha(theme.palette.common.white, 0.15),
+    backgroundColor: alpha(theme.palette.grey[400], 0.15),
     '&:hover': {
-        backgroundColor: alpha(theme.palette.common.white, 0.25),
+        backgroundColor: alpha(theme.palette.grey[400], 0.25),
     },
     marginLeft: 0,
     width: '100%',
@@ -52,6 +58,8 @@ const StyledInputBase = styled(InputBase)(({ theme }) => ({
 
 const AppBar: NextPage = (props) => {
     const router = useRouter();
+    const theme = useTheme();   
+    const colorMode = useContext(ColorModeContext);
 
     return (
         <MUIAppBar position="fixed" {...props}>
@@ -66,6 +74,7 @@ const AppBar: NextPage = (props) => {
                 >
                     <Image src="/sublogo.svg" height={42} width={42} alt="ResearchShare logo" />
                 </IconButton>
+                <Divider orientation="vertical" flexItem={true} />
                 <Search>
                     <SearchIconWrapper>
                         <SearchIcon />
@@ -75,6 +84,12 @@ const AppBar: NextPage = (props) => {
                         inputProps={{ 'aria-label': 'search' }}
                     />
                 </Search>
+                <Box sx={{ flexGrow: 1 }} />
+                <Box sx={{ display: { xs: 'none', md: 'flex' } }}>
+                    <IconButton sx={{ ml: 1 }} onClick={colorMode.toggleColorMode} color="inherit">
+                        {theme.palette.mode === 'dark' ? <Brightness7Icon /> : <Brightness4Icon />}
+                    </IconButton>
+                </Box>
             </Toolbar>
         </MUIAppBar>
     )
