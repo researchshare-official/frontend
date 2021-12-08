@@ -15,7 +15,7 @@ const globalTheme: ThemeOptions = {
             main: "#7447D5"
         },
         background: {
-            default: purple[400]
+            default: "#EEE9FA"
         }
     }
 }
