@@ -45,9 +45,9 @@ const StyledInputBase = styled(InputBase)(({ theme }) => ({
         paddingLeft: `calc(1em + ${theme.spacing(4)})`,
         transition: theme.transitions.create('width'),
         width: '100%',
-        border: "solid",
-        borderRadius: "5px",
-        borderColor: "#7447D5",
+        border: 'solid',
+        borderRadius: theme.spacing(5),
+        borderColor: theme.palette.secondary.main,
         [theme.breakpoints.up('sm')]: {
             width: '30ch',
             '&:focus': {
