@@ -22,10 +22,6 @@ const Search = styled('div')(({ theme }) => ({
     marginLeft: 0,
 
     width: '100%',
-    [theme.breakpoints.up('sm')]: {
-        marginLeft: theme.spacing(1),
-        width: 'auto',
-    },
 }));
 
 const SearchIconWrapper = styled('div')(({ theme }) => ({
@@ -44,14 +40,7 @@ const StyledInputBase = styled(InputBase)(({ theme }) => ({
         padding: theme.spacing(0, 1, 1, 0),
         // vertical padding + font size from searchIcon
         paddingLeft: `calc(1em + ${theme.spacing(4)})`,
-        transition: theme.transitions.create('width'),
         width: '100%',
-        [theme.breakpoints.up('sm')]: {
-            width: '30ch',
-            '&:focus': {
-                width: '40ch',
-            },
-        },
     },
 }));
 
@@ -108,7 +97,11 @@ const FilterBar: NextPage = () => {
                     paddingLeft: '1.875rem',
                     paddingRight: '1.875rem',
             }}>
-            <FormGroup>
+            <FormGroup sx={{
+                overflowY: 'scroll',
+                height: '10rem',
+                flexWrap: 'nowrap',
+            }}>
             {category.map(name => (
                 <FormControlLabel control={<Checkbox color="secondary"/>} label={name} key={name}/>
             ))}
