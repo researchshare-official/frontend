@@ -3,6 +3,8 @@ import Head from 'next/head'
 import styles from '../styles/Home.module.css'
 import Box from '@mui/material/Box'
 import AppBar from '../components/AppBar'
+import ArticlePreview from '../components/ArticlePreview'
+import { articles } from '../mocking/articles.json'
 
 const Home: NextPage = () => {
     return (
@@ -27,6 +29,20 @@ const Home: NextPage = () => {
                         flex: 3,
                         backgroundColor: '#ffffff'
                     }}>
+                        {articles.map(article => (
+                            <ArticlePreview
+                                id={article.id}
+                                title={article.title}
+                                text={article.text}
+                                image={article.image}
+                                authors={article.authors}
+                                tags={article.tags}
+                                date={article.date}
+                                sponsored={article.sponsored}
+                                likes={article.likes}
+                                comments={article.comments}
+                            />
+                        ))}
                     </Box>
                     <Box sx={{
                         flex: 1,
