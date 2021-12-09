@@ -13,6 +13,7 @@ import { useContext } from 'react';
 import Brightness4Icon from '@mui/icons-material/Brightness4';
 import Brightness7Icon from '@mui/icons-material/Brightness7';
 import ColorModeContext from '../utils/ColorModeContext';
+import Button from '@mui/material/Button';
 
 const Search = styled('div')(({ theme }) => ({
     position: 'relative',
@@ -47,13 +48,25 @@ const StyledInputBase = styled(InputBase)(({ theme }) => ({
         paddingLeft: `calc(1em + ${theme.spacing(4)})`,
         transition: theme.transitions.create('width'),
         width: '100%',
+        border: "solid",
+        borderRadius: "5px",
+        borderColor: "#7447D5",
         [theme.breakpoints.up('sm')]: {
             width: '30ch',
             '&:focus': {
-                width: '40ch',
+                width: '60ch',
             },
         },
     },
+}));
+
+const LoginButtonWrapper = styled('div')(({ theme }) => ({
+    padding: theme.spacing(0, 2),
+    height: '100%',
+    pointerEvents: 'none',
+    display: 'flex',
+    alignItems: 'center',
+    justifyContent: 'center',
 }));
 
 const AppBar: NextPage = (props) => {
@@ -63,7 +76,7 @@ const AppBar: NextPage = (props) => {
 
     return (
         <MUIAppBar position="fixed" {...props}>
-            <Toolbar>
+            <Toolbar style={{paddingLeft:"20%", paddingRight:"20%"}}>
                 <IconButton
                     size="large"
                     edge="start"
@@ -84,12 +97,12 @@ const AppBar: NextPage = (props) => {
                         inputProps={{ 'aria-label': 'search' }}
                     />
                 </Search>
+
                 <Box sx={{ flexGrow: 1 }} />
-                <Box sx={{ display: { xs: 'none', md: 'flex' } }}>
-                    <IconButton sx={{ ml: 1 }} onClick={colorMode.toggleColorMode} color="inherit">
-                        {theme.palette.mode === 'dark' ? <Brightness7Icon /> : <Brightness4Icon />}
-                    </IconButton>
-                </Box>
+
+                <LoginButtonWrapper>
+                    <Button variant="contained" style={{color:"white", backgroundColor:"#7447D5"}}>Login</Button>
+                </LoginButtonWrapper>
             </Toolbar>
         </MUIAppBar>
     )
