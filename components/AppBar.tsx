@@ -60,15 +60,6 @@ const StyledInputBase = styled(InputBase)(({ theme }) => ({
     },
 }));
 
-const LoginButtonWrapper = styled('div')(({ theme }) => ({
-    padding: theme.spacing(0, 2),
-    height: '100%',
-    pointerEvents: 'none',
-    display: 'flex',
-    alignItems: 'center',
-    justifyContent: 'center',
-}));
-
 const AppBar: NextPage = (props) => {
     const router = useRouter();
     const theme = useTheme();   
@@ -76,7 +67,7 @@ const AppBar: NextPage = (props) => {
 
     return (
         <MUIAppBar position="fixed" {...props}>
-            <Toolbar style={{paddingLeft:"20%", paddingRight:"20%"}}>
+            <Toolbar sx={{ px: 1/5 }}>
                 <IconButton
                     size="large"
                     edge="start"
@@ -100,7 +91,7 @@ const AppBar: NextPage = (props) => {
 
                 <Box sx={{ flexGrow: 1 }} />
 
-                <Button variant="contained" style={{color:"white", backgroundColor:"#7447D5"}}>Login</Button>
+                <Button variant="contained" sx={{ color: "primary.main", backgroundColor: "secondary.main" }}>Login</Button>
             </Toolbar>
         </MUIAppBar>
     )
