@@ -10,9 +10,6 @@ import InputBase from '@mui/material/InputBase';
 import Divider from '@mui/material/Divider';
 import { NextPage } from 'next';
 import { useContext } from 'react';
-import Brightness4Icon from '@mui/icons-material/Brightness4';
-import Brightness7Icon from '@mui/icons-material/Brightness7';
-import ColorModeContext from '../utils/ColorModeContext';
 import Button from '@mui/material/Button';
 
 const Search = styled('div')(({ theme }) => ({
@@ -62,12 +59,10 @@ const StyledInputBase = styled(InputBase)(({ theme }) => ({
 
 const AppBar: NextPage = (props) => {
     const router = useRouter();
-    const theme = useTheme();   
-    const colorMode = useContext(ColorModeContext);
 
     return (
         <MUIAppBar position="fixed" {...props}>
-            <Toolbar sx={{ px: 1/5 }}>
+            <Toolbar disableGutters={true} sx={{ px: '20%' }}>
                 <IconButton
                     size="large"
                     edge="start"
@@ -91,7 +86,7 @@ const AppBar: NextPage = (props) => {
 
                 <Box sx={{ flexGrow: 1 }} />
 
-                <Button variant="contained" sx={{ color: "primary.main", backgroundColor: "secondary.main" }}>Login</Button>
+                <Button variant="contained" sx={{ color: "primary.main", bgcolor: "secondary.main" }}>Login</Button>
             </Toolbar>
         </MUIAppBar>
     )
