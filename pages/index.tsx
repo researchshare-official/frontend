@@ -14,21 +14,25 @@ const Home: NextPage = () => {
             </Head>
 
             <main className={styles.main}>
-
-                <Box sx={{ flexGrow: 1 }}>
+                <Box>
                     <AppBar />
                 </Box>
                 <div className={styles.body}>
                     <Box sx={{
-                        width: '300',
-                        height: '300',
-                        backgroundColor: '#000000',
-                        flex: 1 }}>
+                        backgroundColor: '#F4F4F4',
+                        flex: 1
+                    }}>
                     </Box>
-                    {/* <Box sx={{ flexGrow: 1 }}>
+                    <Box sx={{
+                        flex: 3,
+                        backgroundColor: '#ffffff'
+                    }}>
                     </Box>
-                    <Box sx={{ flexGrow: 1 }}>
-                    </Box> */}
+                    <Box sx={{
+                        flex: 1,
+                        backgroundColor: '#F4F4F4'
+                    }}>
+                    </Box>
                 </div>
 
             </main>
