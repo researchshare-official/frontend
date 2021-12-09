@@ -10,9 +10,7 @@ import InputBase from '@mui/material/InputBase';
 import Divider from '@mui/material/Divider';
 import { NextPage } from 'next';
 import { useContext } from 'react';
-import Brightness4Icon from '@mui/icons-material/Brightness4';
-import Brightness7Icon from '@mui/icons-material/Brightness7';
-import ColorModeContext from '../utils/ColorModeContext';
+import Button from '@mui/material/Button';
 
 const Search = styled('div')(({ theme }) => ({
     position: 'relative',
@@ -23,6 +21,8 @@ const Search = styled('div')(({ theme }) => ({
     },
     marginLeft: 0,
     width: '100%',
+    border: 'solid',
+    borderColor: theme.palette.secondary.main,
     [theme.breakpoints.up('sm')]: {
         marginLeft: theme.spacing(1),
         width: 'auto',
@@ -50,7 +50,7 @@ const StyledInputBase = styled(InputBase)(({ theme }) => ({
         [theme.breakpoints.up('sm')]: {
             width: '30ch',
             '&:focus': {
-                width: '40ch',
+                width: '60ch',
             },
         },
     },
@@ -58,12 +58,10 @@ const StyledInputBase = styled(InputBase)(({ theme }) => ({
 
 const AppBar: NextPage = (props) => {
     const router = useRouter();
-    const theme = useTheme();   
-    const colorMode = useContext(ColorModeContext);
 
     return (
         <MUIAppBar position="fixed" {...props}>
-            <Toolbar>
+            <Toolbar disableGutters={true} sx={{ px: '20%' }}>
                 <IconButton
                     size="large"
                     edge="start"
@@ -84,12 +82,10 @@ const AppBar: NextPage = (props) => {
                         inputProps={{ 'aria-label': 'search' }}
                     />
                 </Search>
+
                 <Box sx={{ flexGrow: 1 }} />
-                <Box sx={{ display: { xs: 'none', md: 'flex' } }}>
-                    <IconButton sx={{ ml: 1 }} onClick={colorMode.toggleColorMode} color="inherit">
-                        {theme.palette.mode === 'dark' ? <Brightness7Icon /> : <Brightness4Icon />}
-                    </IconButton>
-                </Box>
+
+                <Button variant="contained" sx={{ color: "primary.main", bgcolor: "secondary.main" }}>Login</Button>
             </Toolbar>
         </MUIAppBar>
     )
