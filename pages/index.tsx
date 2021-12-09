@@ -18,6 +18,18 @@ const Home: NextPage = () => {
                 <Box sx={{ flexGrow: 1 }}>
                     <AppBar />
                 </Box>
+                <div className={styles.body}>
+                    <Box sx={{
+                        width: '300',
+                        height: '300',
+                        backgroundColor: '#000000',
+                        flex: 1 }}>
+                    </Box>
+                    {/* <Box sx={{ flexGrow: 1 }}>
+                    </Box>
+                    <Box sx={{ flexGrow: 1 }}>
+                    </Box> */}
+                </div>
 
             </main>
         </div>
