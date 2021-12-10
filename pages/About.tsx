@@ -30,7 +30,7 @@ const About: NextPage = () => {
         <main className={styles.main}>
             <Box component="div" className={styles.aboutHeroContainer}>
                 <Box component="p" className={styles.aboutHeroTitle}>ResearchShare - Knowledge for everyone</Box>
-                <Box component="p" className={styles.aboutHeroDescription}>Une plateforme web de recherche scientifique, dédiée aux chercheurs, avec une volonté d’apporter plus d'interactivité entre acteurs du monde de la recherche.</Box>
+                <Box component="p" className={styles.aboutHeroDescription}>Une plateforme web de recherche scientifique, dédiée aux chercheurs, avec une volonté d&apos;apporter plus d&apos;interactivité entre acteurs du monde de la recherche.</Box>
                 <Button className={styles.aboutHeroButton} variant="contained">Explore</Button>
                 <Box component="img" className={styles.aboutHeroImage} src="images/hero/Screenshot_20211207_151305.png" alt="ResearchShare - Screen"/>
             </Box>
