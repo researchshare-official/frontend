@@ -17,8 +17,8 @@ const ProfileContent: NextPage = (props) => {
 
     return (
         <Box sx={{ display: 'flex', flexGrow: 1, flexDirection: 'column', px: '5%' }} {...props}>
-            <Box sx={{ display: 'flex', alignItems: 'center', flexDirection: 'column' }}>
-                <Image src="/ProfileImg.PNG" height={120} width={120} alt="Profile image" />
+            <Box sx={{ display: 'flex', alignItems: 'center', flexDirection: 'column', border: 'solid' }}>
+                <Image src="/profile-picture.png" height={120} width={120} alt="Profile image" />
                 <Typography>Adina Cazalens</Typography> 
                 <Typography>Researcher in cosmology</Typography> 
                 <Typography>Centre Epitech</Typography>
@@ -33,7 +33,7 @@ const ProfileContent: NextPage = (props) => {
                 <SortIcon sx={{ pr: '1%' }}/>
                 <Typography>Sort by</Typography>
             </Box>
-            <List>
+            <List sx={{ overflow: 'auto', height: "24em" }}>
                 {[1, 2, 3, 4, 5].map(x => (
                     <ListItem key={`publication-${x}`}>
                         <OnePublication/>
