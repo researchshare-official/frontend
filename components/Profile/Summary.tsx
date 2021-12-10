@@ -7,7 +7,7 @@ import CommentIcon from '@mui/icons-material/Comment';
 const Summary: NextPage = (props) => {
 
     return (
-        <Box sx={(theme) => ({ bgcolor: theme.palette.grey[300], px: '2%', pt: '2%', width: 'auto' })} {...props}>
+        <Box sx={(theme) => ({ bgcolor: theme.palette.grey[300], px: '2%', pt: '2%' })} {...props}>
             <Typography variant="h4"> Summary </Typography>
             <Divider sx={{ width: '80%' }}/>
             <List>

@@ -54,7 +54,7 @@ const AppBar: NextPage = (props) => {
     const router = useRouter();
 
     return (
-        <MUIAppBar position="fixed" {...props}>
+        <MUIAppBar position="static" sx={{width: "100vw"}} {...props}>
             <Toolbar>
                 <IconButton
                     size="large"

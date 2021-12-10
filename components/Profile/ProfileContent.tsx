@@ -28,12 +28,12 @@ const ProfileContent: NextPage = (props) => {
                 <Tab icon={<PersonIcon />} label="ABOUT" />
                 <Tab icon={<AccessTimeIcon />} label="LAST POSTS" />
             </Tabs>
-            <Box sx={{ display: 'flex', flexGrow: 1 }}>
+            <Box sx={{ display: 'flex' }}>
                 <Typography sx={{ pr: '1%' }}>Insight</Typography>
                 <SortIcon sx={{ pr: '1%' }}/>
                 <Typography>Sort by</Typography>
             </Box>
-            <List sx={{ overflow: 'auto', height: "24em" }}>
+            <List sx={{ overflow: 'auto' }}>
                 {[1, 2, 3, 4, 5].map(x => (
                     <ListItem key={`publication-${x}`}>
                         <OnePublication/>
