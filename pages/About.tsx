@@ -16,6 +16,7 @@ import NewspaperIcon from '@mui/icons-material/Newspaper';
 import GroupsIcon from '@mui/icons-material/Groups';
 import ReceiptLongIcon from '@mui/icons-material/ReceiptLong';
 import FindInPageIcon from '@mui/icons-material/FindInPage';
+import SendIcon from '@mui/icons-material/Send';
 
 const cards = [
     {component: NewspaperIcon, name: "Publication", content: "Partagez vos articles, choisissez comment vous voulez les partager."},
@@ -54,29 +55,38 @@ const About: NextPage = () => {
             </Box>
             <Box component="div" className={styles.aboutContactContainer}>
                 <Box component="p" className={styles.aboutContactTitle}>Contactez nous</Box>
-                <Box component="div" className={styles.aboutContactFormContainer}>
-                    <TextField
-                        className={styles.aboutContactFormItems}
-                        required
-                        id="full_name"
-                        label="Full Name"
-                        variant="filled"
-                    />
-                    <TextField
-                        className={styles.aboutContactFormItems}
-                        required
-                        id="email"
-                        label="Email"
-                        variant="filled"
-                    />
-                    <TextareaAutosize
-                        className={styles.aboutContactFormItems}
-                        aria-label="minimum height"
-                        id="message"
-                        minRows={3}
-                        placeholder="Message"
-                        style={{ width: 200 }}
-                    />
+                <Box component="div" className={styles.aboutContactFormStyling}>
+                    <Box component="form" action="https://formspree.io/f/xayvyyda" method="POST" className={styles.aboutContactFormContainer}>
+                        <TextField
+                            className={styles.aboutContactFormItems}
+                            required
+                            name="name"
+                            id="name"
+                            label="Full Name"
+                            variant="filled"
+                        />
+                        <TextField
+                            className={styles.aboutContactFormItems}
+                            required
+                            name="_replyto"
+                            id="_replyto"
+                            label="Email"
+                            variant="filled"
+                        />
+                        <TextareaAutosize
+                            className={styles.aboutContactFormTextArea}
+                            aria-label="minimum height"
+                            required
+                            name="message"
+                            id="message"
+                            minRows={3}
+                            placeholder="Message*"
+                            style={{ width: "16rem" }}
+                        />
+                        <Button type="submit" variant="contained" className={styles.aboutHeroButton} endIcon={<SendIcon />}>
+                            Envoyer
+                        </Button>
+                    </Box>
                 </Box>
             </Box>
         </main>

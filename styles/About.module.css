@@ -31,8 +31,8 @@
 }
 
 .aboutHeroImage {
-    width: 50%;
-    height: 50%;
+    width: 60%;
+    height: 60%;
     align-self: center;
 }
 
@@ -73,6 +73,7 @@
 
 .aboutContactContainer {
     background-color: #D5C7F2;
+    padding-bottom: 3rem;
 }
 
 .aboutContactTitle {
@@ -84,14 +85,30 @@
 .aboutContactFormContainer {
     display: flex;
     flex-flow: column;
-    /*background-color: #0070f3;*/
+    background-color: #afc6e8;
+    border-radius: 25px;
     justify-content: center;
-    /*width: 70%;*/
+    width: 30rem;
+    /*padding: 3rem;*/
+    padding: 5rem 0 5rem 0;
 }
 
 .aboutContactFormItems {
     margin: 1rem;
     align-content: center;
     align-self: center;
+    justify-content: center;
+}
+
+.aboutContactFormTextArea {
+    width: 3rem;
+    margin: 1rem;
+    align-content: center;
+    align-self: center;
+    justify-content: center;
+}
+
+.aboutContactFormStyling {
+    display: flex;
     justify-content: center;
 }
