@@ -85,7 +85,7 @@ const AppBar: NextPage = (props) => {
 
                 <Box sx={{ flexGrow: 1 }} />
 
-                <Button variant="contained" sx={{ color: "primary.main", bgcolor: "secondary.main" }}>Login</Button>
+                <Button variant="contained" sx={{ color: "primary.main", bgcolor: "secondary.main", '&:hover': { color: "primary.main", bgcolor: 'secondary.dark' }}}>Login</Button>
             </Toolbar>
         </MUIAppBar>
     )
