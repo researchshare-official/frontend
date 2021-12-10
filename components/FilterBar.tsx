@@ -45,86 +45,87 @@ const StyledInputBase = styled(InputBase)(({ theme }) => ({
 }));
 
 const FilterBar: NextPage = () => {
-    return(
+    return (
         <Box>
-        <Box sx={{
-                    bgcolor: 'rgba(237, 237, 237, 0.6)'
-        }}>
-            <Typography variant="h4" sx={{
-            paddingLeft: '0.625rem',
-            fontWeight: 1000,
-            fontSize: '22px',
-            }}>Filters</Typography>
             <Box sx={{
+                bgcolor: 'rgba(237, 237, 237, 0.6)'
+            }}>
+                <Typography variant="h4" sx={{
+                    paddingLeft: '0.625rem',
+                    fontWeight: 1000,
+                    fontSize: '22px',
+                }}>Filters</Typography>
+                <Box sx={{
                     marginTop: '0.625rem',
                     marginBottom: '1.25rem',
                     paddingLeft: '1.875rem',
                     paddingRight: '1.875rem',
-            }}>
-            <Search>
-                <SearchIconWrapper>
-                    <SearchIcon />
-                </SearchIconWrapper>
-                <StyledInputBase sx={{
-                marginTop: '0.625rem',
-                }}
-                    placeholder="Search for filter…"
-                    inputProps={{ 'aria-label': 'search' }}
-                />
-            </Search>
-        </Box>
-        <Typography variant="h4" sx={{
-            paddingLeft: '0.625rem',
-            fontWeight: 1000,
-            fontSize: '22px',
-            }}>Date</Typography>
-        <Box sx={{
+                }}>
+                    <Search>
+                        <SearchIconWrapper>
+                            <SearchIcon />
+                        </SearchIconWrapper>
+                        <StyledInputBase sx={{
+                            marginTop: '0.625rem',
+                        }}
+                            placeholder="Search for filter…"
+                            inputProps={{ 'aria-label': 'search' }}
+                        />
+                    </Search>
+                </Box>
+                <Typography variant="h4" sx={{
+                    paddingLeft: '0.625rem',
+                    fontWeight: 1000,
+                    fontSize: '22px',
+                }}>Date</Typography>
+                <Box sx={{
                     marginTop: '0.625rem',
                     marginBottom: '1.25rem',
                     paddingLeft: '1.875rem',
                     paddingRight: '1.875rem',
-            }}>
-            <Slider defaultValue={1950} aria-label="Default" valueLabelDisplay="auto" min={1990} max={2021} color="secondary"/>
-        </Box>
-        <Typography variant="h4" sx={{
-            paddingLeft: '0.625rem',
-            fontWeight: 1000,
-            fontSize: '22px',
-            }}>Category</Typography>
-        <Box sx={{
+                }}>
+                    <Slider defaultValue={1990} aria-label="Default" valueLabelDisplay="auto" min={1990} max={2021} color="secondary" />
+                </Box>
+                <Typography variant="h4" sx={{
+                    paddingLeft: '0.625rem',
+                    fontWeight: 1000,
+                    fontSize: '22px',
+                }}>Category</Typography>
+                <Box sx={{
                     marginTop: '0.625rem',
                     marginBottom: '1.25rem',
                     paddingLeft: '1.875rem',
                     paddingRight: '1.875rem',
-            }}>
-            <FormGroup sx={{
-                overflowY: 'scroll',
-                height: '10rem',
-                flexWrap: 'nowrap',
-            }}>
-            {filters.category.map(name => (
-                <FormControlLabel control={<Checkbox color="secondary"/>} label={name} key={name}/>
-            ))}
-            </FormGroup>
-        </Box>
-        <Typography variant="h4" sx={{
-            paddingLeft: '0.625rem',
-            fontWeight: 1000,
-            fontSize: '22px',
-            }}>Price</Typography>
-        <Box sx={{
+                }}>
+                    <FormGroup sx={{
+                        overflowY: 'scroll',
+                        // TODO: fix Checkbox Animation cut on the left.
+                        height: '10rem',
+                        flexWrap: 'nowrap',
+                    }}>
+                        {filters.category.map(name => (
+                            <FormControlLabel control={<Checkbox color="secondary" />} label={name} key={name} />
+                        ))}
+                    </FormGroup>
+                </Box>
+                <Typography variant="h4" sx={{
+                    paddingLeft: '0.625rem',
+                    fontWeight: 1000,
+                    fontSize: '22px',
+                }}>Price</Typography>
+                <Box sx={{
                     marginTop: '0.625rem',
                     marginBottom: '1.25rem',
                     paddingLeft: '1.875rem',
                     paddingRight: '1.875rem',
-            }}>
-            <FormGroup>
-            {filters.price.map(name => (
-                <FormControlLabel control={<Checkbox color="secondary"/>} label={name} key={name}/>
-            ))}
-            </FormGroup>
-        </Box>
-        </Box>
+                }}>
+                    <FormGroup>
+                        {filters.price.map(name => (
+                            <FormControlLabel control={<Checkbox color="secondary" />} label={name} key={name} />
+                        ))}
+                    </FormGroup>
+                </Box>
+            </Box>
         </Box>
     );
 }
