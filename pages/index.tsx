@@ -21,17 +21,17 @@ const Home: NextPage = () => {
                     <AppBar />
                 </Box>
                 <div className={styles.body}>
-                    <Box sx={{
-                        backgroundColor: '#F4F4F4',
-                        flex: 1,
-                    }}>
+                    <Box sx={(theme) => ({
+                        backgroundColor: theme.palette.grey[100],
+                        flex: 1
+                    })}>
                         <FilterBar />
                     </Box>
-                    <Box sx={{
+                    <Box sx={(theme) => ({
                         flex: 3,
-                        backgroundColor: '#ffffff',
+                        backgroundColor: theme.palette.common.white,
                         padding: '50px 75px'
-                    }}>
+                    })}>
                         {articles.articles.map(article => (
                             <ArticlePreview
                                 id={article.id}
@@ -48,10 +48,10 @@ const Home: NextPage = () => {
                             />
                         ))}
                     </Box>
-                    <Box sx={{
+                    <Box sx={(theme) => ({
                         flex: 1,
-                        backgroundColor: '#F4F4F4'
-                    }}>
+                        backgroundColor: theme.palette.grey[100],
+                    })}>
                     </Box>
                 </div>
 

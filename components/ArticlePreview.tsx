@@ -26,7 +26,7 @@ const getText = (text: string) => {
             <Box>
                 <Box sx={{ fontSize: '20px', lineHeight: '24px', fontFamily: 'Arial' }}>{subText}
                     <Button size='small' variant='text'>
-                        <Typography sx={{ color: '#7447D5', fontSize: '20px', fontFamily: 'Abhaya Libre', textDecorationLine: 'underline', textTransform: 'lowercase' }}>Read more</Typography>
+                        <Typography sx={{ color: 'secondary.main', fontSize: '20px', fontFamily: 'Abhaya Libre', textDecorationLine: 'underline', textTransform: 'lowercase' }}>Read more</Typography>
                     </Button>
                 </Box>
             </Box>
@@ -49,14 +49,14 @@ const getAuthors = (authors: Array<string>) => {
             authorNames += ', ' + author
         }
     })
-    return <Box sx={{ fontSize: '16px', color: '#7447D5', marginY: '10px' }}>{authorNames}</Box>
+    return <Box sx={{ fontSize: '16px', color: 'secondary.main', marginY: '10px' }}>{authorNames}</Box>
 }
 
 const getDateOrSponsored = (date: string, sponsored: boolean) => {
     if (sponsored) {
-        return <Box sx={{ fontSize: '18px', color: '#636363', fontWeight: '500' }}>Sponsored</Box>
+        return <Box sx={(theme) => ({ fontSize: '18px', color: theme.palette.grey[700], fontWeight: '500' })}>Sponsored</Box>
     } else {
-        return <Box sx={{ fontSize: '18px', color: '#636363', fontWeight: '500' }}>{date}</Box>
+        return <Box sx={(theme) => ({ fontSize: '18px', color: theme.palette.grey[700], fontWeight: '500' })}>{date}</Box>
     }
 }
 
@@ -67,7 +67,7 @@ const ArticlePreview: NextPage<ArticlePreviewProps> = (props) => {
         <Box>
             <Box sx={{ display: 'flex' }}>
                 <Box sx={{ marginRight: '15px' }}>
-                    <Image src={`/${props.image}`} layout='fixed' width={124} height={124} />
+                    <Image src={`/${props.image}`} layout='fixed' width={124} height={124} alt="article picture" />
                     <Box
                         sx={{
                             display: 'flex',
@@ -75,7 +75,7 @@ const ArticlePreview: NextPage<ArticlePreviewProps> = (props) => {
                         }}
                     >
                         {props.tags.map(tag => (
-                            <Box sx={{ fontSize: '14px', color: '#7447D5' }}>{tag}</Box>
+                            <Box sx={{ fontSize: '14px', color: 'secondary.main' }} key={tag}>{tag}</Box>
                         ))}
                     </Box>
                 </Box>

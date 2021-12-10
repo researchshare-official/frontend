@@ -47,9 +47,7 @@ const StyledInputBase = styled(InputBase)(({ theme }) => ({
 const FilterBar: NextPage = () => {
     return (
         <Box>
-            <Box sx={{
-                bgcolor: 'rgba(237, 237, 237, 0.6)'
-            }}>
+            <Box>
                 <Box sx={{ marginTop: '20px' }}>
                     <Typography variant="h4" sx={{
                         paddingLeft: '0.625rem',
