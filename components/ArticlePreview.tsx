@@ -16,6 +16,7 @@ type ArticlePreviewProps = {
     likes: number,
     comments: number,
 }
+
 const getText = (text: string) => {
     const length = 400
     if (text.length > length) {
@@ -24,7 +25,7 @@ const getText = (text: string) => {
             <Box>
                 <Box sx={{ fontSize: '20px', lineHeight: '24px', fontFamily: 'Arial' }}>{subText}
                     <Button size='small' variant='text'>
-                        <Typography sx={{ color: 'secondary.main', fontSize: '20px', fontFamily: 'Abhaya Libre', textDecorationLine: 'underline', textTransform: 'lowercase' }}>Read more</Typography>
+                        <Typography sx={{ color: 'secondary.main', fontSize: '20px', fontFamily: 'Arial', textDecorationLine: 'underline', textTransform: 'lowercase' }}>Read more</Typography>
                     </Button>
                 </Box>
             </Box>

@@ -5,7 +5,9 @@ import Box from '@mui/material/Box'
 import AppBar from '../components/AppBar'
 import ArticlePreview from '../components/ArticlePreview'
 import { default as articles } from '../mocking/articles.json'
+import { default as hotArticles } from '../mocking/hot_articles.json'
 import FilterBar from '../components/FilterBar'
+import HotArticlePreview from '../components/HotArticlePreview'
 
 const Home: NextPage = () => {
     return (
@@ -52,6 +54,29 @@ const Home: NextPage = () => {
                         flex: 1,
                         backgroundColor: theme.palette.grey[100],
                     })}>
+                        <Box sx={{ display: 'flex', justifyContent: 'center', alignItems: 'center', marginTop: '20px', fontWeight: '500', fontSize: '24px'}}>
+                            Most viewed articles
+                        </Box>
+                        <Box sx={{ padding: '20px' }}>
+                            <Box sx={(theme) => ({ bgcolor: 'primary.main', padding: '20px' })}>
+                                {hotArticles.hotArticles.map(hotArticle => (
+                                    <HotArticlePreview
+                                        id={hotArticle.id}
+                                        title={hotArticle.title}
+                                        text={hotArticle.text}
+                                        image={hotArticle.image}
+                                        authors={hotArticle.authors}
+                                        tags={hotArticle.tags}
+                                        date={hotArticle.date}
+                                        sponsored={hotArticle.sponsored}
+                                        likes={hotArticle.likes}
+                                        comments={hotArticle.comments}
+                                        key={hotArticle.id}
+                                    />
+                                ))
+                                }
+                            </Box>
+                        </Box>
                     </Box>
                 </div>
 
