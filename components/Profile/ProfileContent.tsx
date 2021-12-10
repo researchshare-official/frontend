@@ -12,6 +12,9 @@ const BoxProfile = styled('div')(({ theme }) => ({
     position: 'absolute',
     left: '25%',
     top: '15%',
+    display: 'flex',
+    flexDirection: 'column',
+    justifyContent: 'center'
 }));
 
 const InfoBox = styled('div')(({ theme }) => ({
@@ -22,7 +25,14 @@ const InfoBox = styled('div')(({ theme }) => ({
 const Filters = styled('div')(({ theme }) => ({
     display: 'flex',
     flexDirection: 'row',
-    justifyContent: 'space-between',
+    justifyContent: 'space-around',
+}));
+
+const BoxImg = styled('div')(({ theme }) => ({
+    height: '8rem',
+    width: '100%',
+    display: 'flex',
+    justifyContent: 'center',
 }));
 
 const ProfileContent: NextPage = () => {
@@ -30,7 +40,9 @@ const ProfileContent: NextPage = () => {
 
     return (
         <BoxProfile>
-            <Image src="/ProfileImg.PNG" height={120} width={120} className={ styles.ImgProfile } alt="ResearchShare logo" />
+            <BoxImg>
+                    <Image src="/ProfileImg.PNG" height={120} width={120} className={ styles.ImgProfile } alt="ResearchShare logo" />
+            </BoxImg>
             <InfoBox>
                 <span style={{ margin: 'auto' }}> Adina Cazalens </span>
                 <span style={{ margin: 'auto' }}> Researcher in cosmology </span>
