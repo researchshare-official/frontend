@@ -21,7 +21,7 @@ const getText = (text: string) => {
         const subText = text.substring(0, length) + '...'
         return (
             <Box>
-                <Box sx={{ fontSize: '12px', fontFamily: 'Arial' }}>{subText}
+                <Box sx={{ fontSize: '18px', fontFamily: 'Arial' }}>{subText}
                     <Button size='small' variant='text'>
                         <Typography sx={{ color: 'secondary.main', fontSize: '12px', fontFamily: 'Arial', textDecorationLine: 'underline', textTransform: 'lowercase' }}>Read more</Typography>
                     </Button>
@@ -31,7 +31,7 @@ const getText = (text: string) => {
     } else {
         return (
             <Box>
-                <Box sx={{ fontSize: '12px', fontFamily: 'Abhaya Libre' }}>{text}</Box>
+                <Box sx={{ fontSize: '18px', fontFamily: 'Abhaya Libre' }}>{text}</Box>
             </Box>
         )
     }
@@ -45,7 +45,7 @@ const HotArticlePreview: NextPage<ArticleProps> = (props) => {
             <Box>
                 <Box
                     sx={{
-                        fontSize: '15px',
+                        fontSize: '22px',
                         fontFamily: 'Abhaya Libre ExtraBold',
                         fontWeight: '800'
                     }}
