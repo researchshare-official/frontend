@@ -33,7 +33,7 @@ const getText = (text: string) => {
     } else {
         return (
             <Box>
-                <Box sx={{ fontSize: '20px', lineHeight: '24px', fontFamily: 'Abhaya Libre' }}>{text}</Box>
+                <Box sx={{ fontSize: '20px', lineHeight: '24px', fontFamily: 'Arial' }}>{text}</Box>
             </Box>
         )
     }
