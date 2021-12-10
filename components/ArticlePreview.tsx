@@ -1,10 +1,8 @@
 import Image from 'next/image'
 import { useRouter } from 'next/router'
-import Box from '@mui/material/Box'
 import { NextPage } from 'next';
 import { ArrowUpward, Comment } from '@mui/icons-material';
-import Button from '@mui/material/Button';
-import { Typography, Divider } from '@mui/material';
+import { Typography, Divider, IconButton, Button, Box } from '@mui/material';
 
 type ArticlePreviewProps = {
     id: number
@@ -94,10 +92,12 @@ const ArticlePreview: NextPage<ArticlePreviewProps> = (props) => {
                     {getText(props.text)}
                     <Box sx={{ display: 'flex', justifyContent: 'end' }}>
                         <Box sx={{ display: 'flex', alignItems: 'center' }}>
-                            {props.likes} <ArrowUpward sx={{ marginLeft: 0.5 }} />
+                            {props.likes}
+                            <IconButton><ArrowUpward sx={{ marginLeft: 0.5 }} /></IconButton>
                         </Box>
                         <Box sx={{ marginLeft: 2, display: 'flex', alignItems: 'center' }}>
-                            {props.comments} <Comment sx={{ marginLeft: 0.5 }} />
+                            {props.comments}
+                            <IconButton><Comment sx={{ marginLeft: 0.5 }} /></IconButton>
                         </Box>
                     </Box>
                 </Box>
