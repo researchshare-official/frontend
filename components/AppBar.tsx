@@ -11,6 +11,7 @@ import Divider from '@mui/material/Divider';
 import { NextPage } from 'next';
 import { useContext } from 'react';
 import Button from '@mui/material/Button';
+import { Typography } from '@mui/material';
 
 const Search = styled('div')(({ theme }) => ({
     position: 'relative',
@@ -85,7 +86,9 @@ const AppBar: NextPage = (props) => {
 
                 <Box sx={{ flexGrow: 1 }} />
 
-                <Button variant="contained" sx={{ color: "primary.main", bgcolor: "secondary.main", '&:hover': { color: "primary.main", bgcolor: 'secondary.dark' }}}>Login</Button>
+                <Button variant="contained" sx={{ width: '8rem', color: "primary.main", bgcolor: "secondary.main", '&:hover': { color: "primary.main", bgcolor: 'secondary.dark' }}}>
+                    <Typography sx={{ textTransform: 'capitalize' }}>Login</Typography>
+                </Button>
             </Toolbar>
         </MUIAppBar>
     )
