@@ -16,14 +16,14 @@ const ProfileContent: NextPage = (props) => {
     };
 
     return (
-        <Box sx={{ display: 'flex', flexGrow: 1, flexDirection: 'column', px: '5%' }} {...props}>
+        <Box sx={{ display: 'flex', flexDirection: 'column', px: '5%' }} {...props}>
             <Box sx={{ display: 'flex', alignItems: 'center', flexDirection: 'column' }}>
                 <Image src="/profile-picture.png" height={120} width={120} alt="Profile image" />
                 <Typography>Adina Cazalens</Typography> 
                 <Typography>Researcher in cosmology</Typography> 
                 <Typography>Centre Epitech</Typography>
             </Box>
-            <Tabs variant="fullWidth" value={value} onChange={handleChange} aria-label="icon label tabs example">
+            <Tabs variant="fullWidth" value={value} onChange={handleChange} sx={{minHeight: '72px'}} aria-label="icon label tabs example">
                 <Tab icon={<InfoIcon />} label="PUBLICATIONS" />
                 <Tab icon={<PersonIcon />} label="ABOUT" />
                 <Tab icon={<AccessTimeIcon />} label="LAST POSTS" />
