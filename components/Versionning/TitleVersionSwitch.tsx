@@ -33,7 +33,7 @@ const TitleVersionSwitch: NextPage = () => {
                 <Typography sx={{fontSize:"2rem", display:"flex", justifyContent:'center'}}>
                     Climate change - Impacts on African agriculture 
                 </Typography>
-                <Typography sx={{minWidth:'12rem', display:"flex", justifyContent:'right', fontSize:"1.5rem", marginLeft:"2rem", marginTop:"0.38rem"}}>
+                <Typography sx={{minWidth:'10rem', display:"flex", justifyContent:'right', fontSize:"1.5rem", marginLeft:"2rem", marginTop:"0.38rem"}}>
                     versions 5
                 </Typography>
             </Box>
