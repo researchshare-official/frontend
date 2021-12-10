@@ -1,12 +1,13 @@
 import { NextPage } from 'next';
-import { Box, Divider, List, ListItem, ListItemText, Typography, ListItemIcon } from '@mui/material';
+import { Box, Divider, List, ListItem, ListItemText, Typography, ListItemIcon, useTheme } from '@mui/material';
 import VisibilityIcon from '@mui/icons-material/Visibility';
 import StarIcon from '@mui/icons-material/Star';
 import CommentIcon from '@mui/icons-material/Comment';
 
 const Summary: NextPage = (props) => {
+
     return (
-        <Box sx={{ bgcolor: 'secondary.main', pr: '5%', pt: '2%' }} {...props}>
+        <Box sx={(theme) => ({ bgcolor: theme.palette.grey[300], pr: '5%', pt: '2%', width: 'auto', pl: '5%' })} {...props}>
             <Typography variant="h4"> Summary </Typography>
             <Divider sx={{ width: '80%' }}/>
             <List>
