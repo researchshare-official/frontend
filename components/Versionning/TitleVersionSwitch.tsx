@@ -28,17 +28,16 @@ const TitleVersionSwitch: NextPage = () => {
     };
 
     return (
-        <Box>
-            <Box sx={{display:"flex", flexDirection:"row", marginTop:"1rem"}}>
-                <Typography sx={{fontSize:"2rem"}}>
-                    Climate change - Impacts on African agriculture
+        <Box sx={{}}>
+            <Box sx={{display:"flex", flexDirection:"row", justifyContent:'space-between', marginTop:"1rem", width:'80%', marginLeft:'10%'}}>
+                <Typography sx={{fontSize:"2rem", display:"flex", justifyContent:'center'}}>
+                    Climate change - Impacts on African agriculture 
                 </Typography>
-                <Typography sx={{fontSize:"1.5rem", marginLeft:"2rem", marginTop:"0.38rem"}}>
+                <Typography sx={{minWidth:'12rem', display:"flex", justifyContent:'right', fontSize:"1.5rem", marginLeft:"2rem", marginTop:"0.38rem"}}>
                     versions 5
                 </Typography>
             </Box>
-            {/* <Box sx={{ flexGrow: 3 }} /> */}
-            <Box sx={{ minWidth:"4rem", maxWidth:"10rem", float:'right', marginTop:'1rem'}}>
+            <Box sx={{ minWidth:"4rem", maxWidth:"7rem", marginLeft:'10%', marginTop:'1rem'}}>
                 <FormControl fullWidth>
                     <InputLabel id="demo-simple-select-label">Version</InputLabel>
                     <Select

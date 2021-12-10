@@ -16,15 +16,12 @@ const Versionning: NextPage = () => {
                 <link rel="icon" href="/favicon.ico" />
             </Head>
 
-            <main className={styles.main}>
-                <Box sx={{ flexGrow: 1 }}>
+                <Box sx={{paddingTop:'4rem', display:'flex', flexDirection:'column', justifyContent:'center'}}>
                     <AppBar />
                     <TitleVersionSwitch />
                     <ModificationDescription />
                     <ArticleDiff />
                 </Box>
-
-            </main>
         </div>
     )
 }
