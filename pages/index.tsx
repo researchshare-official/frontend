@@ -4,7 +4,7 @@ import styles from '../styles/Home.module.css'
 import Box from '@mui/material/Box'
 import AppBar from '../components/AppBar'
 import ArticlePreview from '../components/ArticlePreview'
-import { articles } from '../mocking/articles.json'
+import { default as articles } from '../mocking/articles.json'
 
 const Home: NextPage = () => {
     return (
@@ -27,9 +27,10 @@ const Home: NextPage = () => {
                     </Box>
                     <Box sx={{
                         flex: 3,
-                        backgroundColor: '#ffffff'
+                        backgroundColor: '#ffffff',
+                        padding: '50px 75px'
                     }}>
-                        {articles.map(article => (
+                        {articles.articles.map(article => (
                             <ArticlePreview
                                 id={article.id}
                                 title={article.title}
@@ -41,6 +42,7 @@ const Home: NextPage = () => {
                                 sponsored={article.sponsored}
                                 likes={article.likes}
                                 comments={article.comments}
+                                key={article.id}
                             />
                         ))}
                     </Box>

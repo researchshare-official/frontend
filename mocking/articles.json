@@ -2,14 +2,18 @@
     "articles": [
         {
             "id": 0,
-            "title": "Как правильно подготовиться к празднику Рождества",
-            "text": "Праздник Рождества наступает в первый день месяца. В начале месяца на праздник приходится всего один день. В начале месяца на праздник приходится всего один день. В начале месяца на праздник приходится всего один день. В начале месяца на праздник приходится всего один день. В начале месяца на праздник приходится всего один день. В начале месяца на праздник приходится всего один день. В начале месяца на праздник приходится всего один день. В начале мес",
+            "title": "Night of the Day of the Dawn of the Son of the Bride of the Return of the Revenge of the Terror of the Attack of the Evil, Mutant, Alien, Flesh Eating, Hellbound, Zombified Living. ",
+            "text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce nec fringilla nulla, id efficitur turpis. Donec sed erat euismod, auctor libero in, mollis risus. Pellentesque feugiat sem quis tortor convallis venenatis. Sed et auctor dui. Sed eu consequat libero. Aenean sit amet convallis nunc, eu feugiat ante. Praesent placerat posuere sit amet convallis nunc, eu feugiat ante. Praesent placerat posuere",
             "image": "camion.jpg",
-            "authors": ["Александр Коновалов"],
+            "authors": [
+                "Adina Cazalens",
+                "Alexandre Monnier",
+                "Maugan Verdier",
+                "Lorenzo Carrascosa"
+            ],
             "tags": [
-                "#Праздник",
-                "#Рождество",
-                "#Праздник"
+                "#cosmology",
+                "#psychogenesis"
             ],
             "date": "12.12.2019",
             "sponsored": false,
@@ -21,7 +25,9 @@
             "title": "Как пра праздник Рождества",
             "text": "Праздник Рождества наступает в первый день месяца. В начале месяца на праздник приходится всего один день. В начале месяца на праздник приходится всего один день. В начале месяца на праздник приходится всего один день. В начале месяца на праздник приходится всего один день. В начале месяца на праздник приходится всего один день. В начале месяца на праздник приходится всего один день.",
             "image": "compose.png",
-            "authors": ["Александр Коновалов"],
+            "authors": [
+                "Александр Коновалов"
+            ],
             "tags": [],
             "date": "12.12.2019",
             "sponsored": true,
