@@ -8,7 +8,7 @@ import FormControlLabel from '@mui/material/FormControlLabel';
 import Checkbox from '@mui/material/Checkbox';
 import { Box } from '@mui/system';
 import { Typography } from '@mui/material';
-import { category, price } from '../jsonFiles/filterCategory.json';
+import { default as filters } from '../jsonFiles/filterCategory.json';
 
 const Search = styled('div')(({ theme }) => ({
     position: 'relative',
@@ -102,7 +102,7 @@ const FilterBar: NextPage = () => {
                 height: '10rem',
                 flexWrap: 'nowrap',
             }}>
-            {category.map(name => (
+            {filters.category.map(name => (
                 <FormControlLabel control={<Checkbox color="secondary"/>} label={name} key={name}/>
             ))}
             </FormGroup>
@@ -119,7 +119,7 @@ const FilterBar: NextPage = () => {
                     paddingRight: '1.875rem',
             }}>
             <FormGroup>
-            {price.map(name => (
+            {filters.price.map(name => (
                 <FormControlLabel control={<Checkbox color="secondary"/>} label={name} key={name}/>
             ))}
             </FormGroup>
