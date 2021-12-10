@@ -5,10 +5,11 @@ import Box from '@mui/material/Box'
 import AppBar from '../components/AppBar'
 import ArticlePreview from '../components/ArticlePreview'
 import { default as articles } from '../mocking/articles.json'
+import FilterBar from '../components/FilterBar'
 
 const Home: NextPage = () => {
     return (
-        <div className={styles.container}>
+        <div>
             <Head>
                 <title>ResearchShare</title>
                 <meta name="description" content="..." />
@@ -22,8 +23,9 @@ const Home: NextPage = () => {
                 <div className={styles.body}>
                     <Box sx={{
                         backgroundColor: '#F4F4F4',
-                        flex: 1
+                        flex: 1,
                     }}>
+                        <FilterBar />
                     </Box>
                     <Box sx={{
                         flex: 3,
