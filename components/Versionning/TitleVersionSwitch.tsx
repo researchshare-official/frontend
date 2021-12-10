@@ -38,7 +38,7 @@ const TitleVersionSwitch: NextPage = () => {
                 </Typography>
             </Box>
             {/* <Box sx={{ flexGrow: 3 }} /> */}
-            <Box sx={{ minWidth:"4rem", maxWidth:"7rem", float:'right', marginTop:'1rem'}}>
+            <Box sx={{ minWidth:"4rem", maxWidth:"10rem", float:'right', marginTop:'1rem'}}>
                 <FormControl fullWidth>
                     <InputLabel id="demo-simple-select-label">Version</InputLabel>
                     <Select
