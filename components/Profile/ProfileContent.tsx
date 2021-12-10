@@ -23,7 +23,7 @@ const ProfileContent: NextPage = (props) => {
                 <Typography>Researcher in cosmology</Typography> 
                 <Typography>Centre Epitech</Typography>
             </Box>
-            <Tabs variant="fullWidth" value={value} onChange={handleChange} sx={{minHeight: '72px'}} aria-label="icon label tabs example">
+            <Tabs textColor="secondary" indicatorColor="secondary" variant="fullWidth" value={value} onChange={handleChange} sx={{minHeight: '72px'}} aria-label="icon label tabs example">
                 <Tab icon={<InfoIcon />} label="PUBLICATIONS" />
                 <Tab icon={<PersonIcon />} label="ABOUT" />
                 <Tab icon={<AccessTimeIcon />} label="LAST POSTS" />
