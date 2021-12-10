@@ -9,7 +9,7 @@ import { Divider } from '@mui/material'
 
 const Home: NextPage = () => {
     return (
-        <div className={styles.container}>
+        <div>
             <Head>
                 <title>ResearchShare</title>
                 <meta name="description" content="..." />

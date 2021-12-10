@@ -17,7 +17,7 @@ const ProfileContent: NextPage = (props) => {
 
     return (
         <Box sx={{ display: 'flex', flexGrow: 1, flexDirection: 'column', px: '5%' }} {...props}>
-            <Box sx={{ display: 'flex', alignItems: 'center', flexDirection: 'column', border: 'solid' }}>
+            <Box sx={{ display: 'flex', alignItems: 'center', flexDirection: 'column' }}>
                 <Image src="/profile-picture.png" height={120} width={120} alt="Profile image" />
                 <Typography>Adina Cazalens</Typography> 
                 <Typography>Researcher in cosmology</Typography> 
