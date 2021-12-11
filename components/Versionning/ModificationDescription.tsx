@@ -8,7 +8,7 @@ import Image from 'next/image'
 const ModificationDescription: NextPage = () => {
     return (
         <Box sx={{marginTop:'3rem', display:'flex', flexDirection:'row', justifyContent:'space-between'}}>
-            <Box sx={{minWidth:'15%', maxWidth:'15%', display:'flex', flexDirection:'column'}}>
+            <Box sx={{minWidth:'10%', maxWidth:'10%', display:'flex', flexDirection:'column'}}>
                 <Box sx={{}}>
                     <Image src='/interstellar_black_hole.jpg'height={100} width={160} alt='black hole' />
                 </Box>
@@ -28,7 +28,7 @@ const ModificationDescription: NextPage = () => {
                 {/* </Box> */}
             </Box>
 
-            <Box sx={{display:'flex', flexDirection:'column', minWidth:'40%', maxWidth:'65%'}}>
+            <Box sx={{display:'flex', flexDirection:'column', minWidth:'40%', maxWidth:'70%'}}>
                 <Typography sx={{fontSize:"1.5rem"}}>
                     Update - 5
                 </Typography>
