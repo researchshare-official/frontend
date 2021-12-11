@@ -10,7 +10,7 @@ const OnePublication: NextPage = (props) => {
             <Box sx={{ color: 'secondary.main', marginTop: '0.5%', minWidth: '100px' }}>
                 <Image src="/profile-picture.png" height={120} width={120} alt="Profile Picture" />
                 { props.infos.tags.map(x => (
-                    <Typography sx={{ marginLeft: '10px' }}> {x} </Typography>
+                    <Typography key={`tag${x}`} sx={{ marginLeft: '10px' }}> #{x} </Typography>
                 )) }
             </Box>
             <Box m={0} sx={{ marginLeft: '2%' }}>
