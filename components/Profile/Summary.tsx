@@ -9,8 +9,8 @@ const Summary: NextPage = (props) => {
     return (
         <Box sx={(theme) => ({ bgcolor: theme.palette.grey[300], px: '2%', pt: '2%' })} {...props}>
             <Typography variant="h4"> Summary </Typography>
-            <Divider sx={{ width: '80%' }}/>
-            <List>
+            <Divider sx={{ width: '80%', marginTop: '7%' }}/>
+            <List sx={{ whiteSpace: 'nowrap' }}>
                 <ListItem>
                     <ListItemIcon>
                         <VisibilityIcon/>
