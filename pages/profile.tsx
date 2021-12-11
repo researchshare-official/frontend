@@ -6,7 +6,7 @@ import AppBar from '../components/AppBar'
 import Summary from '../components/Profile/Summary'
 import ProfileContent from '../components/Profile/ProfileContent'
 
-const Home: NextPage = () => {
+const Profile: NextPage = () => {
     return (
         <div>
             <Head>
@@ -19,10 +19,14 @@ const Home: NextPage = () => {
                 <Box sx={{ display: 'flex', height: '7vh', justifyContent: 'center'}}>
                     <AppBar />
                 </Box>
+                <Box sx={{ display: 'flex', height: '93vh'}}>
+                    <Summary/>
+                    <ProfileContent/>
+                </Box>
 
             </main>
         </div>
     )
 }
 
-export default Home
+export default Profile
