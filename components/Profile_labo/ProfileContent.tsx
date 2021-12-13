@@ -3,6 +3,7 @@ import { List, Box, ListItem, Divider, Typography, Tabs, Tab, ListItemIcon, List
 import Image from 'next/image';
 import InfoIcon from '@mui/icons-material/Info';
 import PersonIcon from '@mui/icons-material/Person';
+import ShowChartIcon from '@mui/icons-material/ShowChart';
 import SortIcon from '@mui/icons-material/Sort';
 import StarIcon from '@mui/icons-material/Star';
 import AccessTimeIcon from '@mui/icons-material/AccessTime';
@@ -64,8 +65,7 @@ const ProfileContent: NextPage = (props) => {
             <Tabs textColor="secondary" indicatorColor="secondary" variant="fullWidth" value={value} onChange={handleChange} sx={{minHeight: '72px'}} aria-label="icon label tabs example">
                 <Tab icon={<PersonIcon />} label="ABOUT" {...a11yProps(0)} sx={{borderBottom:'2px solid', borderColor:'primary.dark'}} />
                 <Tab icon={<InfoIcon />} label="PUBLICATIONS" {...a11yProps(1)} sx={{borderBottom:'2px solid', borderColor:'primary.dark'}}/>
-                { true ? <Tab icon={<StarIcon />} label="FAVORITE" {...a11yProps(2)} sx={{borderBottom:'2px solid', borderColor:'primary.dark'}}/> : null }
-                {/* <Tab icon={<AccessTimeIcon />} label="LAST POSTS" {...a11yProps(3)} /> */}
+                <Tab icon={<ShowChartIcon />} label="ACTIVITY" {...a11yProps(2)} sx={{borderBottom:'2px solid', borderColor:'primary.dark'}}/> 
             </Tabs>
             <TabPanel value={value} index={0}>
                 <Typography variant="h5" sx={{marginTop:'2rem'}}> Summary </Typography>
@@ -94,19 +94,19 @@ const ProfileContent: NextPage = (props) => {
                 <Typography variant="h5" sx={{marginTop:'2rem'}}> Personal informations </Typography>
                 <Box sx={{display: 'flex', flexDirection: 'column', marginTop:'1rem'}}>
                     <Box sx={{display:'flex', flexDirection:'row'}}>
-                        <Typography variant='body1' sx={{fontWeight:'bold'}} > Date of foundation : </Typography>
+                        <Typography variant='body1' sx={{fontWeight:'bold', whiteSpace: 'nowrap'}} > Date of foundation : </Typography>
                         <Typography variant='body1' sx={{marginLeft:'0.5rem'}}> 1 april 1983 </Typography>
                     </Box>
                     <Box sx={{display:'flex', flexDirection:'row'}}>
-                        <Typography variant='body1' sx={{fontWeight:'bold'}} > Description : </Typography>
+                        <Typography variant='body1' sx={{fontWeight:'bold', whiteSpace: 'nowrap'}} > Description : </Typography>
                         <Typography variant='body1' sx={{marginLeft:'0.5rem'}}> Epitech's research lab </Typography>
                     </Box>
                     <Box sx={{display:'flex', flexDirection:'row'}}>
-                        <Typography variant='body1' sx={{fontWeight:'bold'}} > Other : </Typography>
+                        <Typography variant='body1' sx={{fontWeight:'bold', whiteSpace: 'nowrap'}} > Other : </Typography>
                         <Typography variant='body1' sx={{marginLeft:'0.5rem'}}> Viken is wonderful </Typography>
                     </Box>
                 </Box>
-                <Typography variant="h5" sx={{marginTop:'2rem'}}> Area of expertise </Typography>
+                <Typography variant="h5" sx={{marginTop:'2rem'}}> Areas of expertise </Typography>
                 <Box sx={{display: 'flex', flexDirection: 'row', marginTop:'1rem'}}>
                     <Typography variant='body1' sx={{color:'secondary.main', marginRight:'1rem'}}> #astrology </Typography>
                     <Typography variant='body1' sx={{color:'secondary.main', marginRight:'1rem'}}> #pengouin </Typography>
@@ -130,19 +130,9 @@ const ProfileContent: NextPage = (props) => {
                 </List>
             </TabPanel>
             <TabPanel value={value} index={2}>
-                <Box sx={{ display: 'flex', fontFamily: 'Arial', marginTop: '3%', marginBottom:'2rem' }}>
-                    <Typography sx={{ pr: '2%', fontSize: '22px' }}>Insight</Typography>
-                    <SortIcon sx={{ pr: '1%', }} fontSize="large"/>
-                    <Typography sx={{ fontSize: '22px' }}>Sort by</Typography>
-                </Box>
-                <List>
-                    {[1, 2, 3, 4, 5].map(x => (
-                        <ListItem key={`publication-${x}`} sx={{ display: 'flex', flexDirection: 'column' }}>
-                            <OnePublication infos={ {'tags': ['cosmology', 'tortue'], 'title': "."} }/>
-                            <Divider sx={{ width: '80%', marginTop: '3%', marginBottom: '3%' }}/>
-                        </ListItem>
-                    ))}
-                </List>
+            <Box sx={{ display: 'flex', justifyContent: 'center', flexDirection: 'row', marginTop: '2%', marginBottom: '2%' }}>
+                <Image src="/ActivityChart.png" height={499} width={1172} alt="Profile image" />
+            </Box>
             </TabPanel>
             {/* <TabPanel value={value} index={3}>
                 <List>
