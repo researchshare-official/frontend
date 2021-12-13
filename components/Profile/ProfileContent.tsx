@@ -56,7 +56,7 @@ const ProfileContent: NextPage = (props) => {
         <Box sx={{ display: 'flex', flexDirection: 'column', px: '5%', width:'100%' }} {...props}>
             <Box sx={{ display: 'flex', justifyContent: 'left', flexDirection: 'row', marginTop: '2%', marginBottom: '2%' }}>
                 <Image src="/profile-picture.png" height={120} width={120} alt="Profile image" />
-                <Box sx={{ display: 'flex', alignItems: 'center', flexDirection: 'column', marginTop: '2%' }}>
+                <Box sx={{ display: 'flex', alignItems: 'left', flexDirection: 'column', marginTop: '2%', marginLeft: '0.5rem' }}>
                     <Typography sx={{ color: '#7447D5', fontSize: '20px' }}>Adina Cazalens</Typography> 
                     <Typography>Researcher in cosmology</Typography> 
                     <Typography>Centre Epitech</Typography>
@@ -80,15 +80,19 @@ const ProfileContent: NextPage = (props) => {
                         <Typography variant="h4"> 5 </Typography>
                     </Box>
                     <Box sx={{display:'flex', flexDirection:'column'}}>
-                        <Typography> View </Typography>
+                        <Typography> Review </Typography>
                         <Typography variant="h4"> 1393 </Typography>
+                    </Box>
+                    <Box sx={{display:'flex', flexDirection:'column'}}>
+                        <Typography> Quotation </Typography>
+                        <Typography variant="h4"> 13 </Typography>
                     </Box>
                 </Box>
                 <Typography variant="h5" sx={{marginTop:'2rem'}}> Personal informations </Typography>
                 <Box sx={{display: 'flex', flexDirection: 'column', marginTop:'1rem'}}>
                     <Box sx={{display:'flex', flexDirection:'row'}}>
                         <Typography variant='body1' sx={{fontWeight:'bold'}} > birthday : </Typography>
-                        <Typography variant='body1' sx={{marginLeft:'0.5rem'}}> 1 april </Typography>
+                        <Typography variant='body1' sx={{marginLeft:'0.5rem'}}> 1 april 2000</Typography>
                     </Box>
                     <Box sx={{display:'flex', flexDirection:'row'}}>
                         <Typography variant='body1' sx={{fontWeight:'bold'}} > Description : </Typography>
@@ -131,7 +135,7 @@ const ProfileContent: NextPage = (props) => {
                 <List>
                     {[1, 2, 3, 4, 5].map(x => (
                         <ListItem key={`publication-${x}`} sx={{ display: 'flex', flexDirection: 'column' }}>
-                            <OnePublication infos={ {'tags': ['cosmology', 'tortue'], 'title': "."} }/>
+                            <OnePublication infos={ {'tags': ['cosmology', 'tortue'], 'title': "Night of the Day of the Dawn of the Son of the Bride of the Return of the Revenge of the Terror of the Attack of the Evil, Mutant, Alien, Flesh Eating, Hellbound, Zombified Living.", 'author': "Adrien Michaud, Adina Cazalens, Alexandre Monnier, Maugan Verdier, Lorenzo Carrascosa", 'content': "Pingouin ([pɛ̃.ɡwɛ̃]) est un nom vernaculaire porté en français par deux espèces d’oiseaux de la famille des Alcidés, dont la seule espèce encore vivante est le Petit Pingouin. Ces espèces vivent dans l’hémisphère nord, cherchant leur nourriture dans les eaux maritimes et océaniques froides. On peut rencontrer le Petit Pingouin de l&apos;Arctique jusqu’en Méditerranée occidentale et sur les côtes atlantiques du Maroc en passant, par exemple, par la Bretagne. Ce dernier vole, alors que le Grand Pingouin, espèce éteinte en 18441, ne le pouvait pas. Dans le langage courant, le mot « pingouin » désigne souvent des manchots de manière abusive, notamment dans la culture populaire."} }/>
                             <Divider sx={{ width: '80%', marginTop: '3%', marginBottom: '3%' }}/>
                         </ListItem>
                     ))}
