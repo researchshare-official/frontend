@@ -24,16 +24,6 @@ const OnePublication: NextPage = (props) => {
                     <CommentIcon/>
                 </Box>
             </Box>
-            <Box sx={{ display: 'flex', flexDirection: 'column', whiteSpace: 'nowrap', marginLeft: '1%' }}>
-                <Typography sx={{ marginTop: '3%' }}>06-07-2021</Typography>
-                { true ?
-                    <Box sx={{ display: 'flex', flexDirection: 'column' }}>
-                        <Button variant="contained" sx={{ marginTop: '100%' }}>Edit</Button>
-                        <Button variant="contained" sx={{ bgcolor: '#D60000', marginTop: '25%' }}>Remove</Button>
-                    </Box>
-                    : null
-                }
-            </Box>
         </Box>
     );
 };
