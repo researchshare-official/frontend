@@ -66,7 +66,7 @@ const ProfileContent: NextPage = (props) => {
                 <Tab icon={<PersonIcon />} label="ABOUT" {...a11yProps(0)} sx={{borderBottom:'2px solid', borderColor:'primary.dark'}} />
                 <Tab icon={<InfoIcon />} label="PUBLICATIONS" {...a11yProps(1)} sx={{borderBottom:'2px solid', borderColor:'primary.dark'}}/>
                 { true ? <Tab icon={<StarIcon />} label="FAVORITE" {...a11yProps(2)} sx={{borderBottom:'2px solid', borderColor:'primary.dark'}}/> : null }
-                <Tab icon={<AccessTimeIcon />} label="Sumit paper" {...a11yProps(3)} sx={{borderBottom:'2px solid', borderColor:'primary.dark'}}/>
+                <Tab icon={<AccessTimeIcon />} label="SUBMIT PAPER" {...a11yProps(3)} sx={{borderBottom:'2px solid', borderColor:'primary.dark'}}/>
             </Tabs>
             <TabPanel value={value} index={0}>
                 <Typography variant="h5" sx={{marginTop:'2rem'}}> Summary </Typography>
