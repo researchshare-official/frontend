@@ -70,11 +70,19 @@ const ProfileContent: NextPage = (props) => {
             </Tabs>
             <TabPanel value={value} index={0}>
                 <Typography variant="h4"> Summary </Typography>
-                <Box sx={{display: 'flex', flexDirection: 'row', justifyContent:'space-between', flexGrow: 1, whiteSpace: 'nowrap'}}>
-                    <Typography variant="h4"> Summary </Typography>
-                    <Typography variant="h4"> Summary </Typography>
-                    <Typography variant="h4"> Summary </Typography>
-                    <Typography variant="h4"> Summary </Typography>
+                <Box sx={{display: 'flex', flexDirection: 'row', justifyContent:'space-between', marginTop:'1rem'}}>
+                    <Box sx={{display:'flex', flexDirection:'column'}}>
+                        <Typography> Reputation score </Typography>
+                        <Typography variant="h4" sx={{justifyContent:'right'}}> 3042 </Typography>
+                    </Box>
+                    <Box sx={{display:'flex', flexDirection:'column'}}>
+                        <Typography> Reputation score </Typography>
+                        <Typography variant="h4" sx={{justifyContent:'right'}}> 3042 </Typography>
+                    </Box>
+                    <Box sx={{display:'flex', flexDirection:'column'}}>
+                        <Typography> Reputation score </Typography>
+                        <Typography variant="h4" sx={{justifyContent:'right'}}> 3042 </Typography>
+                    </Box>
                     
                 </Box>
             </TabPanel>
