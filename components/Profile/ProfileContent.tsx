@@ -28,7 +28,7 @@ function TabPanel(props: TabPanelProps) {
         style={{ overflow: 'auto' }}
       >
         {value === index && (
-          <Box sx={{ p: 3 }}>
+          <Box sx={{ paddingLeft:'5%' }}>
             <Typography>{children}</Typography>
           </Box>
         )}
@@ -62,14 +62,14 @@ const ProfileContent: NextPage = (props) => {
                 <Tab icon={<InfoIcon />} label="PUBLICATIONS" {...a11yProps(0)} />
                 { true ? <Tab icon={<StarIcon />} label="FAVORITE" {...a11yProps(1)} /> : null }
                 <Tab icon={<PersonIcon />} label="ABOUT" {...a11yProps(2)} />
-                <Tab icon={<AccessTimeIcon />} label="LAST POSTS" {...a11yProps(3)} />
+                {/* <Tab icon={<AccessTimeIcon />} label="LAST POSTS" {...a11yProps(3)} /> */}
             </Tabs>
-            <Box sx={{ display: 'flex', fontFamily: 'Arial', marginTop: '3%', }}>
-                <Typography sx={{ pr: '2%', fontSize: '22px' }}>Insight</Typography>
-                <SortIcon sx={{ pr: '1%', }} fontSize="large"/>
-                <Typography sx={{ fontSize: '22px' }}>Sort by</Typography>
-            </Box>
             <TabPanel value={value} index={0}>
+                <Box sx={{ display: 'flex', fontFamily: 'Arial', marginTop: '3%', marginBottom:'2rem' }}>
+                    <Typography sx={{ pr: '2%', fontSize: '22px' }}>Insight</Typography>
+                    <SortIcon sx={{ pr: '1%', }} fontSize="large"/>
+                    <Typography sx={{ fontSize: '22px' }}>Sort by</Typography>
+                </Box>
                 <List>
                     {[1, 2, 3, 4, 5].map(x => (
                         <ListItem key={`publication-${x}`} sx={{ display: 'flex', flexDirection: 'column' }}>
@@ -80,6 +80,11 @@ const ProfileContent: NextPage = (props) => {
                 </List>
             </TabPanel>
             <TabPanel value={value} index={1}>
+                <Box sx={{ display: 'flex', fontFamily: 'Arial', marginTop: '3%', marginBottom:'2rem' }}>
+                    <Typography sx={{ pr: '2%', fontSize: '22px' }}>Insight</Typography>
+                    <SortIcon sx={{ pr: '1%', }} fontSize="large"/>
+                    <Typography sx={{ fontSize: '22px' }}>Sort by</Typography>
+                </Box>
                 <List>
                     {[1, 2, 3, 4, 5].map(x => (
                         <ListItem key={`publication-${x}`} sx={{ display: 'flex', flexDirection: 'column' }}>
@@ -89,7 +94,16 @@ const ProfileContent: NextPage = (props) => {
                     ))}
                 </List>
             </TabPanel>
-            <TabPanel value={value} index={3}>
+            <TabPanel value={value} index={2}>
+                <List>
+                    {[1, 2, 3, 4, 5].map(x => (
+                        <ListItem key={`publication-${x}`} sx={{ display: 'flex', flexDirection: 'column' }}>
+                            {/* <Box sx={{}} */}
+                        </ListItem>
+                    ))}
+                </List>
+            </TabPanel>
+            {/* <TabPanel value={value} index={3}>
                 <List>
                     {[1, 2, 3, 4, 5].map(x => (
                         <ListItem key={`publication-${x}`} sx={{ display: 'flex', flexDirection: 'column' }}>
@@ -98,7 +112,7 @@ const ProfileContent: NextPage = (props) => {
                         </ListItem>
                     ))}
                 </List>
-            </TabPanel>
+            </TabPanel> */}
         </Box>
     );
 };

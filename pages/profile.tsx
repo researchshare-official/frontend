@@ -20,7 +20,7 @@ const Profile: NextPage = () => {
                     <AppBar />
                 </Box>
                 <Box sx={{ display: 'flex', height: '93vh'}}>
-                    <Summary/>
+                    {/* <Summary/> */}
                     <ProfileContent/>
                 </Box>
 
