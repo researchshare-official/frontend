@@ -1,5 +1,5 @@
 import { NextPage } from 'next';
-import { List, Box, ListItem, Divider, Typography, Tabs, Tab } from '@mui/material';
+import { List, Box, ListItem, Divider, Typography, Tabs, Tab, ListItemIcon, ListItemText } from '@mui/material';
 import Image from 'next/image';
 import InfoIcon from '@mui/icons-material/Info';
 import PersonIcon from '@mui/icons-material/Person';
@@ -8,6 +8,8 @@ import StarIcon from '@mui/icons-material/Star';
 import AccessTimeIcon from '@mui/icons-material/AccessTime';
 import OnePublication from './OnePublication';
 import { SyntheticEvent, useState } from 'react';
+import VisibilityIcon from '@mui/icons-material/Visibility';
+import CommentIcon from '@mui/icons-material/Comment';
 
 interface TabPanelProps {
     children?: React.ReactNode;
@@ -25,10 +27,10 @@ function TabPanel(props: TabPanelProps) {
         id={`simple-tabpanel-${index}`}
         aria-labelledby={`simple-tab-${index}`}
         {...other}
-        style={{ overflow: 'auto' }}
+        style={{ paddingLeft:'4%', overflow: 'auto', width:'100%' }}
       >
         {value === index && (
-          <Box sx={{ paddingLeft:'5%' }}>
+          <Box sx={{ width:'100%' }}>
             <Typography>{children}</Typography>
           </Box>
         )}
@@ -51,7 +53,7 @@ const ProfileContent: NextPage = (props) => {
     };
 
     return (
-        <Box sx={{ display: 'flex', flexDirection: 'column', px: '5%' }} {...props}>
+        <Box sx={{ display: 'flex', flexDirection: 'column', px: '5%', width:'100%' }} {...props}>
             <Box sx={{ display: 'flex', alignItems: 'center', flexDirection: 'column', marginTop: '2%' }}>
                 <Image src="/profile-picture.png" height={120} width={120} alt="Profile image" />
                 <Typography sx={{ color: '#7447D5', fontSize: '20px' }}>Adina Cazalens</Typography> 
@@ -88,20 +90,21 @@ const ProfileContent: NextPage = (props) => {
                 <List>
                     {[1, 2, 3, 4, 5].map(x => (
                         <ListItem key={`publication-${x}`} sx={{ display: 'flex', flexDirection: 'column' }}>
-                            <OnePublication infos={ {'tags': ['cosmology', 'tortue'], 'title': "on qsoud iqsujdilqs ildjqkldjq kldlqsjdklqjdklqjkld  jdl j js dkljqld q d  dklj qlkdj qlsd d d klqjdklqd  dqsjldjqld  dl d jdj q q dklqsjdklq jd  qsqldj dj dljq ldjqsd qlsdj qd jq j.", 'author': "D'autre mecs", 'content': "Les Tortues (Testudines), ou Chéloniens, forment un ordre de reptiles dont la caractéristique est d'avoir une carapace. Il existe actuellement (décembre 2019) 343 espèces recensées possédant des caractéristiques diverses, mais toutes se distinguent des autres reptiles par une carapace qui est constituée d'un plastron au niveau du ventre et d'une dossière sur le dessus, reliés par deux ponts sur les côtés du corps. On les sépare traditionnellement en trois groupes : les tortues terrestres (environ 70 espèces), les tortues aquatiques, ou tortues dulçaquicoles (environ 260 espèces), et les tortues marines (7 espèces). Les tortues sont ovipares et les pontes ont lieu entre 10 et 12 mois. Les jeunes grandissent vite, puis leur développement se ralentit. L'alimentation des tortues peut se composer de viande ou de végétaux selon les espèces. Les 86 genres de tortues sont divisées en 14 familles. Elles se répartissent sur une bonne partie du globe et peuvent vivre dans des habitats très divers. Quarante-deux pour cent de ces espèces sont menacées de disparition, que ce soit en raison de la destruction de leurs habitats ou d'une prédation trop importante. Dans les deux cas, l'influence des êtres humains est très importante, malgré les actions de protection mises en œuvre."} }/>
+                            <OnePublication infos={ {'tags': ['cosmology', 'tortue'], 'title': "."} }/>
                             <Divider sx={{ width: '80%', marginTop: '3%', marginBottom: '3%' }}/>
                         </ListItem>
                     ))}
                 </List>
             </TabPanel>
             <TabPanel value={value} index={2}>
-                <List>
-                    {[1, 2, 3, 4, 5].map(x => (
-                        <ListItem key={`publication-${x}`} sx={{ display: 'flex', flexDirection: 'column' }}>
-                            {/* <Box sx={{}} */}
-                        </ListItem>
-                    ))}
-                </List>
+                <Typography variant="h4"> Summary </Typography>
+                <Box sx={{display: 'flex', flexDirection: 'row', justifyContent:'space-between', flexGrow: 1, whiteSpace: 'nowrap'}}>
+                    <Typography variant="h4"> Summary </Typography>
+                    <Typography variant="h4"> Summary </Typography>
+                    <Typography variant="h4"> Summary </Typography>
+                    <Typography variant="h4"> Summary </Typography>
+                    
+                </Box>
             </TabPanel>
             {/* <TabPanel value={value} index={3}>
                 <List>
