@@ -3,8 +3,9 @@ import Head from 'next/head'
 import styles from '../styles/Home.module.css'
 import Box from '@mui/material/Box'
 import AppBar from '../components/AppBar'
+import Login from '../components/Login'
 
-const Login: NextPage = () => {
+const LoginPage: NextPage = () => {
   return (
     <div className={styles.container}>
         <Head>
@@ -17,6 +18,7 @@ const Login: NextPage = () => {
 
             <Box sx={{ flexGrow: 1 }}>
                 <AppBar />
+                <Login />
             </Box>
 
         </main>
@@ -24,4 +26,4 @@ const Login: NextPage = () => {
   )
 }
 
-export default Login
+export default LoginPage
