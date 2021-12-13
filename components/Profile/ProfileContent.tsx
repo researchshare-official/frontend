@@ -27,7 +27,7 @@ function TabPanel(props: TabPanelProps) {
         id={`simple-tabpanel-${index}`}
         aria-labelledby={`simple-tab-${index}`}
         {...other}
-        style={{ paddingLeft:'4%', overflow: 'auto', width:'100%' }}
+        style={{ paddingLeft:'4%', paddingRight:'6%', overflow: 'auto', width:'100%' }}
       >
         {value === index && (
           <Box sx={{ width:'100%' }}>
@@ -63,27 +63,39 @@ const ProfileContent: NextPage = (props) => {
                 </Box>
             </Box>
             <Tabs textColor="secondary" indicatorColor="secondary" variant="fullWidth" value={value} onChange={handleChange} sx={{minHeight: '72px'}} aria-label="icon label tabs example">
-                <Tab icon={<PersonIcon />} label="ABOUT" {...a11yProps(0)} />
-                <Tab icon={<InfoIcon />} label="PUBLICATIONS" {...a11yProps(1)} />
-                { true ? <Tab icon={<StarIcon />} label="FAVORITE" {...a11yProps(2)} /> : null }
+                <Tab icon={<PersonIcon />} label="ABOUT" {...a11yProps(0)} sx={{borderBottom:'2px solid', borderColor:'primary.dark'}} />
+                <Tab icon={<InfoIcon />} label="PUBLICATIONS" {...a11yProps(1)} sx={{borderBottom:'2px solid', borderColor:'primary.dark'}}/>
+                { true ? <Tab icon={<StarIcon />} label="FAVORITE" {...a11yProps(2)} sx={{borderBottom:'2px solid', borderColor:'primary.dark'}}/> : null }
                 {/* <Tab icon={<AccessTimeIcon />} label="LAST POSTS" {...a11yProps(3)} /> */}
             </Tabs>
             <TabPanel value={value} index={0}>
-                <Typography variant="h4"> Summary </Typography>
+                <Typography variant="h5" sx={{marginTop:'2rem'}}> Summary </Typography>
                 <Box sx={{display: 'flex', flexDirection: 'row', justifyContent:'space-between', marginTop:'1rem'}}>
                     <Box sx={{display:'flex', flexDirection:'column'}}>
                         <Typography> Reputation score </Typography>
-                        <Typography variant="h4" sx={{justifyContent:'right'}}> 3042 </Typography>
+                        <Typography variant="h4"> 3042 </Typography>
                     </Box>
                     <Box sx={{display:'flex', flexDirection:'column'}}>
-                        <Typography> Reputation score </Typography>
-                        <Typography variant="h4" sx={{justifyContent:'right'}}> 3042 </Typography>
+                        <Typography> Publications </Typography>
+                        <Typography variant="h4"> 5 </Typography>
                     </Box>
                     <Box sx={{display:'flex', flexDirection:'column'}}>
-                        <Typography> Reputation score </Typography>
-                        <Typography variant="h4" sx={{justifyContent:'right'}}> 3042 </Typography>
+                        <Typography> View </Typography>
+                        <Typography variant="h4"> 1393 </Typography>
                     </Box>
-                    
+                </Box>
+                <Typography variant="h5" sx={{marginTop:'2rem'}}> Personal informations </Typography>
+                <Box sx={{display: 'flex', flexDirection: 'column', marginTop:'1rem'}}>
+                    <Typography variant='body1' > birthday : 1 april </Typography>
+                    <Typography variant='body1' > Description : ...</Typography>
+                    <Typography variant='body1' > Other... </Typography>
+                </Box>
+                <Typography variant="h5" sx={{marginTop:'2rem'}}> Area of expertise </Typography>
+                <Box sx={{display: 'flex', flexDirection: 'row', marginTop:'1rem'}}>
+                    <Typography variant='body1' sx={{color:'secondary.main', marginRight:'1rem'}}> #astrology </Typography>
+                    <Typography variant='body1' sx={{color:'secondary.main', marginRight:'1rem'}}> #pingouin </Typography>
+                    <Typography variant='body1' sx={{color:'secondary.main', marginRight:'1rem'}}> #animals </Typography>
+                    <Typography variant='body1' sx={{color:'secondary.main', marginRight:'1rem'}}> #space </Typography>
                 </Box>
             </TabPanel>
             <TabPanel value={value} index={1}>
