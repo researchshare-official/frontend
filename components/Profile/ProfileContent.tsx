@@ -54,19 +54,31 @@ const ProfileContent: NextPage = (props) => {
 
     return (
         <Box sx={{ display: 'flex', flexDirection: 'column', px: '5%', width:'100%' }} {...props}>
-            <Box sx={{ display: 'flex', alignItems: 'center', flexDirection: 'column', marginTop: '2%' }}>
+            <Box sx={{ display: 'flex', justifyContent: 'center', flexDirection: 'row', marginTop: '2%', marginBottom: '2%' }}>
                 <Image src="/profile-picture.png" height={120} width={120} alt="Profile image" />
-                <Typography sx={{ color: '#7447D5', fontSize: '20px' }}>Adina Cazalens</Typography> 
-                <Typography>Researcher in cosmology</Typography> 
-                <Typography>Centre Epitech</Typography>
+                <Box sx={{ display: 'flex', alignItems: 'center', flexDirection: 'column', marginTop: '2%' }}>
+                    <Typography sx={{ color: '#7447D5', fontSize: '20px' }}>Adina Cazalens</Typography> 
+                    <Typography>Researcher in cosmology</Typography> 
+                    <Typography>Centre Epitech</Typography>
+                </Box>
             </Box>
             <Tabs textColor="secondary" indicatorColor="secondary" variant="fullWidth" value={value} onChange={handleChange} sx={{minHeight: '72px'}} aria-label="icon label tabs example">
-                <Tab icon={<InfoIcon />} label="PUBLICATIONS" {...a11yProps(0)} />
-                { true ? <Tab icon={<StarIcon />} label="FAVORITE" {...a11yProps(1)} /> : null }
-                <Tab icon={<PersonIcon />} label="ABOUT" {...a11yProps(2)} />
+                <Tab icon={<PersonIcon />} label="ABOUT" {...a11yProps(0)} />
+                <Tab icon={<InfoIcon />} label="PUBLICATIONS" {...a11yProps(1)} />
+                { true ? <Tab icon={<StarIcon />} label="FAVORITE" {...a11yProps(2)} /> : null }
                 {/* <Tab icon={<AccessTimeIcon />} label="LAST POSTS" {...a11yProps(3)} /> */}
             </Tabs>
             <TabPanel value={value} index={0}>
+                <Typography variant="h4"> Summary </Typography>
+                <Box sx={{display: 'flex', flexDirection: 'row', justifyContent:'space-between', flexGrow: 1, whiteSpace: 'nowrap'}}>
+                    <Typography variant="h4"> Summary </Typography>
+                    <Typography variant="h4"> Summary </Typography>
+                    <Typography variant="h4"> Summary </Typography>
+                    <Typography variant="h4"> Summary </Typography>
+                    
+                </Box>
+            </TabPanel>
+            <TabPanel value={value} index={1}>
                 <Box sx={{ display: 'flex', fontFamily: 'Arial', marginTop: '3%', marginBottom:'2rem' }}>
                     <Typography sx={{ pr: '2%', fontSize: '22px' }}>Insight</Typography>
                     <SortIcon sx={{ pr: '1%', }} fontSize="large"/>
@@ -81,7 +93,7 @@ const ProfileContent: NextPage = (props) => {
                     ))}
                 </List>
             </TabPanel>
-            <TabPanel value={value} index={1}>
+            <TabPanel value={value} index={2}>
                 <Box sx={{ display: 'flex', fontFamily: 'Arial', marginTop: '3%', marginBottom:'2rem' }}>
                     <Typography sx={{ pr: '2%', fontSize: '22px' }}>Insight</Typography>
                     <SortIcon sx={{ pr: '1%', }} fontSize="large"/>
@@ -95,16 +107,6 @@ const ProfileContent: NextPage = (props) => {
                         </ListItem>
                     ))}
                 </List>
-            </TabPanel>
-            <TabPanel value={value} index={2}>
-                <Typography variant="h4"> Summary </Typography>
-                <Box sx={{display: 'flex', flexDirection: 'row', justifyContent:'space-between', flexGrow: 1, whiteSpace: 'nowrap'}}>
-                    <Typography variant="h4"> Summary </Typography>
-                    <Typography variant="h4"> Summary </Typography>
-                    <Typography variant="h4"> Summary </Typography>
-                    <Typography variant="h4"> Summary </Typography>
-                    
-                </Box>
             </TabPanel>
             {/* <TabPanel value={value} index={3}>
                 <List>
