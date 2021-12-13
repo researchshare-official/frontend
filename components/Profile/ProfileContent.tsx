@@ -54,7 +54,7 @@ const ProfileContent: NextPage = (props) => {
 
     return (
         <Box sx={{ display: 'flex', flexDirection: 'column', px: '5%', width:'100%' }} {...props}>
-            <Box sx={{ display: 'flex', justifyContent: 'center', flexDirection: 'row', marginTop: '2%', marginBottom: '2%' }}>
+            <Box sx={{ display: 'flex', justifyContent: 'left', flexDirection: 'row', marginTop: '2%', marginBottom: '2%' }}>
                 <Image src="/profile-picture.png" height={120} width={120} alt="Profile image" />
                 <Box sx={{ display: 'flex', alignItems: 'center', flexDirection: 'column', marginTop: '2%' }}>
                     <Typography sx={{ color: '#7447D5', fontSize: '20px' }}>Adina Cazalens</Typography> 
@@ -86,9 +86,18 @@ const ProfileContent: NextPage = (props) => {
                 </Box>
                 <Typography variant="h5" sx={{marginTop:'2rem'}}> Personal informations </Typography>
                 <Box sx={{display: 'flex', flexDirection: 'column', marginTop:'1rem'}}>
-                    <Typography variant='body1' > birthday : 1 april </Typography>
-                    <Typography variant='body1' > Description : ...</Typography>
-                    <Typography variant='body1' > Other... </Typography>
+                    <Box sx={{display:'flex', flexDirection:'row'}}>
+                        <Typography variant='body1' sx={{fontWeight:'bold'}} > birthday : </Typography>
+                        <Typography variant='body1' sx={{marginLeft:'0.5rem'}}> 1 april </Typography>
+                    </Box>
+                    <Box sx={{display:'flex', flexDirection:'row'}}>
+                        <Typography variant='body1' sx={{fontWeight:'bold'}} > Description : </Typography>
+                        <Typography variant='body1' sx={{marginLeft:'0.5rem'}}> ... </Typography>
+                    </Box>
+                    <Box sx={{display:'flex', flexDirection:'row'}}>
+                        <Typography variant='body1' sx={{fontWeight:'bold'}} > Other : </Typography>
+                        <Typography variant='body1' sx={{marginLeft:'0.5rem'}}> ... </Typography>
+                    </Box>
                 </Box>
                 <Typography variant="h5" sx={{marginTop:'2rem'}}> Area of expertise </Typography>
                 <Box sx={{display: 'flex', flexDirection: 'row', marginTop:'1rem'}}>
