@@ -12,6 +12,7 @@ import { NextPage } from 'next';
 import { useContext } from 'react';
 import Button from '@mui/material/Button';
 import { Typography } from '@mui/material';
+import WhatAreYouLookingFor from './WhatAreYouLookingFor';
 
 const Search = styled('div')(({ theme }) => ({
     position: 'relative',
@@ -60,13 +61,10 @@ const StyledInputBase = styled(InputBase)(({ theme }) => ({
 const SideBar: NextPage = (props) => {
 
     return (
-        <Box sx={{ display: 'flex', flexDirection: 'row', width: 1/4,  height: '7vh'}}>
-            <Box sx={{ display: 'flex', flexDirection: 'column', alignItems: 'center', width: 1/1}}>
-                <Typography variant="h5" sx={{marginTop:'2rem'}}> Personal informations </Typography>
-                <Typography variant="h5" sx={{marginTop:'2rem', alignSelf: 'center'}}> Personal informations </Typography>
-            </Box>
+        <Box sx={{ display: 'flex', flexDirection: 'row', width: 1/4}}>
+            <WhatAreYouLookingFor></WhatAreYouLookingFor>
             <Box sx={{ display: 'flex-end', flexDirection: 'row-reverse', marginLeft: 'auto'}}>
-                <Divider variant="middle" orientation='vertical' sx={{marginTop:'2rem', alignSelf: 'right'}}/>
+                <Divider variant="fullWidth" orientation='vertical' sx={{marginTop:'2rem', alignSelf: 'right'}}/>
             </Box>
         </Box>
     )

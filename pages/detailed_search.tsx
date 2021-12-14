@@ -16,7 +16,7 @@ const Detailed_search: NextPage = () => {
             <Box sx={{ display: 'flex', height: '7vh', justifyContent: 'center'}}>
                 <AppBar />
             </Box>
-            <Box sx={{ display: 'flex', height: '7vh'}}>
+            <Box sx={{ display: 'flex', height: '100vh'}}>
                 <SideBar />
                 <Typography variant="h5" sx={{marginTop:'2rem', alignSelf: 'center'}}> Center </Typography>
             </Box>
