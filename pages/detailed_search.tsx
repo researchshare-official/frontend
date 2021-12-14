@@ -3,6 +3,7 @@ import { List, Box, ListItem, Divider, Typography, Tabs, Tab, ListItemIcon, List
 import Head from 'next/head'
 import styles from '../styles/Home.module.css'
 import AppBar from '../components/AppBar'
+import SideBar from '../components/detailed_search/SideBar'
 
 const Detailed_search: NextPage = () => {
     return (
@@ -15,8 +16,9 @@ const Detailed_search: NextPage = () => {
             <Box sx={{ display: 'flex', height: '7vh', justifyContent: 'center'}}>
                 <AppBar />
             </Box>
-            <Box sx={{ display: 'flex', height: '7vh', justifyContent: 'left'}}>
-                <Typography variant="h5" sx={{marginTop:'2rem', alignSelf: 'left'}}> Personal informations </Typography>
+            <Box sx={{ display: 'flex', height: '7vh'}}>
+                <SideBar />
+                <Typography variant="h5" sx={{marginTop:'2rem', alignSelf: 'center'}}> Center </Typography>
             </Box>
         </div>
     )
