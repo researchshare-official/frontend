@@ -18,13 +18,13 @@ const WhatAreYouLookingFor : NextPage = () => {
         <Box sx={{ display: 'flex', flexDirection: 'column', width: 1/1}}>
             <Typography variant="h5" sx={{marginTop:'2rem', marginLeft:'8%',}}> What are you looking for </Typography>
             <Button variant="contained"
-            sx={{ width: '8rem', alignSelf: 'center', color: "primary.main", bgcolor: "secondary.main", 
+            sx={{ width: '8rem', marginLeft:'12%', color: "primary.main", bgcolor: "secondary.main", 
             '&:hover': { color: "primary.main", bgcolor: 'secondary.dark' }}}>
                 <Typography sx={{ textTransform: 'capitalize' }}>Articles</Typography>
             </Button>
             <Button variant="contained"
-            sx={{ width: '8rem', alignSelf: 'center', color: "secondary.main", bgcolor: "white", 
-            '&:hover': { color: "primary.main", bgcolor: 'secondary.dark', marginTop:'140px' }}}>
+            sx={{ width: '8rem', marginLeft:'12%', color: "secondary.main", bgcolor: "white", 
+            '&:hover': { color: "primary.main", bgcolor: 'secondary.dark', marginTop:'10%' }}}>
                 <Typography sx={{ textTransform: 'capitalize' }}>Authors</Typography>
             </Button>
     </Box>
