@@ -96,7 +96,7 @@ const ProfileContent: NextPage = (props) => {
                     </Box>
                     <Box sx={{display:'flex', flexDirection:'row'}}>
                         <Typography variant='body1' sx={{fontWeight:'bold', whiteSpace:'nowrap'}} > Description : </Typography>
-                        <Typography variant='body1' sx={{marginLeft:'0.5rem'}}> Les ressources de la mer voisine qui venaient en aide à la charité publique, les levées de marais et quelques prairies banales où les plus gênés menaient pacager leurs vaches, un climat très-doux qui rendait les hivers supportables, tout cela faisait que les années passaient sans trop de détresse, et que personne ne se plaignait du sort qui l’avait fait naître à Villeneuve. (Eugène Fromentin, Dominique'', L. Hachette et Cie, 1863, réédition Gründ, page 27) </Typography>
+                        <Typography variant='body1' sx={{marginLeft:'0.5rem'}}> Les ressources de la mer voisine qui venaient en aide à la charité publique, les levées de marais et quelques prairies banales où les plus gênés menaient pacager leurs vaches, un climat très-doux qui rendait les hivers supportables, tout cela faisait que les années passaient sans trop de détresse, et que personne ne se plaignait du sort qui l’avait fait naître à Villeneuve. (Eugène Fromentin, Dominique&apos;&apos;, L. Hachette et Cie, 1863, réédition Gründ, page 27) </Typography>
                     </Box>
                     <Box sx={{display:'flex', flexDirection:'row'}}>
                         <Typography variant='body1' sx={{fontWeight:'bold', whiteSpace:'nowrap'}} > Other : </Typography>

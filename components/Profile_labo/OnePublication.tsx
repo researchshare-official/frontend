@@ -3,8 +3,9 @@ import Image from 'next/image';
 import { Box, Button, Typography } from '@mui/material';
 import ArrowDropUpIcon from '@mui/icons-material/ArrowDropUp';
 import CommentIcon from '@mui/icons-material/Comment';
+import { Publications } from '../../types/OnePublication';
 
-const OnePublication: NextPage = (props) => {
+const OnePublication: NextPage<Publications> = (props) => {
     return (
         <Box sx={{ display: 'flex', flexGrow: 1, marginLeft: '-5%' }} {...props}>
             <Box sx={{ color: 'secondary.main', marginTop: '0.5%', minWidth: '100px' }}>
@@ -15,7 +16,7 @@ const OnePublication: NextPage = (props) => {
             </Box>
             <Box m={0} sx={{ marginLeft: '2%' }}>
                 <Typography variant="h5" sx={{ fontWeight: 'bold' }}> { props.infos.title } </Typography>
-                <Typography variant="subtitle1" sx={{ color: '#7447D5', marginTop: '1%' }}> { props.infos.author } </Typography>
+                <Typography variant="subtitle1" sx={{ color: 'secondary.main', marginTop: '1%' }}> { props.infos.author } </Typography>
                 <Typography sx={{ marginTop: '1%' }}> { props.infos.content } </Typography>
                 <Box sx={{ pt:'1%', display: 'flex', justifyContent: 'flex-end' }}>
                     <Typography>1500</Typography>

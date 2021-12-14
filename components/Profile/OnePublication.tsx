@@ -3,8 +3,9 @@ import Image from 'next/image';
 import { Box, Button, Typography } from '@mui/material';
 import ArrowDropUpIcon from '@mui/icons-material/ArrowDropUp';
 import CommentIcon from '@mui/icons-material/Comment';
+import { Publications } from '../../types/OnePublication';
 
-const OnePublication: NextPage = (props) => {
+const OnePublication: NextPage<Publications> = (props) => {
     return (
         <Box sx={{ display: 'flex', flexGrow: 1, marginLeft: '-5%' }} {...props}>
             <Box sx={{ color: 'secondary.main', marginTop: '0.5%', minWidth: '100px' }}>

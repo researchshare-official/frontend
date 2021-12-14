@@ -99,7 +99,7 @@ const ProfileContent: NextPage = (props) => {
                     </Box>
                     <Box sx={{display:'flex', flexDirection:'row'}}>
                         <Typography variant='body1' sx={{fontWeight:'bold', whiteSpace: 'nowrap'}} > Description : </Typography>
-                        <Typography variant='body1' sx={{marginLeft:'0.5rem'}}> Epitech's research lab </Typography>
+                        <Typography variant='body1' sx={{marginLeft:'0.5rem'}}> Epitech&apos;s research lab </Typography>
                     </Box>
                     <Box sx={{display:'flex', flexDirection:'row'}}>
                         <Typography variant='body1' sx={{fontWeight:'bold', whiteSpace: 'nowrap'}} > Other : </Typography>
