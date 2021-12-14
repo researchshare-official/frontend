@@ -1,0 +1,14 @@
+.backDrop {
+    backdrop-filter: blur(0.1rem);
+    background-color: rgba(0, 0, 30, 0.4);
+}
+
+.notchedOutline {
+    border-width: 1px;
+    border-style: solid !important;
+    border-color: #636363 !important;
+}
+
+.backgroundForm {
+    background-color: '#EEE9FA';
+}

@@ -1,66 +1,135 @@
-import { NextPage } from 'next';
-import {Dialog, DialogContent, Theme, Typography, Box} from '@mui/material/';
-import { makeStyles } from '@mui/styles';
+import { FunctionComponent } from 'react';
+import {
+    Dialog,
+    DialogContent,
+    Typography,
+    Box,
+    DialogProps,
+} from '@mui/material/';
 import TextField from '@mui/material/TextField';
 import Button from '@mui/material/Button';
 import { Divider } from '@mui/material';
+import styles from '../styles/Login.module.css';
 
-const useStyles = makeStyles((theme: Theme) => ({
-    backDrop: {
-      backdropFilter: "blur(0.1rem)",
-      backgroundColor:'rgba(0,0,30,0.4)'
-    },
-    notchedOutline: {
-        border: "1px solid #636363 !important"
-    },
-    backgroundForm: {
-        backgroundColor: "#EEE9FA"
-    }
-}));
-
-const Login: NextPage = () => {
-    const classes = useStyles();
+const Login: FunctionComponent<DialogProps> = (props) => {
     return (
         <Dialog
-        open={true}
-        BackdropProps={{
-            classes: {
-            root: classes.backDrop,
-            },
-        }}
-        PaperProps={{
-            style: { borderRadius: '10px' }
-          }}
-        onClose={() => {}}
+            BackdropProps={{
+                className: styles.backDrop,
+            }}
+            PaperProps={{
+                style: { borderRadius: '10px' },
+            }}
+            {...props}
         >
-        <DialogContent style={{ width: '30rem', backgroundColor: 'white'}}>
-            <Typography variant="body1" sx={{color: '#7447D5', marginBottom: '12px', fontWeight: 'bold'}}>Login</Typography>
-            <TextField id="login" variant="outlined" focused sx={{marginBottom: '30px', width: '26.5rem'}}
-            InputProps={{
-                classes: {
-                  notchedOutline: classes.notchedOutline
-                }
-              }}
-            className={classes.backgroundForm}
-            />
-            <Typography variant="body1" sx={{color: '#7447D5', marginBottom: '12px', fontWeight: 'bold'}}>Password</Typography>
-            <TextField id="password" variant="outlined" focused type="password" sx={{width: '26.5rem'}}
-            InputProps={{
-                classes: {
-                  notchedOutline: classes.notchedOutline
-                }
-              }}
-            className={classes.backgroundForm}
-            />
-            <Typography variant="caption" sx={{color: '#7447D5', textDecoration: 'underline', marginBottom: '30px', marginTop: '17px', display: 'flex', flexDirection: 'row-reverse', marginRight: '0.8rem'}}>Forgot password</Typography>
-            <Box sx={{alignItems: 'center', justifyContent: 'center', display:'flex'}}>
-                <Button variant="contained" sx={{borderRadius: '10px', width: '10rem', marginBottom: '30px', backgroundColor: '#7447D5', color: 'white', textTransform: 'none', fontWeight: 'bold', '&:hover': { color: "primary.main", bgcolor: 'secondary.dark' }}}>Login</Button>
-            </Box>
-            <Divider variant="middle" sx={{marginBottom: '30px'}}/>
-            <Box sx={{alignItems: 'center', justifyContent: 'center', display:'flex'}}>
-                <Button variant="contained" sx={{borderRadius: '10px', backgroundColor: '#7447D5', color: 'white', textTransform: 'none', fontWeight: 'bold', '&:hover': { color: "primary.main", bgcolor: 'secondary.dark' }}}>Create an account</Button>
-            </Box>
-        </DialogContent>
+            <DialogContent style={{ width: '30rem', backgroundColor: 'white' }}>
+                <Typography
+                    variant="body1"
+                    sx={{
+                        color: 'secondary.main',
+                        marginBottom: '12px',
+                        fontWeight: 'bold',
+                    }}
+                >
+                    Login
+                </Typography>
+                <TextField
+                    id="login"
+                    variant="outlined"
+                    focused
+                    sx={{ marginBottom: '30px', width: '26.5rem' }}
+                    InputProps={{
+                        className: styles.notchedOutline,
+                    }}
+                    className={styles.backgroundForm}
+                />
+                <Typography
+                    variant="body1"
+                    sx={{
+                        color: 'secondary.main',
+                        marginBottom: '12px',
+                        fontWeight: 'bold',
+                    }}
+                >
+                    Password
+                </Typography>
+                <TextField
+                    id="password"
+                    variant="outlined"
+                    focused
+                    type="password"
+                    sx={{ width: '26.5rem' }}
+                    InputProps={{
+                        className: styles.notchedOutline,
+                    }}
+                    className={styles.backgroundForm}
+                />
+                <Typography
+                    variant="caption"
+                    sx={{
+                        color: 'secondary.main',
+                        textDecoration: 'underline',
+                        marginBottom: '30px',
+                        marginTop: '17px',
+                        display: 'flex',
+                        flexDirection: 'row-reverse',
+                        marginRight: '0.8rem',
+                    }}
+                >
+                    Forgot password
+                </Typography>
+                <Box
+                    sx={{
+                        alignItems: 'center',
+                        justifyContent: 'center',
+                        display: 'flex',
+                    }}
+                >
+                    <Button
+                        variant="contained"
+                        sx={{
+                            borderRadius: '10px',
+                            width: '10rem',
+                            marginBottom: '30px',
+                            backgroundColor: 'secondary.main',
+                            color: 'white',
+                            textTransform: 'none',
+                            fontWeight: 'bold',
+                            '&:hover': {
+                                color: 'primary.main',
+                                bgcolor: 'secondary.dark',
+                            },
+                        }}
+                    >
+                        Login
+                    </Button>
+                </Box>
+                <Divider variant="middle" sx={{ marginBottom: '30px' }} />
+                <Box
+                    sx={{
+                        alignItems: 'center',
+                        justifyContent: 'center',
+                        display: 'flex',
+                    }}
+                >
+                    <Button
+                        variant="contained"
+                        sx={{
+                            borderRadius: '10px',
+                            backgroundColor: 'secondary.main',
+                            color: 'white',
+                            textTransform: 'none',
+                            fontWeight: 'bold',
+                            '&:hover': {
+                                color: 'primary.main',
+                                bgcolor: 'secondary.dark',
+                            },
+                        }}
+                    >
+                        Create an account
+                    </Button>
+                </Box>
+            </DialogContent>
         </Dialog>
     );
 };
