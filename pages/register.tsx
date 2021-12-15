@@ -17,7 +17,7 @@ const Home: NextPage = () => {
             <main className={styles.main}>
                 <Box sx={{ flexGrow: 1 }}>
                     <AppBar />
-                    <Register />
+                    <Register open={true} />
                 </Box>
             </main>
         </div>

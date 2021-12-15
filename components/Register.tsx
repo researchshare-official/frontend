@@ -1,41 +1,17 @@
-import { NextPage } from 'next';
-import { Dialog, DialogContent, Theme, Typography, Box } from '@mui/material/';
-import { makeStyles } from '@mui/styles';
+import {
+    Dialog,
+    DialogContent,
+    Typography,
+    Box,
+    DialogProps,
+    SelectChangeEvent,
+} from '@mui/material/';
 import TextField from '@mui/material/TextField';
 import Button from '@mui/material/Button';
 import { Divider, Select, MenuItem } from '@mui/material';
-import { Done } from '@mui/icons-material/';
+import styles from '../styles/Auth.module.scss';
 import { Tabs, Tab } from '@mui/material/';
-import TabsListUnstyled from '@mui/base/TabsListUnstyled';
-import TabPanelUnstyled from '@mui/base/TabPanelUnstyled';
-import { buttonUnstyledClasses } from '@mui/base/ButtonUnstyled';
-import TabUnstyled, { tabUnstyledClasses } from '@mui/base/TabUnstyled';
-import { styled } from '@mui/system';
-import { useState, SyntheticEvent, SelectChangeEvent } from 'react';
-
-const useStyles = makeStyles((theme: Theme) => ({
-    backDrop: {
-        backdropFilter: 'blur(0.1rem)',
-        backgroundColor: 'rgba(0,0,30,0.4)',
-    },
-    notchedOutline: {
-        border: '1px solid #636363 !important',
-    },
-    backgroundForm: {
-        backgroundColor: '#EEE9FA',
-    },
-    select: {
-        '&:before': {
-            borderColor: 'white',
-        },
-        '&:after': {
-            borderColor: 'white',
-        },
-        '&:not(.Mui-disabled):hover::before': {
-            borderColor: 'white',
-        },
-    },
-}));
+import { useState, SyntheticEvent, FunctionComponent } from 'react';
 
 interface TabPanelProps {
     children?: React.ReactNode;
@@ -70,14 +46,13 @@ function a11yProps(index: number) {
     };
 }
 
-const Register: NextPage = () => {
-    const classes = useStyles();
-    const [value, setValue] = useState(0);
-    const [age, setAge] = useState('');
-    const [number, setValueNumber] = useState(0);
+const Register: FunctionComponent<DialogProps> = (props) => {
+    const [value, setValue] = useState<number>(0);
+    const [age, setAge] = useState<string>('');
+    const [number, setValueNumber] = useState<number>(0);
 
     const handleChangeSelect = (event: SelectChangeEvent) => {
-        setAge(event.target.value as string);
+        setAge(event.target.value);
     };
     const handleChange = (event: SyntheticEvent, newValue: number) => {
         setValue(newValue);
@@ -87,16 +62,13 @@ const Register: NextPage = () => {
     };
     return (
         <Dialog
-            open={true}
             BackdropProps={{
-                classes: {
-                    root: classes.backDrop,
-                },
+                className: styles.backdrop,
             }}
             PaperProps={{
                 style: { borderRadius: '10px' },
             }}
-            onClose={() => {}}
+            {...props}
         >
             <DialogContent style={{ width: '30rem', backgroundColor: 'white' }}>
                 <Typography
@@ -139,7 +111,7 @@ const Register: NextPage = () => {
                         value={age}
                         label="MemberType"
                         onChange={handleChangeSelect}
-                        className={classes.select}
+                        className={styles.selectForm}
                         sx={{ marginBottom: '12px' }}
                     >
                         <MenuItem sx={{ color: 'white' }} value={'Scientist'}>
@@ -169,11 +141,9 @@ const Register: NextPage = () => {
                                 focused
                                 sx={{ width: '24rem' }}
                                 InputProps={{
-                                    classes: {
-                                        notchedOutline: classes.notchedOutline,
-                                    },
+                                    className: styles.notchedOutline,
                                 }}
-                                className={classes.backgroundForm}
+                                className={styles.backgroundForm}
                             />
                         </Box>
                     )}
@@ -201,11 +171,9 @@ const Register: NextPage = () => {
                                 focused
                                 sx={{ width: '10rem' }}
                                 InputProps={{
-                                    classes: {
-                                        notchedOutline: classes.notchedOutline,
-                                    },
+                                    className: styles.notchedOutline,
                                 }}
-                                className={classes.backgroundForm}
+                                className={styles.backgroundForm}
                             />
                         </Box>
                         <Box>
@@ -224,11 +192,9 @@ const Register: NextPage = () => {
                                 focused
                                 sx={{ width: '10rem' }}
                                 InputProps={{
-                                    classes: {
-                                        notchedOutline: classes.notchedOutline,
-                                    },
+                                    className: styles.notchedOutline,
                                 }}
-                                className={classes.backgroundForm}
+                                className={styles.backgroundForm}
                             />
                         </Box>
                     </Box>
@@ -247,11 +213,9 @@ const Register: NextPage = () => {
                         focused
                         sx={{ width: '24rem', marginBottom: '12px' }}
                         InputProps={{
-                            classes: {
-                                notchedOutline: classes.notchedOutline,
-                            },
+                            className: styles.notchedOutline,
                         }}
-                        className={classes.backgroundForm}
+                        className={styles.backgroundForm}
                     />
                     <Typography
                         variant="body1"
@@ -269,11 +233,9 @@ const Register: NextPage = () => {
                         focused
                         sx={{ width: '24rem', marginBottom: '12px' }}
                         InputProps={{
-                            classes: {
-                                notchedOutline: classes.notchedOutline,
-                            },
+                            className: styles.notchedOutline,
                         }}
-                        className={classes.backgroundForm}
+                        className={styles.backgroundForm}
                     />
                     <Typography
                         variant="body1"
@@ -291,11 +253,9 @@ const Register: NextPage = () => {
                         focused
                         sx={{ width: '24rem', marginBottom: '12px' }}
                         InputProps={{
-                            classes: {
-                                notchedOutline: classes.notchedOutline,
-                            },
+                            className: styles.notchedOutline,
                         }}
-                        className={classes.backgroundForm}
+                        className={styles.backgroundForm}
                     />
                     <Box
                         sx={{
@@ -349,11 +309,9 @@ const Register: NextPage = () => {
                                 focused
                                 sx={{ width: '10rem' }}
                                 InputProps={{
-                                    classes: {
-                                        notchedOutline: classes.notchedOutline,
-                                    },
+                                    className: styles.notchedOutline,
                                 }}
-                                className={classes.backgroundForm}
+                                className={styles.backgroundForm}
                             />
                         </Box>
                         <Box>
@@ -372,11 +330,9 @@ const Register: NextPage = () => {
                                 focused
                                 sx={{ width: '10rem' }}
                                 InputProps={{
-                                    classes: {
-                                        notchedOutline: classes.notchedOutline,
-                                    },
+                                    className: styles.notchedOutline,
                                 }}
-                                className={classes.backgroundForm}
+                                className={styles.backgroundForm}
                             />
                         </Box>
                     </Box>
@@ -395,11 +351,9 @@ const Register: NextPage = () => {
                         focused
                         sx={{ width: '24rem', marginBottom: '12px' }}
                         InputProps={{
-                            classes: {
-                                notchedOutline: classes.notchedOutline,
-                            },
+                            className: styles.notchedOutline,
                         }}
-                        className={classes.backgroundForm}
+                        className={styles.backgroundForm}
                     />
                     <Typography
                         variant="body1"
@@ -417,11 +371,9 @@ const Register: NextPage = () => {
                         focused
                         sx={{ width: '24rem', marginBottom: '12px' }}
                         InputProps={{
-                            classes: {
-                                notchedOutline: classes.notchedOutline,
-                            },
+                            className: styles.notchedOutline,
                         }}
-                        className={classes.backgroundForm}
+                        className={styles.backgroundForm}
                     />
                     <Typography
                         variant="body1"
@@ -439,11 +391,9 @@ const Register: NextPage = () => {
                         focused
                         sx={{ width: '24rem', marginBottom: '12px' }}
                         InputProps={{
-                            classes: {
-                                notchedOutline: classes.notchedOutline,
-                            },
+                            className: styles.notchedOutline,
                         }}
-                        className={classes.backgroundForm}
+                        className={styles.backgroundForm}
                     />
 
                     <Typography
@@ -483,11 +433,9 @@ const Register: NextPage = () => {
                             focused
                             sx={{ width: '21rem', marginBottom: '12px' }}
                             InputProps={{
-                                classes: {
-                                    notchedOutline: classes.notchedOutline,
-                                },
+                                className: styles.notchedOutline,
                             }}
-                            className={classes.backgroundForm}
+                            className={styles.backgroundForm}
                         />
                     </TabPanel>
                     <TabPanel value={number} index={1}>
@@ -506,11 +454,9 @@ const Register: NextPage = () => {
                             focused
                             sx={{ width: '21rem' }}
                             InputProps={{
-                                classes: {
-                                    notchedOutline: classes.notchedOutline,
-                                },
+                                className: styles.notchedOutline,
                             }}
-                            className={classes.backgroundForm}
+                            className={styles.backgroundForm}
                         />
                     </TabPanel>
 
@@ -548,7 +494,7 @@ const Register: NextPage = () => {
                     notchedOutline: classes.notchedOutline
                     }
                 }}
-                className={classes.backgroundForm}
+                className={styles.backgroundForm}
             />
             <Typography variant="body1" sx={{color: '#7447D5', marginBottom: '12px', fontWeight: 'bold'}}>Password</Typography>
             <TextField id="password" variant="outlined" focused type="password" sx={{width: '26.5rem'}}
@@ -557,7 +503,7 @@ const Register: NextPage = () => {
                   notchedOutline: classes.notchedOutline
                 }
               }}
-            className={classes.backgroundForm}
+            className={styles.backgroundForm}
             />
             <Typography variant="caption" sx={{color: '#7447D5', textDecoration: 'underline', marginBottom: '30px', marginTop: '17px', display: 'flex', flexDirection: 'row-reverse', marginRight: '0.8rem'}}>Forgot password</Typography>
             <Box sx={{alignItems: 'center', justifyContent: 'center', display:'flex'}}>

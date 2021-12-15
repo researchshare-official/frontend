@@ -9,7 +9,7 @@ import {
 import TextField from '@mui/material/TextField';
 import Button from '@mui/material/Button';
 import { Divider } from '@mui/material';
-import styles from '../styles/Login.module.css';
+import styles from '../styles/Auth.module.scss';
 
 const Login: FunctionComponent<DialogProps> = (props) => {
     return (
