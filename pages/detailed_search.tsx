@@ -30,8 +30,7 @@ const Detailed_search: NextPage = () => {
             </Box>
             <Box sx={{ display: 'flex' , flexDirection:'row' , height: '100vh'}}>
                 <SideBar />
-                <Box sx={{marginLeft: '55%'}}>
-                    <Typography variant="h5" sx={{marginTop:'2rem', alignSelf: 'right'}}> Climate Change->Impact->Agriculture </Typography>
+                <Box sx={{marginLeft: '5%', marginTop: '2%'}}>
                     <TextField onChange={handleChange}
                         label="With normal TextField"
                         InputProps={{
