@@ -13,7 +13,7 @@ import { useContext } from 'react';
 import Button from '@mui/material/Button';
 import { Typography } from '@mui/material';
 
-const CategoriesFilter: NextPage = () => {
+const CategoriesFilter = () => {
     return (
         <Box sx={{ display: 'flex', flexDirection: 'column', width: 1/1}}>
             <Typography variant="h5" sx={{marginTop:'2rem', marginLeft:'8%',}}> Categories </Typography>

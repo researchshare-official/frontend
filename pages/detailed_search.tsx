@@ -1,9 +1,8 @@
 import type { NextPage } from 'next'
-import { Box, Typography, TextField } from '@mui/material'
+import { Box, Typography, TextField, IconButton } from '@mui/material'
 import Head from 'next/head'
 import AppBar from '../components/AppBar'
-import SideBar from '../components/detailed_search/SideBar'
-import IconButton from '@mui/material/IconButton';
+import SideBar from '../components/DetailedSearch/SideBar'
 import SearchIcon from '@mui/icons-material/Search';
 import { useState } from 'react';
 
@@ -31,7 +30,7 @@ const Detailed_search: NextPage = () => {
             <Box sx={{ display: 'flex' , flexDirection:'row' , height: '100vh'}}>
                 <SideBar />
                 <Box sx={{marginLeft: '55%'}}>
-                    <Typography variant="h5" sx={{marginTop:'2rem', alignSelf: 'right'}}> Climate Change->Impact->Agriculture </Typography>
+                    <Typography variant="h5" sx={{marginTop:'2rem', alignSelf: 'right'}}> Climate Change-&gt;Impact-&gt;Agriculture </Typography>
                     <TextField onChange={handleChange}
                         label="With normal TextField"
                         InputProps={{
