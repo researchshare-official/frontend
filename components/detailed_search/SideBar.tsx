@@ -13,6 +13,8 @@ import { useContext } from 'react';
 import Button from '@mui/material/Button';
 import { Typography } from '@mui/material';
 import WhatAreYouLookingFor from './WhatAreYouLookingFor';
+import Date from './Date';
+import IncludeFilter from './IncludeFilter'
 
 const Search = styled('div')(({ theme }) => ({
     position: 'relative',
@@ -61,8 +63,12 @@ const StyledInputBase = styled(InputBase)(({ theme }) => ({
 const SideBar: NextPage = (props) => {
 
     return (
-        <Box sx={{ display: 'flex', flexDirection: 'row', width: 1/4}}>
-            <WhatAreYouLookingFor></WhatAreYouLookingFor>
+        <Box sx={{ display: 'flex', flexDirection: 'row', width: 1/5}}>
+            <Box sx={{ display: 'flex', flexDirection: 'column', width: 1/1}}>
+                <WhatAreYouLookingFor></WhatAreYouLookingFor>
+                <Date></Date>
+                <IncludeFilter></IncludeFilter>
+            </Box>
             <Box sx={{ display: 'flex-end', flexDirection: 'row-reverse', marginLeft: 'auto'}}>
                 <Divider variant="fullWidth" orientation='vertical' sx={{marginTop:'2rem', alignSelf: 'right'}}/>
             </Box>
