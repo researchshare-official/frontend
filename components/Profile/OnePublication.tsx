@@ -30,7 +30,7 @@ const OnePublication: NextPage<Publications> = (props) => {
                 { true ?
                     <Box sx={{ display: 'flex', flexDirection: 'column' }}>
                         <Button variant="contained" sx={{ marginTop: '100%' }}>Edit</Button>
-                        <Button variant="contained" sx={{ bgcolor: '#D60000', marginTop: '25%' }}>Remove</Button>
+                        <Button variant="contained" sx={{ bgcolor: 'palette.error.main', marginTop: '25%' }}>Remove</Button>
                     </Box>
                     : null
                 }
