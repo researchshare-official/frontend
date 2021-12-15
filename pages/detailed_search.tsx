@@ -10,10 +10,10 @@ import { useState } from 'react';
 const Detailed_search: NextPage = () => {
     const [value, setValue] = useState();
 
-    function truc() {
+    function handleSearch() {
         console.log(value);
     }
-    function machin(event) {
+    function handleChange(event) {
         console.log(event.target.value);
         setValue(event.target.value);
     }
@@ -32,11 +32,11 @@ const Detailed_search: NextPage = () => {
                 <SideBar />
                 <Box sx={{marginLeft: '55%'}}>
                     <Typography variant="h5" sx={{marginTop:'2rem', alignSelf: 'right'}}> Climate Change->Impact->Agriculture </Typography>
-                    <TextField onChange={machin}
+                    <TextField onChange={handleChange}
                         label="With normal TextField"
                         InputProps={{
                             endAdornment: (
-                                <IconButton onClick={truc}>
+                                <IconButton onClick={handleSearch}>
                                     <SearchIcon />
                                 </IconButton>
                             )
