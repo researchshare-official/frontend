@@ -19,16 +19,37 @@ const CategoriesFilter: NextPage = () => {
             <Typography variant="h5" sx={{marginTop:'2rem', marginLeft:'8%',}}> Categories </Typography>
             <Box>
             <Button variant="contained"
-            sx={{ width: '8rem', marginLeft:'8%', color: "primary.main", bgcolor: "secondary.main", 
+            sx={{ width: '10rem', marginLeft:'8%', color: "primary.main", bgcolor: "secondary.main", 
             '&:hover': { color: "primary.main", bgcolor: 'secondary.dark'}}}>
-                <Typography sx={{ textTransform: 'capitalize' }}>All time</Typography>
+                <Typography sx={{ textTransform: 'capitalize' }}>2021-March</Typography>
             </Button>
             </Box>
             <Box sx={{marginTop: '3%'}}>
             <Button variant="contained"
-            sx={{ width: '8rem', marginLeft:'8%', color: "secondary.main", bgcolor: "white", 
+            sx={{ width: '10rem', marginLeft:'16%', color: "secondary.main", bgcolor: "white", 
             '&:hover': { color: "primary.main", bgcolor: 'secondary.dark'}}}>
-                <Typography sx={{ textTransform: 'capitalize' }}>24 hours</Typography>
+                <Typography sx={{ textTransform: 'capitalize' }}>The impact...</Typography>
+            </Button>
+            </Box>
+            <Box sx={{marginTop: '3%'}}>
+            <Button variant="contained"
+            sx={{ width: '10rem', marginLeft:'16%', color: "secondary.main", bgcolor: "white", 
+            '&:hover': { color: "primary.main", bgcolor: 'secondary.dark'}}}>
+                <Typography sx={{ textTransform: 'capitalize' }}>Climate ch...</Typography>
+            </Button>
+            </Box>
+            <Box sx={{marginTop: '3%'}}>
+            <Button variant="contained"
+            sx={{ width: '10rem', marginLeft:'8%', color: "secondary.main", bgcolor: "white", 
+            '&:hover': { color: "primary.main", bgcolor: 'secondary.dark'}}}>
+                <Typography sx={{ textTransform: 'capitalize' }}>2021-November</Typography>
+            </Button>
+            </Box>
+            <Box sx={{marginTop: '3%'}}>
+            <Button variant="contained"
+            sx={{ width: '10rem', marginLeft:'8%', color: "secondary.main", bgcolor: "white", 
+            '&:hover': { color: "primary.main", bgcolor: 'secondary.dark'}}}>
+                <Typography sx={{ textTransform: 'capitalize'}}>Other Dates</Typography>
             </Button>
             </Box>
     </Box>

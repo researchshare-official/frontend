@@ -15,6 +15,7 @@ import { Typography } from '@mui/material';
 import WhatAreYouLookingFor from './WhatAreYouLookingFor';
 import Date from './Date';
 import IncludeFilter from './IncludeFilter'
+import CategoriesFilter from './CategoriesFilter';
 
 const Search = styled('div')(({ theme }) => ({
     position: 'relative',
@@ -68,6 +69,7 @@ const SideBar: NextPage = (props) => {
                 <WhatAreYouLookingFor></WhatAreYouLookingFor>
                 <Date></Date>
                 <IncludeFilter></IncludeFilter>
+                <CategoriesFilter></CategoriesFilter>
             </Box>
             <Box sx={{ display: 'flex-end', flexDirection: 'row-reverse', marginLeft: 'auto'}}>
                 <Divider variant="fullWidth" orientation='vertical' sx={{marginTop:'2rem', alignSelf: 'right'}}/>
