@@ -18,7 +18,9 @@ const Detailed_search: NextPage = () => {
             </Box>
             <Box sx={{ display: 'flex', height: '100vh'}}>
                 <SideBar />
-                <Typography variant="h5" sx={{marginTop:'2rem', alignSelf: 'center'}}> Center </Typography>
+                <Box sx={{marginLeft: '64rem'}}>
+                <Typography variant="h5" sx={{marginTop:'2rem', alignSelf: 'right'}}> Climate Change->Impact->Agriculture </Typography>
+                </Box>
             </Box>
         </div>
     )
