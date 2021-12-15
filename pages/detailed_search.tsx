@@ -1,12 +1,23 @@
 import type { NextPage } from 'next'
-import Image from 'next/image'
-import { List, Box, ListItem, Divider, Typography, Tabs, Tab, ListItemIcon, ListItemText } from '@mui/material'
+import { Box, Typography, TextField } from '@mui/material'
 import Head from 'next/head'
-import styles from '../styles/Home.module.css'
 import AppBar from '../components/AppBar'
 import SideBar from '../components/detailed_search/SideBar'
+import IconButton from '@mui/material/IconButton';
+import SearchIcon from '@mui/icons-material/Search';
+import { useState } from 'react';
 
 const Detailed_search: NextPage = () => {
+    const [value, setValue] = useState();
+
+    function truc() {
+        console.log(value);
+    }
+    function machin(event) {
+        console.log(event.target.value);
+        setValue(event.target.value);
+    }
+
     return (
         <div>
             <Head>
@@ -20,11 +31,20 @@ const Detailed_search: NextPage = () => {
             <Box sx={{ display: 'flex' , flexDirection:'row' , height: '100vh'}}>
                 <SideBar />
                 <Box sx={{marginLeft: '55%'}}>
-                <Typography variant="h5" sx={{marginTop:'2rem', alignSelf: 'right'}}> Climate Change->Impact->Agriculture </Typography>
+                    <Typography variant="h5" sx={{marginTop:'2rem', alignSelf: 'right'}}> Climate Change->Impact->Agriculture </Typography>
+                    <TextField onChange={machin}
+                        label="With normal TextField"
+                        InputProps={{
+                            endAdornment: (
+                                <IconButton onClick={truc}>
+                                    <SearchIcon />
+                                </IconButton>
+                            )
+                        }}
+                        />
                 </Box>
             </Box>
             <Box sx={{ display: 'flex', height: '100vh'}}>
-               
             </Box>
         </div>
     )
