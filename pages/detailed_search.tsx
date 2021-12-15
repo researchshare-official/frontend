@@ -13,7 +13,7 @@ const Detailed_search: NextPage = () => {
     function handleSearch() {
         console.log(value);
     }
-    function handleChange(event) {
+    function handleChange(event : any) {
         console.log(event.target.value);
         setValue(event.target.value);
     }
