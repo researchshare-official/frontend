@@ -134,16 +134,6 @@ const ProfileContent: NextPage = (props) => {
                 <Image src="/ActivityChart.png" height={499} width={1172} alt="Profile image" />
             </Box>
             </TabPanel>
-            {/* <TabPanel value={value} index={3}>
-                <List>
-                    {[1, 2, 3, 4, 5].map(x => (
-                        <ListItem key={`publication-${x}`} sx={{ display: 'flex', flexDirection: 'column' }}>
-                            <OnePublication infos={ {'tags': ['lapin', 'latin', 'chasse'],  'title': "qjsdk sjk sdjk j jk js jkssdj jksd jd jksdjks djk sjk djksdj j sjkdjks jks djk j j j j jkd sjk jsjdsjkd jks djk sjkd jks djkds djk sj dj sjdjs dsdjsdjskdjs d skjd ks jkd sdjk sdjkddjksjjd.", 'author': "Encore d'autre mecs", 'content': "Le mot lapin (/lapε̃/) est un terme très général qui désigne en français certains animaux lagomorphes à longues oreilles, que l'on différencie des lièvres par une silhouette moins élancée et par les petits qui naissent aveugles et nus, cachés dans un nid creusé au sol. Ces animaux ne correspondent donc pas à un niveau précis de classification scientifique. « Lapin » est en fait un nom vernaculaire ambigu, désignant une partie seulement des différentes espèces de mammifères classées dans la famille des Léporidés, une famille qui regroupe à la fois les lièvres et les lapins. Longtemps classés dans l'ordre des rongeurs, ils sont maintenant regroupés dans un ordre à part : les Lagomorphes. En employant le terme « lapin », on fait toutefois référence le plus souvent au lapin domestique issu du Lapin de garenne (Oryctolagus cuniculus), l'espèce sauvage d'origine européenne qui s'est répandue un peu partout, puisqu'elle est à la base des multiples races de lapins élevées à présent dans le monde entier, y compris des lapins nains. Cependant, les lapins ne se limitent pas à cette seule espèce européenne : il existe en effet plus d'une vingtaine d'espèces de lapins sauvages dans le monde, réparties dans neuf genres biologiques, mais dont plusieurs sont menacées d'extinction et protégées au xxie siècle. Le lapin est un gibier traditionnel, classé en cuisine avec les volailles et il est un mets apprécié dans de nombreux pays . C'est aussi un animal très présent dans de nombreux domaines culturels. L'« animal aux longues oreilles » est évoqué dans l'art et la littérature tout autant que dans la culture populaire, la mythologie et la symbolique de plusieurs continents. De nombreux personnages célèbres de fiction sont des lapins, notamment dans l'univers enfantin. Le mot « lapin » est par ailleurs utilisé aussi bien comme patronyme que comme marque commerciale.."} }/>
-                            <Divider sx={{ width: '80%', marginTop: '3%', marginBottom: '3%' }}/>
-                        </ListItem>
-                    ))}
-                </List>
-            </TabPanel> */}
         </Box>
     );
 };
