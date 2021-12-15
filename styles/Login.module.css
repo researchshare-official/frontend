@@ -4,11 +4,11 @@
 }
 
 .notchedOutline {
-    border-width: 1px;
+    border-width: 1px !important;
     border-style: solid !important;
     border-color: #636363 !important;
 }
 
 .backgroundForm {
-    background-color: '#EEE9FA';
+    background-color: #eee9fa;
 }
