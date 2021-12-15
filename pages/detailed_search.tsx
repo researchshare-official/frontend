@@ -1,4 +1,5 @@
 import type { NextPage } from 'next'
+import Image from 'next/image'
 import { List, Box, ListItem, Divider, Typography, Tabs, Tab, ListItemIcon, ListItemText } from '@mui/material'
 import Head from 'next/head'
 import styles from '../styles/Home.module.css'
@@ -16,11 +17,14 @@ const Detailed_search: NextPage = () => {
             <Box sx={{ display: 'flex', height: '7vh', justifyContent: 'center'}}>
                 <AppBar />
             </Box>
-            <Box sx={{ display: 'flex', height: '100vh'}}>
+            <Box sx={{ display: 'flex' , flexDirection:'row' , height: '100vh'}}>
                 <SideBar />
                 <Box sx={{marginLeft: '55%'}}>
                 <Typography variant="h5" sx={{marginTop:'2rem', alignSelf: 'right'}}> Climate Change->Impact->Agriculture </Typography>
                 </Box>
+            </Box>
+            <Box sx={{ display: 'flex', height: '100vh'}}>
+               
             </Box>
         </div>
     )
