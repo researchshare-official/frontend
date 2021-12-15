@@ -1,8 +1,8 @@
-import type { NextPage } from 'next'
-import Head from 'next/head'
-import styles from '../styles/Home.module.css'
-import Box from '@mui/material/Box'
-import AppBar from '../components/AppBar'
+import type { NextPage } from 'next';
+import Head from 'next/head';
+import styles from '../styles/Home.module.css';
+import Box from '@mui/material/Box';
+import AppBar from '../components/AppBar';
 
 const Home: NextPage = () => {
     return (
@@ -14,14 +14,12 @@ const Home: NextPage = () => {
             </Head>
 
             <main className={styles.main}>
-
                 <Box sx={{ flexGrow: 1 }}>
                     <AppBar />
                 </Box>
-
             </main>
         </div>
-    )
-}
+    );
+};
 
-export default Home
+export default Home;
