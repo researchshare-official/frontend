@@ -9,7 +9,6 @@ import SearchIcon from '@mui/icons-material/Search';
 import InputBase from '@mui/material/InputBase';
 import Divider from '@mui/material/Divider';
 import { NextPage } from 'next';
-import { useContext } from 'react';
 import Button from '@mui/material/Button';
 import { Typography } from '@mui/material';
 

@@ -1,9 +1,8 @@
 import type { NextPage } from 'next'
-import { Box, Typography, TextField } from '@mui/material'
+import { Box, Typography, TextField, IconButton } from '@mui/material'
 import Head from 'next/head'
 import AppBar from '../components/AppBar'
-import SideBar from '../components/detailed_search/SideBar'
-import IconButton from '@mui/material/IconButton';
+import SideBar from '../components/DetailedSearch/SideBar'
 import SearchIcon from '@mui/icons-material/Search';
 import { useState } from 'react';
 
