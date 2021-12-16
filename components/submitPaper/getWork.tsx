@@ -65,13 +65,18 @@ const GetWork: NextPage = (props) => {
     //   }
 
     const submitAll = () => {
+        const toSend = {content: "", filename: ""};
         console.log( "Content = " ,valueContent)
         console.log( "value1 = " ,value1)
         console.log( "value2 = " ,value2)
         console.log( "value3 = " ,value3)
+        toSend.content = valueContent;
+        toSend.filename = "d";
         if (value1.length > 0 && value2.length > 0 && value3.length > 0 && valueContent.length > 0) {
             console.log("sending...")
-            ax.post("/index", valueContent);
+            console.log(valueContent)
+            console.log(file);
+            // ax.post("/index_file", valueContent);
         }
 
     }
