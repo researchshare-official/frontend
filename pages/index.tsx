@@ -14,7 +14,13 @@ const Home: NextPage = () => {
             </Head>
 
             <main className={styles.main}>
-                <Box sx={{ flexGrow: 1 }}>
+                <Box
+                    sx={{
+                        display: 'flex',
+                        height: '7vh',
+                        justifyContent: 'center',
+                    }}
+                >
                     <AppBar />
                 </Box>
             </main>

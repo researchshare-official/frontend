@@ -38,7 +38,7 @@ const OnePublication: NextPage<Publications> = (props) => {
                 </Typography>
                 <Typography
                     variant="subtitle1"
-                    sx={{ color: '#7447D5', marginTop: '1%' }}
+                    sx={{ color: 'secondary.main', marginTop: '1%' }}
                 >
                     {' '}
                     {props.infos.author}{' '}
