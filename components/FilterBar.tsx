@@ -13,8 +13,9 @@ import { default as filters } from '../jsonFiles/filterCategory.json';
 const Search = styled('div')(({ theme }) => ({
     position: 'relative',
     marginTop: '0.625rem',
-    border: '3px solid #7447D5',
-    borderRadius: theme.shape.borderRadius,
+    border: 'solid',
+    borderRadius: 3,
+    borderColor: 'secondary.main'
     backgroundColor: alpha(theme.palette.grey[400], 0.15),
     '&:hover': {
         backgroundColor: alpha(theme.palette.grey[400], 0.25),
