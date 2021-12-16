@@ -79,10 +79,10 @@ const Home: NextPage = () => {
                         </Box>
                         <Box sx={{ padding: '20px' }}>
                             <Box
-                                sx={(theme) => ({
+                                sx={{
                                     bgcolor: 'primary.main',
                                     padding: '20px',
-                                })}
+                                }}
                             >
                                 {hotArticles.hotArticles.map((hotArticle) => (
                                     <HotArticlePreview
