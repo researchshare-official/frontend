@@ -17,7 +17,6 @@ const Home: NextPage = () => {
                 <Box
                     sx={{
                         display: 'flex',
-                        height: '7vh',
                         justifyContent: 'center',
                     }}
                 >
