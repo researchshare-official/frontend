@@ -7,7 +7,6 @@ import {
     ListItemText,
     Typography,
     ListItemIcon,
-    useTheme,
 } from '@mui/material';
 import VisibilityIcon from '@mui/icons-material/Visibility';
 import StarIcon from '@mui/icons-material/Star';
