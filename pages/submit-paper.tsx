@@ -4,7 +4,6 @@ import styles from '../styles/Home.module.css'
 import Box from '@mui/material/Box'
 import AppBar from '../components/AppBar'
 import GetWork from '../components/submitPaper/getWork'
-import Preview from '../components/submitPaper/preview'
 
 const SubmitPaper: NextPage = () => {
     return (
