@@ -7,8 +7,6 @@ import {
     Typography,
     Tabs,
     Tab,
-    ListItemIcon,
-    ListItemText,
 } from '@mui/material';
 import Image from 'next/image';
 import InfoIcon from '@mui/icons-material/Info';
@@ -18,8 +16,6 @@ import StarIcon from '@mui/icons-material/Star';
 import AccessTimeIcon from '@mui/icons-material/AccessTime';
 import OnePublication from './OnePublication';
 import { SyntheticEvent, useState } from 'react';
-import VisibilityIcon from '@mui/icons-material/Visibility';
-import CommentIcon from '@mui/icons-material/Comment';
 
 interface TabPanelProps {
     children?: React.ReactNode;
