@@ -185,7 +185,7 @@ const Register: FunctionComponent<DialogProps> = (props) => {
                                     fontWeight: 'bold',
                                 }}
                             >
-                                Firstname
+                                Lastname
                             </Typography>
                             <TextField
                                 variant="outlined"
@@ -198,6 +198,25 @@ const Register: FunctionComponent<DialogProps> = (props) => {
                             />
                         </Box>
                     </Box>
+                    <Typography
+                        variant="body1"
+                        sx={{
+                            color: 'secondary.main',
+                            marginBottom: '12px',
+                            fontWeight: 'bold',
+                        }}
+                    >
+                        Name
+                    </Typography>
+                    <TextField
+                        variant="outlined"
+                        focused
+                        sx={{ width: '24rem', marginBottom: '12px' }}
+                        InputProps={{
+                            className: styles.notchedOutline,
+                        }}
+                        className={styles.backgroundForm}
+                    />
                     <Typography
                         variant="body1"
                         sx={{
@@ -323,7 +342,7 @@ const Register: FunctionComponent<DialogProps> = (props) => {
                                     fontWeight: 'bold',
                                 }}
                             >
-                                Firstname
+                                Lastname
                             </Typography>
                             <TextField
                                 variant="outlined"
@@ -336,6 +355,25 @@ const Register: FunctionComponent<DialogProps> = (props) => {
                             />
                         </Box>
                     </Box>
+                    <Typography
+                        variant="body1"
+                        sx={{
+                            color: 'secondary.main',
+                            marginBottom: '12px',
+                            fontWeight: 'bold',
+                        }}
+                    >
+                        Name
+                    </Typography>
+                    <TextField
+                        variant="outlined"
+                        focused
+                        sx={{ width: '24rem', marginBottom: '12px' }}
+                        InputProps={{
+                            className: styles.notchedOutline,
+                        }}
+                        className={styles.backgroundForm}
+                    />
                     <Typography
                         variant="body1"
                         sx={{
