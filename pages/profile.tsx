@@ -3,12 +3,11 @@ import Head from 'next/head';
 import styles from '../styles/Home.module.css';
 import Box from '@mui/material/Box';
 import AppBar from '../components/AppBar';
-import Summary from '../components/Profile/Summary';
 import ProfileContent from '../components/Profile/ProfileContent';
 
 const Profile: NextPage = () => {
     return (
-        <div>
+        <div className={styles.container}>
             <Head>
                 <title>ResearchShare</title>
                 <meta name="description" content="..." />
@@ -19,14 +18,12 @@ const Profile: NextPage = () => {
                 <Box
                     sx={{
                         display: 'flex',
-                        height: '7vh',
                         justifyContent: 'center',
                     }}
                 >
                     <AppBar />
                 </Box>
-                <Box sx={{ display: 'flex', height: '93vh', width: '100%' }}>
-                    {/* <Summary/> */}
+                <Box sx={{ display: 'flex', width: '100%' }}>
                     <ProfileContent />
                 </Box>
             </main>
