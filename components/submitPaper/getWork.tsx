@@ -3,6 +3,7 @@ import { Box, Typography, Input, TextField } from '@mui/material';
 import Image from 'next/image';
 import { ChangeEvent, useState } from 'react';
 import Button from '@mui/material/Button';
+import ax from '../../pages/api/axios'
 
 
 
@@ -16,6 +17,8 @@ const GetWork: NextPage = (props) => {
     const [filepath, setFilepath] = useState<string>("");
     const [file, setFile] = useState<File | undefined>();
 
+    const [valueContent, setValueContent] = useState<string>("");
+
     const handleImageUpload = (event: ChangeEvent<HTMLInputElement>) => {
         if (event.target.files !== null && event.target.files.length > 0) {
             setImg(event.target.files[0]);
@@ -27,13 +30,46 @@ const GetWork: NextPage = (props) => {
     }
 
     const handleFileUpload = (event: ChangeEvent<HTMLInputElement>) => {
+        event.preventDefault()
         if (event.target.files !== null && event.target.files.length > 0) {
             setFile(event.target.files[0]);
             setFilepath(URL.createObjectURL(event.target.files[0]));
+            const reader = new FileReader()
+            reader.onload = async (event) => { 
+                const text = (event.target.result)
+                //   console.log("TEXT = ", text)
+                setValueContent(text);
+            };
+            reader.readAsText(event.target.files[0])
         } else {
             setFile(undefined);
             setFilepath("");
         }
+    }
+
+    // const showFile = async (e) => {
+    //     e.preventDefault()
+    //     const reader = new FileReader()
+    //     reader.onload = async (e) => { 
+    //       const text = (e.target.result)
+    //     //   console.log("TEXT = ", text)
+    //       setValueContent(text);
+    //     };
+    //     reader.readAsText(e.target.files[0])
+    //     //const varyal = btoa(e.target.result);
+    //     //console.log("BASE64 = ", varyal, "READER = ", reader.result);
+    //   }
+
+    const submitAll = () => {
+        console.log( "Content = " ,valueContent)
+        console.log( "value1 = " ,value1)
+        console.log( "value2 = " ,value2)
+        console.log( "value3 = " ,value3)
+        if (value1.length > 0 && value2.length > 0 && value3.length > 0 && valueContent.length > 0) {
+            console.log("sending...")
+            ax.post("/index", valueContent);
+        }
+
     }
 
     return (
@@ -84,7 +120,7 @@ const GetWork: NextPage = (props) => {
 
                 <Box sx={{ display: 'flex', flexDirection: 'row', justifyContent:'center', marginTop: '3rem' }}>
                     <label htmlFor="">
-                        <Button component="span" sx={{ color: 'primary.main', backgroundColor: 'secondary.main' }}>
+                        <Button component="span" onClick={submitAll} sx={{ color: 'primary.main', backgroundColor: 'secondary.main' }}>
                             SUBMIT ALL
                         </Button>
                     </label>
