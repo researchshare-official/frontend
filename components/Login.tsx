@@ -1,4 +1,4 @@
-import { FunctionComponent } from 'react';
+import { Dispatch, FunctionComponent, SetStateAction } from 'react';
 import {
     Dialog,
     DialogContent,
@@ -13,7 +13,21 @@ import styles from '../styles/Auth.module.scss';
 import { useState } from 'react';
 import { AUTHlogin } from '../pages/api/auth';
 
-const Login: FunctionComponent<DialogProps> = (props) => {
+interface LoginRegisterProps {
+    register: RegisterProps;
+    login: LoginProps;
+}
+
+interface RegisterProps {
+    registerIsOpen: boolean;
+    setRegisterIsOpen: Dispatch<SetStateAction<boolean>>;
+}
+
+interface LoginProps {
+    setLoginIsOpen: Dispatch<SetStateAction<boolean>>;
+}
+
+const Login: FunctionComponent<DialogProps & LoginRegisterProps> = (props) => {
     const [email, setEmail] = useState<string>("");
     const [password, setPassword] = useState<string>("");
 
@@ -96,6 +110,7 @@ const Login: FunctionComponent<DialogProps> = (props) => {
                         variant="contained"
                         sx={{
                             borderRadius: '10px',
+
                             width: '10rem',
                             marginBottom: '30px',
                             backgroundColor: 'secondary.main',
@@ -121,6 +136,10 @@ const Login: FunctionComponent<DialogProps> = (props) => {
                     }}
                 >
                     <Button
+                        onClick={() => {
+                            props.login.setLoginIsOpen(false);
+                            props.register.setRegisterIsOpen(true);
+                        }}
                         variant="contained"
                         sx={{
                             borderRadius: '10px',
