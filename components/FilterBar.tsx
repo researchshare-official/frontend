@@ -15,7 +15,7 @@ const Search = styled('div')(({ theme }) => ({
     marginTop: '0.625rem',
     border: 'solid',
     borderRadius: 3,
-    borderColor: 'secondary.main'
+    borderColor: 'secondary.main',
     backgroundColor: alpha(theme.palette.grey[400], 0.15),
     '&:hover': {
         backgroundColor: alpha(theme.palette.grey[400], 0.25),
@@ -68,8 +68,8 @@ const FilterBar: NextPage = () => {
                             <StyledInputBase sx={{
                                 marginTop: '0.625rem',
                             }}
-                                placeholder="Search for filter…"
-                                inputProps={{ 'aria-label': 'search' }}
+                            placeholder="Search for filter…"
+                            inputProps={{ 'aria-label': 'search' }}
                             />
                         </Search>
                     </Box>

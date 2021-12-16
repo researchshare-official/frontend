@@ -2,13 +2,13 @@ import { Button } from "@mui/material";
 import { NextPage } from 'next';
 
 const LoginForm: NextPage = () => {
-  return (
-    <div>
-      <Button variant="contained">
+    return (
+        <div>
+            <Button variant="contained">
           Login
-      </Button>
-    </div>
-  );
+            </Button>
+        </div>
+    );
 }
 
 export default LoginForm;
