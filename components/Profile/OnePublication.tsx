@@ -29,8 +29,12 @@ const OnePublication: NextPage<Publications> = (props) => {
                 <Typography sx={{ marginTop: '3%' }}>06-07-2021</Typography>
                 { true ?
                     <Box sx={{ display: 'flex', flexDirection: 'column' }}>
-                        <Button variant="contained" sx={{ marginTop: '100%' }}>Edit</Button>
-                        <Button variant="contained" sx={{ bgcolor: 'palette.error.main', marginTop: '25%' }}>Remove</Button>
+                        <Button variant="contained" sx={{ marginTop: '2rem', marginBottom: '2rem', width: '8rem', color: "primary.main", bgcolor: "secondary.main", '&:hover': { color: "primary.main", bgcolor: 'secondary.dark' }}}>
+                            <Typography sx={{ textTransform: 'capitalize' }}>Edit</Typography>
+                        </Button>
+                        <Button variant="contained" color="error" sx={{ width: '8rem', color: "primary.main", '&:hover': { color: "primary.main", bgcolor: 'palette.error.main' }}}>
+                            <Typography sx={{ textTransform: 'capitalize' }}>Remove</Typography>
+                        </Button>
                     </Box>
                     : null
                 }
