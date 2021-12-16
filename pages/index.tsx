@@ -3,7 +3,6 @@ import Head from 'next/head'
 import styles from '../styles/Home.module.css'
 import Box from '@mui/material/Box'
 import AppBar from '../components/AppBar'
-import FilterBar from '../components/FilterBar'
 
 const Home: NextPage = () => {
     return (
@@ -19,8 +18,6 @@ const Home: NextPage = () => {
                 <Box sx={{ flexGrow: 1 }}>
                     <AppBar />
                 </Box>
-                <FilterBar />
-
             </main>
         </div>
     )
