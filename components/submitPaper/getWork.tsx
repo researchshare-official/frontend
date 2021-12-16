@@ -65,7 +65,7 @@ const GetWork: NextPage = (props) => {
                         setValue2(value);
                     }} placeholder='Name your coworker here...'></TextField>
 
-                <Typography variant='body1' sx={{ marginTop: '2rem' }}  >Put the tags of your project (with a "#" before and space between each)</Typography>
+                <Typography variant='body1' sx={{ marginTop: '2rem' }}  >Put the tags of your project (with a # before and space between each)</Typography>
                 <TextField sx={{ border: 'solid', borderColor: 'secondary.main', borderRadius: '0.5rem' }} onChange={
                     event => {
                         const { value } = event.target;
