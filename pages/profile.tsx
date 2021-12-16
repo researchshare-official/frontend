@@ -1,10 +1,10 @@
-import type { NextPage } from 'next'
-import Head from 'next/head'
-import styles from '../styles/Home.module.css'
-import Box from '@mui/material/Box'
-import AppBar from '../components/AppBar'
-import Summary from '../components/Profile/Summary'
-import ProfileContent from '../components/Profile/ProfileContent'
+import type { NextPage } from 'next';
+import Head from 'next/head';
+import styles from '../styles/Home.module.css';
+import Box from '@mui/material/Box';
+import AppBar from '../components/AppBar';
+import Summary from '../components/Profile/Summary';
+import ProfileContent from '../components/Profile/ProfileContent';
 
 const Profile: NextPage = () => {
     return (
@@ -16,17 +16,22 @@ const Profile: NextPage = () => {
             </Head>
 
             <main className={styles.main}>
-                <Box sx={{ display: 'flex', height: '7vh', justifyContent: 'center'}}>
+                <Box
+                    sx={{
+                        display: 'flex',
+                        height: '7vh',
+                        justifyContent: 'center',
+                    }}
+                >
                     <AppBar />
                 </Box>
-                <Box sx={{ display: 'flex', height: '93vh', width:'100%'}}>
+                <Box sx={{ display: 'flex', height: '93vh', width: '100%' }}>
                     {/* <Summary/> */}
-                    <ProfileContent/>
+                    <ProfileContent />
                 </Box>
-
             </main>
         </div>
-    )
-}
+    );
+};
 
-export default Profile
+export default Profile;

@@ -1,6 +1,7 @@
 import '../styles/globals.css';
 import type { AppProps } from 'next/app';
 import { createTheme, ThemeProvider } from '@mui/material/styles';
+
 import { useMemo, useState } from 'react';
 import { PaletteMode, ThemeOptions } from '@mui/material';
 import ColorModeContext from '../utils/ColorModeContext';
