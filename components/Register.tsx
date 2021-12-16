@@ -12,6 +12,7 @@ import { Divider, Select, MenuItem } from '@mui/material';
 import styles from '../styles/Auth.module.scss';
 import { Tabs, Tab } from '@mui/material/';
 import { useState, SyntheticEvent, FunctionComponent } from 'react';
+import { AUTHregister } from '../pages/api/auth';
 
 interface TabPanelProps {
     children?: React.ReactNode;
@@ -50,6 +51,12 @@ const Register: FunctionComponent<DialogProps> = (props) => {
     const [value, setValue] = useState<number>(0);
     const [age, setAge] = useState<string>('');
     const [number, setValueNumber] = useState<number>(0);
+    const [firstname, setFirstname] = useState<string>("");
+    const [lastname, setLastname] = useState<string>("");
+    const [name, setName] = useState<string>("");
+    const [email, setEmail] = useState<string>("");
+    const [password, setPassword] = useState<string>("");
+    const [confirmedPassword, setConfirmedPassword] = useState<string>("");
 
     const handleChangeSelect = (event: SelectChangeEvent) => {
         setAge(event.target.value);
@@ -174,6 +181,7 @@ const Register: FunctionComponent<DialogProps> = (props) => {
                                     className: styles.notchedOutline,
                                 }}
                                 className={styles.backgroundForm}
+                                onChange={(e) => setFirstname(e.target.value)}
                             />
                         </Box>
                         <Box>
@@ -195,6 +203,7 @@ const Register: FunctionComponent<DialogProps> = (props) => {
                                     className: styles.notchedOutline,
                                 }}
                                 className={styles.backgroundForm}
+                                onChange={(e) => setLastname(e.target.value)}
                             />
                         </Box>
                     </Box>
@@ -216,6 +225,7 @@ const Register: FunctionComponent<DialogProps> = (props) => {
                             className: styles.notchedOutline,
                         }}
                         className={styles.backgroundForm}
+                        onChange={(e) => setName(e.target.value)}
                     />
                     <Typography
                         variant="body1"
@@ -235,6 +245,7 @@ const Register: FunctionComponent<DialogProps> = (props) => {
                             className: styles.notchedOutline,
                         }}
                         className={styles.backgroundForm}
+                        onChange={(e) => setEmail(e.target.value)}
                     />
                     <Typography
                         variant="body1"
@@ -255,6 +266,7 @@ const Register: FunctionComponent<DialogProps> = (props) => {
                             className: styles.notchedOutline,
                         }}
                         className={styles.backgroundForm}
+                        onChange={(e) => setPassword(e.target.value)}
                     />
                     <Typography
                         variant="body1"
@@ -275,6 +287,7 @@ const Register: FunctionComponent<DialogProps> = (props) => {
                             className: styles.notchedOutline,
                         }}
                         className={styles.backgroundForm}
+                        onChange={(e) => setConfirmedPassword(e.target.value)}
                     />
                     <Box
                         sx={{
@@ -298,6 +311,7 @@ const Register: FunctionComponent<DialogProps> = (props) => {
                                     bgcolor: 'secondary.dark',
                                 },
                             }}
+                            onClick={() => {AUTHregister(name, email, password, confirmedPassword, firstname, lastname)}}
                         >
                             Register
                         </Button>

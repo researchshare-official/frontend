@@ -1,11 +1,17 @@
 import api from './axios'
 
-async function AUTHregister(name: string, email: string, password: string) {
+async function AUTHregister(name: string, email: string, password: string, passwordConfirm: string, firstName: string, lastName: string) {
+    if (password !== passwordConfirm) {
+        throw new Error('Passwords do not match')
+    }
     const res = await api.post('/auth/register', {
         name,
         email,
-        password
+        password,
+        firstName,
+        lastName
     })
+    console.log(res.data)
     return res.data
 }
 
