@@ -1,0 +1,26 @@
+.backDrop {
+    backdrop-filter: blur(0.1rem);
+    background-color: rgba(0, 0, 30, 0.4);
+}
+
+.notchedOutline {
+    border-width: 1px !important;
+    border-style: solid !important;
+    border-color: #636363 !important;
+}
+
+.backgroundForm {
+    background-color: #eee9fa;
+}
+
+.selectForm {
+    :before {
+        border-color: 'white';
+    }
+    :after {
+        border-color: 'white';
+    }
+    :not(.Mui-disabled):hover::before {
+        border-color: 'white';
+    }
+}
