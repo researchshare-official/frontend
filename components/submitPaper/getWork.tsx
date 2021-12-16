@@ -40,6 +40,7 @@ const GetWork: NextPage = (props) => {
                     return;
                 const text = (event.target.result)
                 //   console.log("TEXT = ", text)
+                // eslint-disable-next-line @typescript-eslint/ban-ts-comment
                 // @ts-ignore
                 setValueContent(text);
             };

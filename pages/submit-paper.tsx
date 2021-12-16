@@ -14,12 +14,12 @@ const SubmitPaper: NextPage = () => {
                 <link rel="icon" href="/favicon.ico" />
             </Head>
 
-                <Box sx={{ display: 'flex', height: '7vh', justifyContent: 'center'}}>
-                    <AppBar />
-                </Box>
-                <Box sx={{ display: 'flex', marginTop:'2rem', height: '93vh', width:'100%'}}>
-                    <GetWork/>
-                </Box>
+            <Box sx={{ display: 'flex', height: '7vh', justifyContent: 'center'}}>
+                <AppBar />
+            </Box>
+            <Box sx={{ display: 'flex', marginTop:'2rem', height: '93vh', width:'100%'}}>
+                <GetWork/>
+            </Box>
         </div>
     )
 }
