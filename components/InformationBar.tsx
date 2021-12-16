@@ -1,5 +1,7 @@
 import { NextPage } from 'next';
 import { Box, Typography } from '@mui/material/';
+import { default as article } from '../jsonFiles/article.json';
+// import {default as Authors, default as Dates, default as Tags, default as OtherArticles, default as ArticleReviewed} from '../jsonFiles/article.json';
 
 const InformationBar: NextPage = () => {
     return (
@@ -12,42 +14,41 @@ const InformationBar: NextPage = () => {
                         <Typography variant="h6" sx={{color: 'black', marginBottom: '0.4375rem'}}>Authors:</Typography>
                     </Box>
                     <Box sx={{marginLeft: '1.875rem', marginBottom: '1.5625rem'}}>
-                        <Typography variant="body2" sx={{color: 'secondary.main', textDecoration: 'underline'}}>Adina Cazalens</Typography>
-                        <Typography variant="body2" sx={{color: 'secondary.main', textDecoration: 'underline'}}>Alexandre Monnier</Typography>
-                        <Typography variant="body2" sx={{color: 'secondary.main', textDecoration: 'underline'}}>Maugan Verdier</Typography>
-                        <Typography variant="body2" sx={{color: 'secondary.main', textDecoration: 'underline'}}>Lorenzo Carrascosa</Typography>
+                        {article.Authors.map(name => (
+                            <Typography variant="body2" sx={{color: 'secondary.main', textDecoration: 'underline'}} key={name}>{name}</Typography>
+                        ))}
                     </Box>
                     <Box sx={{alignItems: 'center', justifyContent: 'center', display: 'flex', flexDirection: 'column'}}>
                         <Typography variant="h6" sx={{color: 'black', marginBottom: '0.4375rem'}}>Dates:</Typography>
                     </Box>
                     <Box sx={{marginLeft: '1.875rem', marginBottom: '1.5625rem'}}>
-                        <Typography variant="body2" sx={{color: 'black'}}>Some</Typography>
-                        <Typography variant="body2" sx={{color: 'black'}}>Other</Typography>
-                        <Typography variant="body2" sx={{color: 'black'}}>Infos...</Typography>
+                        {article.Dates.map(name => (
+                            <Typography variant="body2" sx={{color: 'black'}} key={name}>{name}</Typography>
+                        ))}
                     </Box>
                     <Box sx={{alignItems: 'center', justifyContent: 'center', display: 'flex', flexDirection: 'column'}}>
                         <Typography variant="h6" sx={{color: 'black', marginBottom: '0.4375rem'}}>Tags:</Typography>
                     </Box>
                     <Box sx={{marginLeft: '1.875rem', marginBottom: '1.5625rem'}}>
-                        <Typography variant="body2" sx={{color: 'black'}}>Some</Typography>
-                        <Typography variant="body2" sx={{color: 'black'}}>Other</Typography>
-                        <Typography variant="body2" sx={{color: 'black'}}>Tags...</Typography>
+                        {article.Tags.map(name => (
+                            <Typography variant="body2" sx={{color: 'black'}} key={name}>{name}</Typography>
+                        ))}
                     </Box>
                     <Box sx={{alignItems: 'center', justifyContent: 'center', display: 'flex', flexDirection: 'column'}}>
                         <Typography variant="h6" sx={{color: 'black', marginBottom: '0.4375rem'}}>Other articles:</Typography>
                     </Box>
                     <Box sx={{marginLeft: '1.875rem', marginBottom: '1.5625rem'}}>
-                        <Typography variant="body2" sx={{color: 'secondary.main', textDecoration: 'underline'}}>Some</Typography>
-                        <Typography variant="body2" sx={{color: 'secondary.main', textDecoration: 'underline'}}>Other</Typography>
-                        <Typography variant="body2" sx={{color: 'secondary.main', textDecoration: 'underline'}}>Links...</Typography>
+                        {article.OtherArticles.map(name => (
+                            <Typography variant="body2" sx={{color: 'secondary.main', textDecoration: 'underline'}} key={name}>{name}</Typography>
+                        ))}
                     </Box>
                     <Box sx={{alignItems: 'center', justifyContent: 'center', display: 'flex', flexDirection: 'column'}}>
                         <Typography variant="h6" sx={{color: 'black', marginBottom: '0.4375rem'}}>Reviewed by:</Typography>
                     </Box>
                     <Box sx={{marginLeft: '1.875rem', marginBottom: '1.5625rem'}}>
-                        <Typography variant="body2" sx={{color: 'secondary.main', textDecoration: 'underline'}}>Some</Typography>
-                        <Typography variant="body2" sx={{color: 'secondary.main', textDecoration: 'underline'}}>Other</Typography>
-                        <Typography variant="body2" sx={{color: 'secondary.main', textDecoration: 'underline'}}>Reviewer...</Typography>
+                        {article.ArticleReviewed.map(name => (
+                            <Typography variant="body2" sx={{color: 'secondary.main', textDecoration: 'underline'}} key={name}>{name}</Typography>
+                        ))}
                     </Box>
                 </Box>
             </Box>

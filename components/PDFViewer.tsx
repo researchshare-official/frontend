@@ -1,6 +1,7 @@
 import { NextPage } from 'next';
 import { Box } from '@mui/material/';
 import Commentaries from '../components/Commentaries';
+import {default as article } from '../jsonFiles/article.json';
 
 const PDFViewer: NextPage = () => {
     return (
@@ -11,7 +12,7 @@ const PDFViewer: NextPage = () => {
                     <iframe
                         width="1000rem"
                         height="800rem"
-                        src="https://www.w3.org/WAI/ER/tests/xhtml/testfiles/resources/pdf/dummy.pdf#toolbar=0&navpanes=0"></iframe>
+                        src={article.Link[0]}></iframe>
                     <Box sx={{marginBottom: '1.5625rem'}}></Box>
                     <Commentaries />
                 </Box>
