@@ -3,15 +3,11 @@ import styles from '../styles/About.module.css'
 import Box from '@mui/material/Box'
 import {Button} from '@mui/material'
 import Card from '@mui/material/Card';
-import CardActions from '@mui/material/CardActions';
 import CardContent from '@mui/material/CardContent';
 import CardHeader from '@mui/material/CardHeader';
-import AppBar from "../components/AppBar";
-import Typography from '@mui/material/Typography';
 import React, {Component} from "react";
 import TextField from '@mui/material/TextField'
 import TextareaAutosize from '@mui/material/TextareaAutosize'
-
 import NewspaperIcon from '@mui/icons-material/Newspaper';
 import GroupsIcon from '@mui/icons-material/Groups';
 import ReceiptLongIcon from '@mui/icons-material/ReceiptLong';
