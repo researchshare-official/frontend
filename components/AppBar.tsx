@@ -13,6 +13,7 @@ import Login from './Login';
 import Button from '@mui/material/Button';
 import { Typography } from '@mui/material';
 import { useState } from 'react';
+import Register from './Register';
 
 const Search = styled('div')(({ theme }) => ({
     position: 'relative',
@@ -61,6 +62,7 @@ const StyledInputBase = styled(InputBase)(({ theme }) => ({
 const AppBar: NextPage = (props) => {
     const router = useRouter();
     const [loginIsOpen, setLoginIsOpen] = useState<boolean>(false);
+    const [registerIsOpen, setRegisterIsOpen] = useState<boolean>(false);
 
     return (
         <MUIAppBar position="static" sx={{ width: '100vw' }} {...props}>
@@ -111,7 +113,16 @@ const AppBar: NextPage = (props) => {
                     </Typography>
                 </Button>
             </Toolbar>
-            <Login open={loginIsOpen} onClose={() => setLoginIsOpen(false)} />
+            <Login
+                open={loginIsOpen}
+                register={{ registerIsOpen, setRegisterIsOpen }}
+                login={{ setLoginIsOpen }}
+                onClose={() => setLoginIsOpen(false)}
+            />
+            <Register
+                open={registerIsOpen}
+                onClose={() => setRegisterIsOpen(false)}
+            />
         </MUIAppBar>
     );
 };
