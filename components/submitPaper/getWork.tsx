@@ -35,9 +35,12 @@ const GetWork: NextPage = (props) => {
             setFile(event.target.files[0]);
             setFilepath(URL.createObjectURL(event.target.files[0]));
             const reader = new FileReader()
-            reader.onload = async (event) => { 
+            reader.onload = async (event) => {
+                if (!event.target)
+                    return;
                 const text = (event.target.result)
                 //   console.log("TEXT = ", text)
+                // @ts-ignore
                 setValueContent(text);
             };
             reader.readAsText(event.target.files[0])
