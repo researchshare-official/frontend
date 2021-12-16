@@ -6,7 +6,7 @@ import AppBar from '../components/AppBar';
 
 const Home: NextPage = () => {
     return (
-        <div className={styles.container}>
+        <div>
             <Head>
                 <title>ResearchShare</title>
                 <meta name="description" content="..." />
@@ -14,7 +14,13 @@ const Home: NextPage = () => {
             </Head>
 
             <main className={styles.main}>
-                <Box sx={{ flexGrow: 1 }}>
+                <Box
+                    sx={{
+                        display: 'flex',
+                        height: '7vh',
+                        justifyContent: 'center',
+                    }}
+                >
                     <AppBar />
                 </Box>
             </main>

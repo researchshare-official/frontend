@@ -63,7 +63,7 @@ const AppBar: NextPage = (props) => {
     const [loginIsOpen, setLoginIsOpen] = useState<boolean>(false);
 
     return (
-        <MUIAppBar position="fixed" {...props}>
+        <MUIAppBar position="static" sx={{width: "100vw"}} {...props}>
             <Toolbar disableGutters={true} sx={{ px: '20%' }}>
                 <IconButton
                     size="large"
