@@ -19,7 +19,12 @@ const Home: NextPage = () => {
             </Head>
 
             <main className={styles.main}>
-                <Box>
+                <Box
+                    sx={{
+                        display: 'flex',
+                        justifyContent: 'center',
+                    }}
+                >
                     <AppBar />
                 </Box>
                 <div className={styles.body}>
