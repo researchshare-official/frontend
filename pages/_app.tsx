@@ -1,34 +1,31 @@
-import '../styles/globals.css'
-import type { AppProps } from 'next/app'
+import '../styles/globals.css';
+import type { AppProps } from 'next/app';
 import { createTheme, ThemeProvider } from '@mui/material/styles';
-import { common, purple } from '@mui/material/colors';
+
 import { useMemo, useState } from 'react';
 import { PaletteMode, ThemeOptions } from '@mui/material';
 import ColorModeContext from '../utils/ColorModeContext';
+import { primary, secondary, background } from '../utils/Theme';
 
 const globalTheme: ThemeOptions = {
     palette: {
-        primary: {
-            main: common.white
-        },
-        secondary: {
-            main: "#7447D5"
-        },
-        background: {
-            default: "#EEE9FA"
-        }
-    }
-}
+        primary: primary,
+        secondary: secondary,
+        background: background,
+    },
+};
 
 function MyApp({ Component, pageProps }: AppProps) {
     const [mode, setMode] = useState<PaletteMode>('light');
     const colorMode = useMemo(
         () => ({
             toggleColorMode: () => {
-                setMode((prevMode) => (prevMode === 'light' ? 'dark' : 'light'));
+                setMode((prevMode) =>
+                    prevMode === 'light' ? 'dark' : 'light'
+                );
             },
         }),
-        [],
+        []
     );
 
     const theme = useMemo(
@@ -37,9 +34,9 @@ function MyApp({ Component, pageProps }: AppProps) {
                 palette: {
                     mode,
                 },
-                ...globalTheme
+                ...globalTheme,
             }),
-        [mode],
+        [mode]
     );
 
     return (
@@ -47,8 +44,8 @@ function MyApp({ Component, pageProps }: AppProps) {
             <ThemeProvider theme={theme}>
                 <Component {...pageProps} />
             </ThemeProvider>
-        </ColorModeContext.Provider >
-    )
+        </ColorModeContext.Provider>
+    );
 }
 
-export default MyApp
+export default MyApp;
