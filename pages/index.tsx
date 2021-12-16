@@ -79,10 +79,9 @@ const Home: NextPage = () => {
                         </Box>
                     </Box>
                 </div>
-
             </main>
         </div>
-    )
-}
+    );
+};
 
-export default Home
+export default Home;
