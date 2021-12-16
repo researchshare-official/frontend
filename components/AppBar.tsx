@@ -9,6 +9,10 @@ import SearchIcon from '@mui/icons-material/Search';
 import InputBase from '@mui/material/InputBase';
 import Divider from '@mui/material/Divider';
 import { NextPage } from 'next';
+import { useContext } from 'react';
+import Brightness4Icon from '@mui/icons-material/Brightness4';
+import Brightness7Icon from '@mui/icons-material/Brightness7';
+import ColorModeContext from '../utils/ColorModeContext';
 import Login from './Login';
 import Button from '@mui/material/Button';
 import { Typography } from '@mui/material';
@@ -63,7 +67,7 @@ const AppBar: NextPage = (props) => {
     const [loginIsOpen, setLoginIsOpen] = useState<boolean>(false);
 
     return (
-        <MUIAppBar position="static" sx={{width: "100vw"}} {...props}>
+        <MUIAppBar position="static" sx={{ width: '100vw' }} {...props}>
             <Toolbar disableGutters={true} sx={{ px: '20%' }}>
                 <IconButton
                     size="large"
