@@ -39,7 +39,7 @@ const Detailed_search: NextPage = () => {
                                 </IconButton>
                             )
                         }}
-                        />
+                    />
                 </Box>
             </Box>
             <Box sx={{ display: 'flex', height: '100vh'}}>
