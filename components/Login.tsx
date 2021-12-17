@@ -10,6 +10,8 @@ import TextField from '@mui/material/TextField';
 import Button from '@mui/material/Button';
 import { Divider } from '@mui/material';
 import styles from '../styles/Auth.module.scss';
+import { useState } from 'react';
+import { AUTHlogin } from '../pages/api/auth';
 
 interface LoginRegisterProps {
     register: RegisterProps;
@@ -26,6 +28,9 @@ interface LoginProps {
 }
 
 const Login: FunctionComponent<DialogProps & LoginRegisterProps> = (props) => {
+    const [email, setEmail] = useState<string>("");
+    const [password, setPassword] = useState<string>("");
+
     return (
         <Dialog
             BackdropProps={{
@@ -45,7 +50,7 @@ const Login: FunctionComponent<DialogProps & LoginRegisterProps> = (props) => {
                         fontWeight: 'bold',
                     }}
                 >
-                    Login
+                    Login (email)
                 </Typography>
                 <TextField
                     id="login"
@@ -56,6 +61,7 @@ const Login: FunctionComponent<DialogProps & LoginRegisterProps> = (props) => {
                         className: styles.notchedOutline,
                     }}
                     className={styles.backgroundForm}
+                    onChange={(e) => setEmail(e.target.value)}
                 />
                 <Typography
                     variant="body1"
@@ -77,6 +83,7 @@ const Login: FunctionComponent<DialogProps & LoginRegisterProps> = (props) => {
                         className: styles.notchedOutline,
                     }}
                     className={styles.backgroundForm}
+                    onChange={(e) => setPassword(e.target.value)}
                 />
                 <Typography
                     variant="caption"
@@ -115,6 +122,7 @@ const Login: FunctionComponent<DialogProps & LoginRegisterProps> = (props) => {
                                 bgcolor: 'secondary.dark',
                             },
                         }}
+                        onClick={() => { AUTHlogin(email, password) }}
                     >
                         Login
                     </Button>
