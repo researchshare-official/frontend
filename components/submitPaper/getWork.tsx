@@ -3,7 +3,7 @@ import { Box, Typography, Input, TextField } from '@mui/material';
 import Image from 'next/image';
 import { ChangeEvent, useState } from 'react';
 import Button from '@mui/material/Button';
-import ax from '../../pages/api/axios';
+import axios from 'axios';
 
 const GetWork: NextPage = (props) => {
     const [projectName, setProjectName] = useState<string>('');
@@ -12,7 +12,7 @@ const GetWork: NextPage = (props) => {
     const [imgpath, setImgpath] = useState<string>('');
     const [, setImg] = useState<File | undefined>(undefined);
     const [filepath, setFilepath] = useState<string>('');
-    const [, setFile] = useState<File | undefined>(undefined);
+    const [filey, setFile] = useState<File | undefined>(undefined);
 
     const [fileContent, setFileContent] = useState<string | ArrayBuffer | null>(
         ''
@@ -44,19 +44,6 @@ const GetWork: NextPage = (props) => {
         }
     };
 
-    // const showFile = async (e) => {
-    //     e.preventDefault()
-    //     const reader = new FileReader()
-    //     reader.onload = async (e) => {
-    //       const text = (e.target.result)
-    //     //   console.log("TEXT = ", text)
-    //       setFileContent(text);
-    //     };
-    //     reader.readAsText(e.target.files[0])
-    //     //const varyal = btoa(e.target.result);
-    //     //console.log("BASE64 = ", varyal, "READER = ", reader.result);
-    //   }
-
     const submitAll = () => {
         console.log('Content = ', fileContent);
         console.log('projectName = ', projectName);
@@ -69,7 +56,20 @@ const GetWork: NextPage = (props) => {
             (fileContent as string).length > 0
         ) {
             console.log('sending...');
-            ax.post('/index', fileContent);
+            const formData = new FormData();
+            // eslint-disable-next-line @typescript-eslint/ban-ts-comment
+            // @ts-ignore
+            formData.append("file", filey);
+            try {
+                axios({
+                    method: "post",
+                    url: "http://localhost:4000/index_file",
+                    data: formData,
+                    headers: {"Content-Type": "multipart/form-data"},
+                });
+            } catch (e) {
+                console.log(e);
+            }
         }
     };
 
@@ -141,7 +141,7 @@ const GetWork: NextPage = (props) => {
                         setProjectName(event.target.value);
                     }}
                     placeholder="Name your project here..."
-                ></TextField>
+                />
 
                 <Typography variant="body1" sx={{ marginTop: '2rem' }}>
                     Name your coworkers
@@ -156,7 +156,7 @@ const GetWork: NextPage = (props) => {
                         setCoworkers(event.target.value);
                     }}
                     placeholder="Name your coworker here..."
-                ></TextField>
+                />
 
                 <Typography variant="body1" sx={{ marginTop: '2rem' }}>
                     Put the tags of your project (with a # before and space
@@ -172,7 +172,7 @@ const GetWork: NextPage = (props) => {
                         setTags(event.target.value);
                     }}
                     placeholder="Put the tags of your project here..."
-                ></TextField>
+                />
 
                 <Box
                     sx={{
@@ -275,7 +275,7 @@ const GetWork: NextPage = (props) => {
                                 src={imgpath}
                                 width={500}
                                 height={500}
-                            ></Image>
+                            />
                         ) : null}
                     </Box>
                     <Typography
@@ -330,7 +330,7 @@ const GetWork: NextPage = (props) => {
                         width="100%"
                         height="500rem"
                         src={filepath}
-                    ></iframe>
+                    />
                 </Box>
             </Box>
         </Box>
