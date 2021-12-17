@@ -6,12 +6,32 @@ import SideBar from '../components/DetailedSearch/SideBar';
 import SearchIcon from '@mui/icons-material/Search';
 import styles from '../styles/Home.module.css';
 import { ChangeEvent, useState } from 'react';
+import axios from "axios";
+import DetailedSearchResults from '../components/DetailedSearch/detailed-search-results'
 
 const DetailedSearch: NextPage = () => {
-    const [, setSearch] = useState<string>('');
+    const [searchy, setSearch] = useState<string>('');
+    const [results, setResults] = useState<string>('');
 
     function handleChange(event: ChangeEvent<HTMLInputElement>) {
         setSearch(event.target.value);
+    }
+
+    function submitSearch() {
+        console.log(searchy);
+        try {
+            axios({
+                method: "get",
+                url: "http://localhost:4000/search?text=" + searchy,
+                // headers: {"Content-Type": "multipart/form-data"},
+            }).then(e => {
+                // setResults(e);
+                setResults(JSON.stringify(e.data.body.hits.hits))
+                // console.log(e.data.body.hits.hits);
+            });
+        } catch (e) {
+            console.log(e);
+        }
     }
 
     return (
@@ -44,12 +64,14 @@ const DetailedSearch: NextPage = () => {
                             label="With normal TextField"
                             InputProps={{
                                 endAdornment: (
-                                    <IconButton>
+                                    <IconButton onClick={submitSearch}>
                                         <SearchIcon />
                                     </IconButton>
                                 ),
                             }}
                         />
+                        {/*<DetailedSearchResults {...results}/>*/}
+                        <DetailedSearchResults results={results}/>
                     </Box>
                 </Box>
             </main>
