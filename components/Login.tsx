@@ -1,4 +1,4 @@
-import { Dispatch, FunctionComponent, SetStateAction } from 'react';
+import { Dispatch, FunctionComponent, SetStateAction, useContext } from 'react';
 import {
     Dialog,
     DialogContent,
@@ -10,8 +10,10 @@ import TextField from '@mui/material/TextField';
 import Button from '@mui/material/Button';
 import { Divider } from '@mui/material';
 import styles from '../styles/Auth.module.scss';
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { AUTHlogin } from '../pages/api/auth';
+import userContext from '../utils/store';
+import { setRequestMeta } from 'next/dist/server/request-meta';
 
 interface LoginRegisterProps {
     register: RegisterProps;
@@ -28,8 +30,26 @@ interface LoginProps {
 }
 
 const Login: FunctionComponent<DialogProps & LoginRegisterProps> = (props) => {
-    const [email, setEmail] = useState<string>("");
-    const [password, setPassword] = useState<string>("");
+    const [email, setEmail] = useState<string>('');
+    const [password, setPassword] = useState<string>('');
+    const [user, setUser] = useState<any>(null);
+    const userContextValue = useContext(userContext);
+
+    useEffect(() => {
+        setUser(userContextValue.user);
+    }, []);
+
+    const login = () => {
+        console.log('here');
+        AUTHlogin(email, password)
+            .then((cUser) => {
+                userContextValue.setUser(cUser);
+                setUser(cUser);
+            })
+            .then(() => {
+                props.login.setLoginIsOpen(false);
+            });
+    };
 
     return (
         <Dialog
@@ -122,7 +142,7 @@ const Login: FunctionComponent<DialogProps & LoginRegisterProps> = (props) => {
                                 bgcolor: 'secondary.dark',
                             },
                         }}
-                        onClick={() => { AUTHlogin(email, password) }}
+                        onClick={login}
                     >
                         Login
                     </Button>

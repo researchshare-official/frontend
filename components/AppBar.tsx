@@ -11,9 +11,17 @@ import Divider from '@mui/material/Divider';
 import { NextPage } from 'next';
 import Login from './Login';
 import Button from '@mui/material/Button';
-import { Typography } from '@mui/material';
-import { useState } from 'react';
+import { buttonGroupClasses, Typography } from '@mui/material';
+import {
+    useState,
+    useEffect,
+    useContext,
+    FunctionComponent,
+    useRef,
+} from 'react';
 import Register from './Register';
+import userContext from '../utils/store';
+import { AUTHlogout } from '../pages/api/auth';
 
 const Search = styled('div')(({ theme }) => ({
     position: 'relative',
@@ -59,10 +67,11 @@ const StyledInputBase = styled(InputBase)(({ theme }) => ({
     },
 }));
 
-const AppBar: NextPage = (props) => {
+const AppBar: FunctionComponent = (props) => {
     const router = useRouter();
     const [loginIsOpen, setLoginIsOpen] = useState<boolean>(false);
     const [registerIsOpen, setRegisterIsOpen] = useState<boolean>(false);
+    const { user, setUser } = useContext(userContext);
 
     return (
         <MUIAppBar position="static" sx={{ width: '100vw' }} {...props}>
@@ -95,23 +104,46 @@ const AppBar: NextPage = (props) => {
 
                 <Box sx={{ flexGrow: 1 }} />
 
-                <Button
-                    onClick={() => setLoginIsOpen(true)}
-                    variant="contained"
-                    sx={{
-                        width: '8rem',
-                        color: 'primary.main',
-                        bgcolor: 'secondary.main',
-                        '&:hover': {
+                {user !== undefined && user !== null ? (
+                    <Button
+                        onClick={() => {
+                            AUTHlogout();
+                            setUser(null);
+                        }}
+                        variant="contained"
+                        sx={{
+                            width: '8rem',
                             color: 'primary.main',
-                            bgcolor: 'secondary.dark',
-                        },
-                    }}
-                >
-                    <Typography sx={{ textTransform: 'capitalize' }}>
-                        Login
-                    </Typography>
-                </Button>
+                            bgcolor: 'secondary.main',
+                            '&:hover': {
+                                color: 'primary.main',
+                                bgcolor: 'secondary.dark',
+                            },
+                        }}
+                    >
+                        <Typography sx={{ textTransform: 'capitalize' }}>
+                            Logout
+                        </Typography>
+                    </Button>
+                ) : (
+                    <Button
+                        onClick={() => setLoginIsOpen(true)}
+                        variant="contained"
+                        sx={{
+                            width: '8rem',
+                            color: 'primary.main',
+                            bgcolor: 'secondary.main',
+                            '&:hover': {
+                                color: 'primary.main',
+                                bgcolor: 'secondary.dark',
+                            },
+                        }}
+                    >
+                        <Typography sx={{ textTransform: 'capitalize' }}>
+                            Login
+                        </Typography>
+                    </Button>
+                )}
             </Toolbar>
             <Login
                 open={loginIsOpen}
