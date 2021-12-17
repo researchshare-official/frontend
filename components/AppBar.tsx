@@ -5,17 +5,20 @@ import Box from '@mui/material/Box';
 import { useRouter } from 'next/router';
 import Toolbar from '@mui/material/Toolbar';
 import IconButton from '@mui/material/IconButton';
+import InfoIcon from '@mui/icons-material/Info';
+import NoteAddIcon from '@mui/icons-material/NoteAdd';
 import SearchIcon from '@mui/icons-material/Search';
 import AccountCircleIcon from '@mui/icons-material/AccountCircle';
 import InputBase from '@mui/material/InputBase';
 import Divider from '@mui/material/Divider';
 import Login from './Login';
 import Button from '@mui/material/Button';
-import { buttonGroupClasses, Typography } from '@mui/material';
+import { buttonGroupClasses, Icon, Typography } from '@mui/material';
 import { useState, useContext, FunctionComponent } from 'react';
 import Register from './Register';
 import userContext from '../utils/store';
 import { AUTHlogout } from '../pages/api/auth';
+import { ManageSearch } from '@mui/icons-material';
 
 const Search = styled('div')(({ theme }) => ({
     position: 'relative',
@@ -97,61 +100,6 @@ const AppBar: FunctionComponent = (props) => {
                 </Search>
 
                 <Box sx={{ flexGrow: 1 }} />
-                <Button
-                    onClick={() => router.push('/about')}
-                    variant="contained"
-                    sx={{
-                        width: '8rem',
-                        color: 'primary.main',
-                        marginRight: '1rem',
-                        bgcolor: 'secondary.main',
-                        '&:hover': {
-                            color: 'primary.main',
-                            bgcolor: 'secondary.dark',
-                        },
-                    }}
-                >
-                    <Typography sx={{ textTransform: 'capitalize' }}>
-                        About
-                    </Typography>
-                </Button>
-                <Button
-                    onClick={() => router.push('/submit-paper')}
-                    variant="contained"
-                    sx={{
-                        width: '8rem',
-                        color: 'primary.main',
-                        marginRight: '1rem',
-                        bgcolor: 'secondary.main',
-                        '&:hover': {
-                            color: 'primary.main',
-                            bgcolor: 'secondary.dark',
-                        },
-                    }}
-                >
-                    <Typography sx={{ textTransform: 'capitalize' }}>
-                        New Paper
-                    </Typography>
-                </Button>
-
-                <Button
-                    onClick={() => router.push('/profile')}
-                    variant="contained"
-                    sx={{
-                        width: '8rem',
-                        color: 'primary.main',
-                        marginRight: '1rem',
-                        bgcolor: 'secondary.main',
-                        '&:hover': {
-                            color: 'primary.main',
-                            bgcolor: 'secondary.dark',
-                        },
-                    }}
-                >
-                    <Typography sx={{ textTransform: 'capitalize' }}>
-                        Profile
-                    </Typography>
-                </Button>
 
                 {user !== undefined && user !== null ? (
                     <>
@@ -176,28 +124,51 @@ const AppBar: FunctionComponent = (props) => {
                                 Logout
                             </Typography>
                         </Button>
-                        <IconButton onClick={() => router.push('profile')}>
+                        <IconButton onClick={() => router.push('/profile')}>
                             <AccountCircleIcon />
+                        </IconButton>
+                        <IconButton
+                            onClick={() => router.push('/submit-paper')}
+                        >
+                            <NoteAddIcon />
+                        </IconButton>
+                        <IconButton onClick={() => router.push('/about')}>
+                            <InfoIcon />
+                        </IconButton>
+                        <IconButton
+                            onClick={() => router.push('/detailed-search')}
+                        >
+                            <ManageSearch />
                         </IconButton>
                     </>
                 ) : (
-                    <Button
-                        onClick={() => setLoginIsOpen(true)}
-                        variant="contained"
-                        sx={{
-                            width: '8rem',
-                            color: 'primary.main',
-                            bgcolor: 'secondary.main',
-                            '&:hover': {
+                    <>
+                        <Button
+                            onClick={() => setLoginIsOpen(true)}
+                            variant="contained"
+                            sx={{
+                                width: '8rem',
                                 color: 'primary.main',
-                                bgcolor: 'secondary.dark',
-                            },
-                        }}
-                    >
-                        <Typography sx={{ textTransform: 'capitalize' }}>
-                            Login
-                        </Typography>
-                    </Button>
+                                bgcolor: 'secondary.main',
+                                '&:hover': {
+                                    color: 'primary.main',
+                                    bgcolor: 'secondary.dark',
+                                },
+                            }}
+                        >
+                            <Typography sx={{ textTransform: 'capitalize' }}>
+                                Login
+                            </Typography>
+                        </Button>
+                        <IconButton onClick={() => router.push('/about')}>
+                            <InfoIcon />
+                        </IconButton>
+                        <IconButton
+                            onClick={() => router.push('/detailed-search')}
+                        >
+                            <ManageSearch />
+                        </IconButton>
+                    </>
                 )}
             </Toolbar>
             <Login
