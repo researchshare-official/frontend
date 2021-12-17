@@ -2,6 +2,7 @@ import Image from 'next/image';
 import { NextPage } from 'next';
 import { ArrowUpward, Comment } from '@mui/icons-material';
 import { Typography, Divider, IconButton, Button, Box } from '@mui/material';
+import { NextRouter, useRouter } from 'next/router';
 
 type ArticlePreviewProps = {
     id: number;
@@ -16,7 +17,7 @@ type ArticlePreviewProps = {
     comments: number;
 };
 
-const getText = (text: string) => {
+const getText = (text: string, router: NextRouter) => {
     const length = 400;
     if (text.length > length) {
         const subText = text.substring(0, length) + '...';
@@ -30,7 +31,11 @@ const getText = (text: string) => {
                     }}
                 >
                     {subText}
-                    <Button size="small" variant="text">
+                    <Button
+                        size="small"
+                        variant="text"
+                        onClick={() => router.push('/see-article')}
+                    >
                         <Typography
                             sx={{
                                 color: 'secondary.main',
@@ -110,6 +115,7 @@ const getDateOrSponsored = (date: string, sponsored: boolean) => {
 };
 
 const ArticlePreview: NextPage<ArticlePreviewProps> = (props) => {
+    const router = useRouter();
     return (
         <Box>
             <Box sx={{ display: 'flex' }}>
@@ -160,7 +166,7 @@ const ArticlePreview: NextPage<ArticlePreviewProps> = (props) => {
                         {getDateOrSponsored(props.date, props.sponsored)}
                     </Box>
                     {getAuthors(props.authors)}
-                    {getText(props.text)}
+                    {getText(props.text, router)}
                     <Box sx={{ display: 'flex', justifyContent: 'end' }}>
                         <Box sx={{ display: 'flex', alignItems: 'center' }}>
                             {props.likes}
