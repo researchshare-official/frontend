@@ -6,19 +6,13 @@ import { useRouter } from 'next/router';
 import Toolbar from '@mui/material/Toolbar';
 import IconButton from '@mui/material/IconButton';
 import SearchIcon from '@mui/icons-material/Search';
+import AccountCircleIcon from '@mui/icons-material/AccountCircle';
 import InputBase from '@mui/material/InputBase';
 import Divider from '@mui/material/Divider';
-import { NextPage } from 'next';
 import Login from './Login';
 import Button from '@mui/material/Button';
 import { buttonGroupClasses, Typography } from '@mui/material';
-import {
-    useState,
-    useEffect,
-    useContext,
-    FunctionComponent,
-    useRef,
-} from 'react';
+import { useState, useContext, FunctionComponent } from 'react';
 import Register from './Register';
 import userContext from '../utils/store';
 import { AUTHlogout } from '../pages/api/auth';
@@ -105,26 +99,32 @@ const AppBar: FunctionComponent = (props) => {
                 <Box sx={{ flexGrow: 1 }} />
 
                 {user !== undefined && user !== null ? (
-                    <Button
-                        onClick={() => {
-                            AUTHlogout();
-                            setUser(null);
-                        }}
-                        variant="contained"
-                        sx={{
-                            width: '8rem',
-                            color: 'primary.main',
-                            bgcolor: 'secondary.main',
-                            '&:hover': {
+                    <>
+                        <Button
+                            onClick={() => {
+                                AUTHlogout();
+                                setUser(null);
+                                router.push('/');
+                            }}
+                            variant="contained"
+                            sx={{
+                                width: '8rem',
                                 color: 'primary.main',
-                                bgcolor: 'secondary.dark',
-                            },
-                        }}
-                    >
-                        <Typography sx={{ textTransform: 'capitalize' }}>
-                            Logout
-                        </Typography>
-                    </Button>
+                                bgcolor: 'secondary.main',
+                                '&:hover': {
+                                    color: 'primary.main',
+                                    bgcolor: 'secondary.dark',
+                                },
+                            }}
+                        >
+                            <Typography sx={{ textTransform: 'capitalize' }}>
+                                Logout
+                            </Typography>
+                        </Button>
+                        <IconButton onClick={() => router.push('profile')}>
+                            <AccountCircleIcon />
+                        </IconButton>
+                    </>
                 ) : (
                     <Button
                         onClick={() => setLoginIsOpen(true)}
