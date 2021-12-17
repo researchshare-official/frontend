@@ -11,13 +11,30 @@ import Button from '@mui/material/Button';
 import { Divider, Select, MenuItem } from '@mui/material';
 import styles from '../styles/Auth.module.scss';
 import { Tabs, Tab } from '@mui/material/';
-import { useState, SyntheticEvent, FunctionComponent } from 'react';
+import {
+    useState,
+    SyntheticEvent,
+    FunctionComponent,
+    Dispatch,
+    SetStateAction,
+    useContext,
+} from 'react';
 import { AUTHregister } from '../pages/api/auth';
+import userContext from '../utils/store';
 
 interface TabPanelProps {
     children?: React.ReactNode;
     index: number;
     value: number;
+}
+
+interface RegisterDialogProps {
+    register: RegisterProps;
+}
+
+interface RegisterProps {
+    registerIsOpen: boolean;
+    setRegisterIsOpen: Dispatch<SetStateAction<boolean>>;
 }
 
 function TabPanel(props: TabPanelProps) {
@@ -47,16 +64,19 @@ function a11yProps(index: number) {
     };
 }
 
-const Register: FunctionComponent<DialogProps> = (props) => {
+const Register: FunctionComponent<DialogProps & RegisterDialogProps> = (
+    props
+) => {
     const [value, setValue] = useState<number>(0);
     const [age, setAge] = useState<string>('');
     const [number, setValueNumber] = useState<number>(0);
-    const [firstname, setFirstname] = useState<string>("");
-    const [lastname, setLastname] = useState<string>("");
-    const [name, setName] = useState<string>("");
-    const [email, setEmail] = useState<string>("");
-    const [password, setPassword] = useState<string>("");
-    const [confirmedPassword, setConfirmedPassword] = useState<string>("");
+    const [firstname, setFirstname] = useState<string>('');
+    const [lastname, setLastname] = useState<string>('');
+    const [name, setName] = useState<string>('');
+    const [email, setEmail] = useState<string>('');
+    const [password, setPassword] = useState<string>('');
+    const [confirmedPassword, setConfirmedPassword] = useState<string>('');
+    const userContextValue = useContext(userContext);
 
     const handleChangeSelect = (event: SelectChangeEvent) => {
         setAge(event.target.value);
@@ -67,6 +87,24 @@ const Register: FunctionComponent<DialogProps> = (props) => {
     const handleChangeNumber = (event: SyntheticEvent, newValue: number) => {
         setValueNumber(newValue);
     };
+
+    const register = () => {
+        AUTHregister(
+            name,
+            email,
+            password,
+            confirmedPassword,
+            firstname,
+            lastname
+        )
+            .then((cUser) => {
+                userContextValue.setUser(cUser);
+            })
+            .then(() => {
+                props.register.setRegisterIsOpen(false);
+            });
+    };
+
     return (
         <Dialog
             BackdropProps={{
@@ -311,7 +349,7 @@ const Register: FunctionComponent<DialogProps> = (props) => {
                                     bgcolor: 'secondary.dark',
                                 },
                             }}
-                            onClick={() => {AUTHregister(name, email, password, confirmedPassword, firstname, lastname)}}
+                            onClick={register}
                         >
                             Register
                         </Button>

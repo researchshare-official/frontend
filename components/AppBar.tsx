@@ -5,15 +5,20 @@ import Box from '@mui/material/Box';
 import { useRouter } from 'next/router';
 import Toolbar from '@mui/material/Toolbar';
 import IconButton from '@mui/material/IconButton';
+import InfoIcon from '@mui/icons-material/Info';
+import NoteAddIcon from '@mui/icons-material/NoteAdd';
 import SearchIcon from '@mui/icons-material/Search';
+import AccountCircleIcon from '@mui/icons-material/AccountCircle';
 import InputBase from '@mui/material/InputBase';
 import Divider from '@mui/material/Divider';
-import { NextPage } from 'next';
 import Login from './Login';
 import Button from '@mui/material/Button';
-import { Typography } from '@mui/material';
-import { useState } from 'react';
+import { buttonGroupClasses, Icon, Typography } from '@mui/material';
+import { useState, useContext, FunctionComponent } from 'react';
 import Register from './Register';
+import userContext from '../utils/store';
+import { AUTHlogout } from '../pages/api/auth';
+import { ManageSearch } from '@mui/icons-material';
 
 const Search = styled('div')(({ theme }) => ({
     position: 'relative',
@@ -59,10 +64,11 @@ const StyledInputBase = styled(InputBase)(({ theme }) => ({
     },
 }));
 
-const AppBar: NextPage = (props) => {
+const AppBar: FunctionComponent = (props) => {
     const router = useRouter();
     const [loginIsOpen, setLoginIsOpen] = useState<boolean>(false);
     const [registerIsOpen, setRegisterIsOpen] = useState<boolean>(false);
+    const { user, setUser } = useContext(userContext);
 
     return (
         <MUIAppBar position="static" sx={{ width: '100vw' }} {...props}>
@@ -94,79 +100,76 @@ const AppBar: NextPage = (props) => {
                 </Search>
 
                 <Box sx={{ flexGrow: 1 }} />
-                <Button
-                    onClick={() => router.push('/about')}
-                    variant="contained"
-                    sx={{
-                        width: '8rem',
-                        color: 'primary.main',
-                        marginRight: '1rem',
-                        bgcolor: 'secondary.main',
-                        '&:hover': {
-                            color: 'primary.main',
-                            bgcolor: 'secondary.dark',
-                        },
-                    }}
-                >
-                    <Typography sx={{ textTransform: 'capitalize' }}>
-                        About
-                    </Typography>
-                </Button>
-                <Button
-                    onClick={() => router.push('/submit-paper')}
-                    variant="contained"
-                    sx={{
-                        width: '8rem',
-                        color: 'primary.main',
-                        marginRight: '1rem',
-                        bgcolor: 'secondary.main',
-                        '&:hover': {
-                            color: 'primary.main',
-                            bgcolor: 'secondary.dark',
-                        },
-                    }}
-                >
-                    <Typography sx={{ textTransform: 'capitalize' }}>
-                        New Paper
-                    </Typography>
-                </Button>
 
-                <Button
-                    onClick={() => router.push('/profile')}
-                    variant="contained"
-                    sx={{
-                        width: '8rem',
-                        color: 'primary.main',
-                        marginRight: '1rem',
-                        bgcolor: 'secondary.main',
-                        '&:hover': {
-                            color: 'primary.main',
-                            bgcolor: 'secondary.dark',
-                        },
-                    }}
-                >
-                    <Typography sx={{ textTransform: 'capitalize' }}>
-                        Profile
-                    </Typography>
-                </Button>
-
-                <Button
-                    onClick={() => setLoginIsOpen(true)}
-                    variant="contained"
-                    sx={{
-                        width: '8rem',
-                        color: 'primary.main',
-                        bgcolor: 'secondary.main',
-                        '&:hover': {
-                            color: 'primary.main',
-                            bgcolor: 'secondary.dark',
-                        },
-                    }}
-                >
-                    <Typography sx={{ textTransform: 'capitalize' }}>
-                        Login
-                    </Typography>
-                </Button>
+                {user !== undefined && user !== null ? (
+                    <>
+                        <Button
+                            onClick={() => {
+                                AUTHlogout();
+                                setUser(null);
+                                router.push('/');
+                            }}
+                            variant="contained"
+                            sx={{
+                                width: '8rem',
+                                color: 'primary.main',
+                                bgcolor: 'secondary.main',
+                                '&:hover': {
+                                    color: 'primary.main',
+                                    bgcolor: 'secondary.dark',
+                                },
+                            }}
+                        >
+                            <Typography sx={{ textTransform: 'capitalize' }}>
+                                Logout
+                            </Typography>
+                        </Button>
+                        <IconButton onClick={() => router.push('/profile')}>
+                            <AccountCircleIcon />
+                        </IconButton>
+                        <IconButton
+                            onClick={() => router.push('/submit-paper')}
+                        >
+                            <NoteAddIcon />
+                        </IconButton>
+                        <IconButton onClick={() => router.push('/about')}>
+                            <InfoIcon />
+                        </IconButton>
+                        <IconButton
+                            onClick={() => router.push('/detailed-search')}
+                        >
+                            <ManageSearch />
+                        </IconButton>
+                    </>
+                ) : (
+                    <>
+                        <Button
+                            onClick={() => setLoginIsOpen(true)}
+                            variant="contained"
+                            sx={{
+                                width: '8rem',
+                                color: 'primary.main',
+                                bgcolor: 'secondary.main',
+                                '&:hover': {
+                                    color: 'primary.main',
+                                    bgcolor: 'secondary.dark',
+                                },
+                            }}
+                        >
+                            <Typography sx={{ textTransform: 'capitalize' }}>
+                                Login
+                            </Typography>
+                        </Button>
+                        <IconButton onClick={() => router.push('/about')}>
+                            <InfoIcon />
+                        </IconButton>
+                        <IconButton
+                            onClick={() => router.push('/detailed-search')}
+                        >
+                            <ManageSearch />
+                        </IconButton>
+                    </>
+                )}
             </Toolbar>
             <Login
                 open={loginIsOpen}
@@ -176,6 +179,7 @@ const AppBar: NextPage = (props) => {
             />
             <Register
                 open={registerIsOpen}
+                register={{ registerIsOpen, setRegisterIsOpen }}
                 onClose={() => setRegisterIsOpen(false)}
             />
         </MUIAppBar>
