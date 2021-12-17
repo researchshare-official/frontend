@@ -32,19 +32,12 @@ interface LoginProps {
 const Login: FunctionComponent<DialogProps & LoginRegisterProps> = (props) => {
     const [email, setEmail] = useState<string>('');
     const [password, setPassword] = useState<string>('');
-    const [user, setUser] = useState<any>(null);
     const userContextValue = useContext(userContext);
 
-    useEffect(() => {
-        setUser(userContextValue.user);
-    }, []);
-
     const login = () => {
-        console.log('here');
         AUTHlogin(email, password)
             .then((cUser) => {
                 userContextValue.setUser(cUser);
-                setUser(cUser);
             })
             .then(() => {
                 props.login.setLoginIsOpen(false);

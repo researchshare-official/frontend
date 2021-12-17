@@ -153,6 +153,7 @@ const AppBar: FunctionComponent = (props) => {
             />
             <Register
                 open={registerIsOpen}
+                register={{ registerIsOpen, setRegisterIsOpen }}
                 onClose={() => setRegisterIsOpen(false)}
             />
         </MUIAppBar>
