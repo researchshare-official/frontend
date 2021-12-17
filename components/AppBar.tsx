@@ -94,6 +94,61 @@ const AppBar: NextPage = (props) => {
                 </Search>
 
                 <Box sx={{ flexGrow: 1 }} />
+                <Button
+                    onClick={() => router.push('/about')}
+                    variant="contained"
+                    sx={{
+                        width: '8rem',
+                        color: 'primary.main',
+                        marginRight: '1rem',
+                        bgcolor: 'secondary.main',
+                        '&:hover': {
+                            color: 'primary.main',
+                            bgcolor: 'secondary.dark',
+                        },
+                    }}
+                >
+                    <Typography sx={{ textTransform: 'capitalize' }}>
+                        About
+                    </Typography>
+                </Button>
+                <Button
+                    onClick={() => router.push('/submit-paper')}
+                    variant="contained"
+                    sx={{
+                        width: '8rem',
+                        color: 'primary.main',
+                        marginRight: '1rem',
+                        bgcolor: 'secondary.main',
+                        '&:hover': {
+                            color: 'primary.main',
+                            bgcolor: 'secondary.dark',
+                        },
+                    }}
+                >
+                    <Typography sx={{ textTransform: 'capitalize' }}>
+                        New Paper
+                    </Typography>
+                </Button>
+
+                <Button
+                    onClick={() => router.push('/profile')}
+                    variant="contained"
+                    sx={{
+                        width: '8rem',
+                        color: 'primary.main',
+                        marginRight: '1rem',
+                        bgcolor: 'secondary.main',
+                        '&:hover': {
+                            color: 'primary.main',
+                            bgcolor: 'secondary.dark',
+                        },
+                    }}
+                >
+                    <Typography sx={{ textTransform: 'capitalize' }}>
+                        Profile
+                    </Typography>
+                </Button>
 
                 <Button
                     onClick={() => setLoginIsOpen(true)}
