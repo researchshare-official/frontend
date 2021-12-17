@@ -1,6 +1,6 @@
 import Image from 'next/image';
 import { NextPage } from 'next';
-import { ArrowUpward, Comment } from '@mui/icons-material';
+import { ArrowUpward, Comment, ExpandCircleDown } from '@mui/icons-material';
 import { Typography, Divider, IconButton, Button, Box } from '@mui/material';
 
 type ArticlePreviewProps = {
@@ -165,7 +165,12 @@ const ArticlePreview: NextPage<ArticlePreviewProps> = (props) => {
                         <Box sx={{ display: 'flex', alignItems: 'center' }}>
                             {props.likes}
                             <IconButton>
-                                <ArrowUpward sx={{ marginLeft: 0.5 }} />
+                                <ExpandCircleDown
+                                    sx={{
+                                        marginLeft: 0.5,
+                                        transform: 'scaleY(-1)',
+                                    }}
+                                />
                             </IconButton>
                         </Box>
                         <Box
