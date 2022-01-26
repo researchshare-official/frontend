@@ -5,24 +5,30 @@ import AppBar from '../components/AppBar';
 import SideBar from '../components/DetailedSearch/SideBar';
 import SearchIcon from '@mui/icons-material/Search';
 import styles from '../styles/Home.module.css';
-import { ChangeEvent, useState } from 'react';
+import {ChangeEvent, useEffect, useState} from 'react';
 import axios from "axios";
 import DetailedSearchResults from '../components/DetailedSearch/detailed-search-results'
+import { useRouter } from 'next/router';
 
 const DetailedSearch: NextPage = () => {
-    const [searchy, setSearch] = useState<string>('');
+    const { query } = useRouter();
+    const [search, setSearch] = useState<string>('');
     const [results, setResults] = useState<string>('');
+
+    useEffect(() => {
+        setSearch(query.search as string | undefined ?? '')
+    }, [query.search]);
 
     function handleChange(event: ChangeEvent<HTMLInputElement>) {
         setSearch(event.target.value);
     }
 
     function submitSearch() {
-        console.log(searchy);
+        console.log(search);
         try {
             axios({
                 method: "get",
-                url: "http://localhost:4000/search?text=" + searchy,
+                url: "http://localhost:4000/search?text=" + search,
                 // headers: {"Content-Type": "multipart/form-data"},
             }).then(e => {
                 // setResults(e);
@@ -39,7 +45,7 @@ const DetailedSearch: NextPage = () => {
             <Head>
                 <title>ResearchShare</title>
                 <meta name="description" content="..." />
-                <link rel="icon" href="/favicon.ico" />
+                <link rel="shortcut icon" href="/favicon.ico" />
             </Head>
 
             <main className={styles.main_unflex}>
