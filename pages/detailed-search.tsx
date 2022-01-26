@@ -32,6 +32,16 @@ const DetailedSearch: NextPage = () => {
         } catch (e) {
             console.log(e);
         }
+        try {
+            axios({
+                method: "get",
+                url: "http://localhost:4000/get_relations",
+            }).then(e => {
+                console.log(e);
+            });
+        } catch (e) {
+            console.log(e);
+        }
     }
 
     return (

@@ -70,12 +70,13 @@ const GetWork: NextPage = (props) => {
             } catch (e) {
                 console.log(e);
             }
+            let data = {
+                category: 'Nature', title : projectName, author : 'Jean-Michel'
+            }
             try {
                 axios({
                     method: "post",
-                    url: "http://localhost:4000/create_nodes",
-                    body: JSON.stringify({category: 'Nature', title : 'projectName', author : 'Jean-Michel'}),
-                    headers: {"Content-Type": "multipart/form-data"},
+                    url: `http://localhost:4000/create_nodes?category=${data.category}&title=${data.title}&author=${data.author}`,
                 });
             } catch (e) {
                 console.log(e);
