@@ -25,9 +25,13 @@ const DetailedSearch: NextPage = () => {
                 url: "http://localhost:4000/search?text=" + searchy,
                 // headers: {"Content-Type": "multipart/form-data"},
             }).then(e => {
+                if (e.data.body) {
+                    const rslt = JSON.stringify(e.data.body.hits.hits)
+                    if (rslt) {
+                        setResults(rslt)
+                    }
+                }
                 // setResults(e);
-                setResults(JSON.stringify(e.data.body.hits.hits))
-                // console.log(e.data.body.hits.hits);
             });
         } catch (e) {
             console.log(e);
