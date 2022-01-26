@@ -1,7 +1,6 @@
-import { NextPage } from 'next';
 import { Box, Typography, Avatar, Button, IconButton } from '@mui/material/';
 import { ArrowCircleUp, ArrowUpward, Comment } from '@mui/icons-material/';
-import { default as article } from '../jsonFiles/article.json';
+import { default as article } from '../mocking/article.json';
 import { useState, FunctionComponent } from 'react';
 
 interface CommentaryProps {
@@ -11,7 +10,7 @@ interface CommentaryProps {
 
 const Commentary: FunctionComponent<CommentaryProps> = (props) => {
     const [like, setLike] = useState<number>(props.likes);
-    const [alreadyLiked, setAlreadyLiked] = useState<boolean>(props.liked);
+    const [, setAlreadyLiked] = useState<boolean>(props.liked);
 
     const addLike = () => setLike(like + 1);
     const subLike = () => setLike(like - 1);
@@ -23,7 +22,7 @@ const Commentary: FunctionComponent<CommentaryProps> = (props) => {
             <IconButton
                 color="secondary"
                 onClick={() => {
-                    if (props.liked == true) {
+                    if (props.liked) {
                         subLike();
                         unliked();
                         alert('unliked');
@@ -150,7 +149,7 @@ const Commentaries = () => {
                     <Typography variant="body2" sx={{color:'secondary.main', marginRight:'0.5rem'}}>{article.Comments}</Typography>
                     <Comment />
                 </IconButton> */}
-                <Commentary likes={1} liked={false}></Commentary>
+                <Commentary likes={1} liked={false}/>
                 <Button
                     variant="contained"
                     sx={{

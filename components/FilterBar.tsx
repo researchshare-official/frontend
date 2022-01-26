@@ -8,7 +8,7 @@ import FormControlLabel from '@mui/material/FormControlLabel';
 import Checkbox from '@mui/material/Checkbox';
 import { Box } from '@mui/system';
 import { Typography } from '@mui/material';
-import { default as filters } from '../jsonFiles/filterCategory.json';
+import { default as filters } from '../mocking/filter_category.json';
 
 const Search = styled('div')(({ theme }) => ({
     position: 'relative',

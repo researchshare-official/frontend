@@ -1,6 +1,6 @@
 import { NextPage } from 'next';
 import { Box, Typography } from '@mui/material/';
-import { default as article } from '../jsonFiles/article.json';
+import { default as article } from '../mocking/article.json';
 // import {default as Authors, default as Dates, default as Tags, default as OtherArticles, default as ArticleReviewed} from '../jsonFiles/article.json';
 
 const InformationBar: NextPage = () => {
@@ -27,7 +27,7 @@ const InformationBar: NextPage = () => {
                             backgroundColor: 'secondary.main',
                             display: 'flex',
                         }}
-                    ></Box>
+                    />
                     <Box
                         sx={{
                             alignItems: 'center',
