@@ -84,7 +84,7 @@ const DetailedSearchResults: React.FC<DetailedSearchResultsProps> = ({results}) 
                                 title={tosearch._source.fileName}
                             />
                             <CardContent>
-                                <Typography letiant="body2" color="text.secondary">
+                                <Typography variant="body2" color="text.secondary">
                                     {tosearch._source.attachment.content.substring(0, 500) + ' ...'}
                                 </Typography>
                             </CardContent>
