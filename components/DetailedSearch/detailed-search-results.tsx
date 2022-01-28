@@ -1,4 +1,4 @@
-import {Box, TextField, IconButton, Button} from '@mui/material';
+import {Box, Button} from '@mui/material';
 import styles from '../../styles/DetailedSearchResults.module.css';
 import * as React from 'react';
 import Card from '@mui/material/Card';
@@ -43,8 +43,8 @@ const DetailedSearchResults: React.FC<DetailedSearchResultsProps> = ({results}) 
             return;
         setResultsy(JSON.parse(results))
     } ,[results])
-    console.log("yolo");
-    console.log(resultsy);
+    // console.log("yolo");
+    // console.log(resultsy);
     if (!resultsy) {
         return (
             <main className={styles.detailedAllComponents}>

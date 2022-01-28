@@ -13,8 +13,8 @@ import InputBase from '@mui/material/InputBase';
 import Divider from '@mui/material/Divider';
 import Login from './Login';
 import Button from '@mui/material/Button';
-import { buttonGroupClasses, Icon, Typography } from '@mui/material';
-import { useState, useContext, FunctionComponent } from 'react';
+import { Typography } from '@mui/material';
+import {useState, useContext, FunctionComponent, useEffect} from 'react';
 import Register from './Register';
 import userContext from '../utils/store';
 import { AUTHlogout } from '../pages/api/auth';
@@ -66,9 +66,15 @@ const StyledInputBase = styled(InputBase)(({ theme }) => ({
 
 const AppBar: FunctionComponent = (props) => {
     const router = useRouter();
+    const { query } = router;
     const [loginIsOpen, setLoginIsOpen] = useState<boolean>(false);
     const [registerIsOpen, setRegisterIsOpen] = useState<boolean>(false);
+    const [search, setSearch] = useState<string>('');
     const { user, setUser } = useContext(userContext);
+
+    useEffect(() => {
+        setSearch(query.search as string | undefined ?? '')
+    }, [query.search]);
 
     return (
         <MUIAppBar position="static" sx={{ width: '100vw' }} {...props}>
@@ -94,7 +100,18 @@ const AppBar: FunctionComponent = (props) => {
                         <SearchIcon />
                     </SearchIconWrapper>
                     <StyledInputBase
+                        onKeyPress={async (ev) => {
+                            if (ev.key === 'Enter') {
+                                await router.push({
+                                    pathname: '/detailed-search',
+                                    query: { search }
+                                });
+                                ev.preventDefault();
+                            }
+                        }}
+                        onChange={(e) => setSearch(e.target.value)}
                         placeholder="Search…"
+                        value={search}
                         inputProps={{ 'aria-label': 'search' }}
                     />
                 </Search>
