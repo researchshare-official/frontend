@@ -7,6 +7,7 @@ import CardContent from '@mui/material/CardContent';
 import CardActions from '@mui/material/CardActions';
 import Typography from '@mui/material/Typography';
 import {useEffect, useState} from "react";
+import axios from "axios";
 
 interface DetailedSearchResultsProps {
     results: string
@@ -54,6 +55,25 @@ const DetailedSearchResults: React.FC<DetailedSearchResultsProps> = ({results}) 
             </main>
         )
     }
+
+    function getArticleFromName(articleName : string) {
+        axios({
+            method: "get",
+            url: "http://localhost:4000/rawArticle?articleName=" + articleName,
+        }).then(response => {
+            const byteCharacters = atob(response.data);
+            const byteNumbers = new Array(byteCharacters.length);
+            for (let i = 0; i < byteCharacters.length; i++) {
+                byteNumbers[i] = byteCharacters.charCodeAt(i);
+            }
+            const byteArray = new Uint8Array(byteNumbers);
+            const file = new Blob([byteArray], { type: 'application/pdf;base64' });
+            const fileURL = URL.createObjectURL(file);
+            window.open(fileURL);
+        });
+        return false
+    }
+
     return (
         <main className={styles.detailedAllComponents}>
             {
@@ -65,12 +85,26 @@ const DetailedSearchResults: React.FC<DetailedSearchResultsProps> = ({results}) 
                             />
                             <CardContent>
                                 <Typography variant="body2" color="text.secondary">
-                                    {tosearch._source.attachment.content}
+                                    {tosearch._source.attachment.content.substring(0, 500) + ' ...'}
                                 </Typography>
                             </CardContent>
                             <CardActions disableSpacing>
-                                <Button variant="contained">
-                                    Learn More
+                                <Button
+                                    onClick={() => {getArticleFromName(tosearch._source.fileName)}}
+                                    variant="contained"
+                                    sx={{
+                                        width: '8rem',
+                                        color: 'primary.main',
+                                        bgcolor: 'secondary.main',
+                                        '&:hover': {
+                                            color: 'primary.main',
+                                            bgcolor: 'secondary.dark',
+                                        },
+                                    }}
+                                >
+                                    <Typography sx={{ textTransform: 'capitalize' }}>
+                                        Learn More
+                                    </Typography>
                                 </Button>
                             </CardActions>
                         </Card>
