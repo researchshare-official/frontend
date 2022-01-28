@@ -20,23 +20,23 @@ const cards = [
         component: NewspaperIcon,
         name: 'Publication',
         content:
-            'Partagez vos articles, choisissez comment vous voulez les partager.',
+            'Share your articles, choose how you share them',
     },
     {
         component: GroupsIcon,
-        name: 'Mise en relation',
-        content: 'Interactivité entre les acteurs du monde de la recherche.',
+        name: 'Relations',
+        content: 'Interactivity between the actors of the research world.',
     },
     {
         component: ReceiptLongIcon,
-        name: 'Relecture Anonyme',
+        name: 'Proofreading Anonymous',
         content:
-            "Relecture en ligne, anonyme jusqu'à publication, pour garantir l'objectivité des avis de celle-ci.",
+            "Online proofreading, anonymous until publication, to guarantee the objectivity of its opinions.",
     },
     {
         component: FindInPageIcon,
-        name: 'Consultations',
-        content: 'Consulter des papiers de recherches gratuites ou payantes.',
+        name: 'Consultation',
+        content: 'Consult free or paid research papers.',
     },
 ];
 
@@ -50,9 +50,9 @@ const About: NextPage = () => {
                         ResearchShare - Knowledge for everyone
                     </Box>
                     <Box component="p" className={styles.aboutHeroDescription}>
-                        Une plateforme web de recherche scientifique, dédiée aux
-                        chercheurs, avec une volonté d&apos;apporter plus
-                        d&apos;interactivité entre acteurs du monde de la recherche.
+                        A web-based scientific research platform,
+                        dedicated to researchers, with a will to bring more
+                        interactivity between actors of the research world.
                     </Box>
                     <Button className={styles.aboutHeroButton} variant="contained">
                         Explore
@@ -66,7 +66,7 @@ const About: NextPage = () => {
                 </Box>
                 <Box component="div" className={styles.aboutCardsContainer}>
                     <Box component="p" className={styles.aboutCardsListTitle}>
-                        Ce que nous proposons
+                        What we offer
                     </Box>
                     <Box component="div" className={styles.aboutCardsList}>
                         {cards.map((cardy, index) => {
@@ -88,7 +88,7 @@ const About: NextPage = () => {
                 </Box>
                 <Box component="div" className={styles.aboutContactContainer}>
                     <Box component="p" className={styles.aboutContactTitle}>
-                        Contactez nous
+                        Contact us
                     </Box>
                     <Box component="div" className={styles.aboutContactFormStyling}>
                         <Box
@@ -129,7 +129,7 @@ const About: NextPage = () => {
                                 className={styles.aboutHeroButton}
                                 endIcon={<SendIcon />}
                             >
-                                Envoyer
+                                Send
                             </Button>
                         </Box>
                     </Box>
