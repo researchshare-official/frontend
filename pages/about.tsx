@@ -69,6 +69,7 @@ const About: NextPage = () => {
                     {cards.map((cardy, index) => {
                         return (
                             <Card
+                                sx={{backgroundColor: '#ffffff'}}
                                 key={index}
                                 className={styles.aboutCardsItems}
                             >
