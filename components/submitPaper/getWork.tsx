@@ -70,7 +70,7 @@ const GetWork: NextPage = (props) => {
             } catch (e) {
                 console.log(e);
             }
-            let data = {
+            const data = {
                 category: 'Nature', title : projectName, author : 'Jean-Michel'
             }
             try {
