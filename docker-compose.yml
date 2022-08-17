@@ -1,0 +1,15 @@
+services:
+  frontend:
+    build:
+      context: .
+    image: erudia/frontend:latest
+    ports:
+      - '80:80'
+    networks:
+      - erudia-frontend-net
+    env_file:
+      - env/frontend.env
+    restart: always
+
+networks:
+  erudia-frontend-net:

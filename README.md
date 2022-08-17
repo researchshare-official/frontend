@@ -1,34 +1,32 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# frontend
 
-## Getting Started
+This project is Erudia's frontend repository
 
-First, run the development server:
+### Configure
 
-```bash
-npm run dev
-# or
-yarn dev
-```
+Before anything run the script `./copy-env.sh` and modify yourself the `.env` files
+located in the `env/` folder in order to modify services' configurations
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+### Build/Run on your dev environment
 
-You can start editing the page by modifying `pages/index.tsx`. The page auto-updates as you edit the file.
+Use `yarn install` to install your dependencies    
+Use `yarn start` to start your dev environment    
 
-[API routes](https://nextjs.org/docs/api-routes/introduction) can be accessed on [http://localhost:3000/api/hello](http://localhost:3000/api/hello). This endpoint can be edited in `pages/api/hello.ts`.
+### Test with the back
 
-The `pages/api` directory is mapped to `/api/*`. Files in this directory are treated as [API routes](https://nextjs.org/docs/api-routes/introduction) instead of React pages.
+Elsewere on you dev machine clone the backend repository    
+Follow the backend README.md to run the services in a dev env    
+The backend compose forwards the ports so your dev env can use
+it with localhost access in the env/frontend.env.    
 
-## Learn More
+### Build/Run with Docker
 
-To learn more about Next.js, take a look at the following resources:
+You just have to do `docker-compose up -d` to run all services (frontend included) and
+`docker-compose up --build -d` in consecutive build (if you modify frontend's sources)
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+### Create Release to deploy
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+v0.0.0 for version and replace avec -m with the title
+`git tag -a v0.0.0 -m "Init v0.0.0"`
+to run the CI to deploy :
+`git push origin --tags`

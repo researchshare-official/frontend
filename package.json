@@ -1,40 +1,57 @@
 {
-  "name": "researchshare-frontend",
+  "name": "researchshare",
+  "version": "1.0.0",
   "private": true,
   "scripts": {
-    "dev": "next dev",
-    "build": "next build",
-    "inspect": "NODE_OPTIONS='--inspect' next dev",
-    "start": "next start",
-    "lint": "next lint"
+    "dev": "nuxt",
+    "build": "nuxt build",
+    "start": "nuxt start",
+    "generate": "nuxt generate",
+    "lint:js": "eslint --ext \".js,.ts,.vue\" --ignore-path .gitignore .",
+    "lint:style": "stylelint \"**/*.{css,scss,sass,html,vue}\" --ignore-path .gitignore",
+    "lint:prettier": "prettier --check .",
+    "lint": "yarn lint:js && yarn lint:style && yarn lint:prettier",
+    "lintfix": "prettier --write --list-different . && yarn lint:js --fix && yarn lint:style --fix",
+    "prepare": "husky install"
+  },
+  "lint-staged": {
+    "*.{js,ts,vue}": "eslint --cache",
+    "*.{css,scss,sass,html,vue}": "stylelint",
+    "*.**": "prettier --check --ignore-unknown"
   },
   "dependencies": {
-    "@babel/core": "^7.16.0",
-    "@emotion/react": "^11.7.0",
-    "@emotion/styled": "^11.6.0",
-    "@material-ui/lab": "^4.0.0-alpha.60",
-    "@mui/icons-material": "^5.2.1",
-    "@mui/material": "^5.2.3",
-    "axios": "^0.24.0",
-    "@mui/styles": "^5.2.3",
-    "next": "12.0.7",
-    "react": "17.0.2",
-    "react-dom": "17.0.2",
-    "sass": "^1.45.0"
+    "@nuxt/content": "^1.15.1",
+    "@nuxtjs/axios": "^5.13.6",
+    "@nuxtjs/pwa": "^3.3.5",
+    "core-js": "^3.19.3",
+    "nuxt": "^2.15.8",
+    "vue": "^2.6.14",
+    "vue-server-renderer": "^2.6.14",
+    "vue-template-compiler": "^2.6.14",
+    "vuetify": "^2.6.7",
+    "webpack": "^4.46.0"
   },
   "devDependencies": {
-    "@types/node": "16.11.11",
-    "@types/react": "17.0.37",
-    "@typescript-eslint/eslint-plugin": "^5.7.0",
-    "@typescript-eslint/parser": "^5.7.0",
-    "eslint": "8.4.0",
-    "eslint-config-next": "12.0.7",
+    "@babel/eslint-parser": "^7.16.3",
+    "@commitlint/cli": "^15.0.0",
+    "@commitlint/config-conventional": "^15.0.0",
+    "@nuxt/types": "^2.15.8",
+    "@nuxt/typescript-build": "^2.1.0",
+    "@nuxtjs/eslint-config-typescript": "^8.0.0",
+    "@nuxtjs/eslint-module": "^3.0.2",
+    "@nuxtjs/stylelint-module": "^4.1.0",
+    "@nuxtjs/vuetify": "^1.12.3",
+    "eslint": "^8.19.0",
     "eslint-config-prettier": "^8.3.0",
-    "eslint-plugin-prettier": "^4.0.0",
-    "prettier": "^2.5.1",
-    "typescript": "4.5.2"
-  },
-  "engines": {
-    "node": ">=14.18.1"
+    "eslint-plugin-nuxt": "^3.1.0",
+    "eslint-plugin-vue": "^8.2.0",
+    "husky": "^7.0.4",
+    "lint-staged": "^13.0.3",
+    "postcss-html": "^1.3.0",
+    "prettier": "^2.7.1",
+    "stylelint": "^14.1.0",
+    "stylelint-config-prettier": "^9.0.3",
+    "stylelint-config-recommended-vue": "^1.1.0",
+    "stylelint-config-standard": "^24.0.0"
   }
 }
